@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace TravelPackerAPI.Models {
 	public class Item : IItem {
-		public string Title { get; set; }
-		public bool Done { get; set; }
 
 		// own properties
+		[Required]
 		public int Amount { get; set; }
+
+		public Item(string title, int amount = 1) : base(title) {
+			Amount = amount;
+		}
+
+		protected Item() {
+			// EF
+		}
 
 	}
 }

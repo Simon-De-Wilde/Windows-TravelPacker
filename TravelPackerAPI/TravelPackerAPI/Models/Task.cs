@@ -5,9 +5,15 @@ using System.Threading.Tasks;
 
 namespace TravelPackerAPI.Models {
 	public class Task : IItem {
-		public string Title { get; set; }
-		public bool Done { get; set; }
 
 		public TimeSpan Duration { get; set; }
+
+		public Task(string title, TimeSpan duration) : base(title) {
+			Duration = duration;
+		}
+
+		protected Task() {
+			// EF
+		}
 	}
 }
