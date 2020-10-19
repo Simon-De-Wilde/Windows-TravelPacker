@@ -55,9 +55,9 @@ namespace TravelPackerAPI {
 
 			services.AddSwaggerDocument(c => {
 				c.DocumentName = "apidocs";
-				c.Title = "EssentialsToolkit";
+				c.Title = "TravelPacker API";
 				c.Version = "v1";
-				c.Description = "The essentialsToolkitAPI documentation";
+				c.Description = "The TravelPacker API documentation";
 			});
 		}
 
