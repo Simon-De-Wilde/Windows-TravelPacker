@@ -7,11 +7,11 @@ using TravelPackerAPI.Models.RepositoryInterfaces;
 
 namespace TravelPackerAPI.Data.Repositories {
 	public class ItemRepository : IItemRepository {
-		public void Add(Item u) {
+		public void Add(Item i) {
 			throw new NotImplementedException();
 		}
 
-		public void Delete(Item u) {
+		public void Delete(Item i) {
 			throw new NotImplementedException();
 		}
 
@@ -23,7 +23,7 @@ namespace TravelPackerAPI.Data.Repositories {
 			throw new NotImplementedException();
 		}
 
-		public void Update(Item u) {
+		public void Update(Item i) {
 			throw new NotImplementedException();
 		}
 	}

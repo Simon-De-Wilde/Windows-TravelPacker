@@ -9,10 +9,10 @@ namespace TravelPackerAPI.Models.RepositoryInterfaces {
 
 		Task GetById(int id);
 
-		void Add(Task u);
+		void Add(Task t);
 
-		void Delete(Task u);
+		void Delete(Task t);
 
-		void Update(Task u);
+		void Update(Task t);
 	}
 }

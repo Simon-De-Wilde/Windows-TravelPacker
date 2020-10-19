@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using TravelPackerAPI.Models;
 using TravelPackerAPI.Models.RepositoryInterfaces;
 
 namespace TravelPackerAPI.Data.Repositories {
 	public class TaskRepository : ITaskRepository {
-		public void Add(Models.Task u) {
+		public void Add(Task t) {
 			throw new NotImplementedException();
 		}
 
-		public void Delete(Models.Task u) {
+		public void Delete(Task t) {
 			throw new NotImplementedException();
 		}
 
-		public IEnumerable<Models.Task> GetAll() {
+		public IEnumerable<Task> GetAll() {
 			throw new NotImplementedException();
 		}
 
@@ -22,7 +22,7 @@ namespace TravelPackerAPI.Data.Repositories {
 			throw new NotImplementedException();
 		}
 
-		public void Update(Models.Task u) {
+		public void Update(Task t) {
 			throw new NotImplementedException();
 		}
 	}

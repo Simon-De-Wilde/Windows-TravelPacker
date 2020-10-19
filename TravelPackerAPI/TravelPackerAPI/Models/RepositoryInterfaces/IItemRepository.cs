@@ -10,10 +10,10 @@ namespace TravelPackerAPI.Models.RepositoryInterfaces {
 
 		Item GetById(int id);
 
-		void Add(Item u);
+		void Add(Item i);
 
-		void Delete(Item u);
+		void Delete(Item i);
 
-		void Update(Item u);
+		void Update(Item i);
 	}
 }
