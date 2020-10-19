@@ -6,28 +6,24 @@ using TravelPackerAPI.Models;
 using TravelPackerAPI.Models.RepositoryInterfaces;
 
 namespace TravelPackerAPI.Data.Repositories {
-	public class UserRepository : IUserRepository {
-		public void Add(User u) {
+	public class ItineraryItemRepository : IItineraryItemRepository {
+		public void Add(ItineraryItem u) {
 			throw new NotImplementedException();
 		}
 
-		public void Delete(User u) {
+		public void Delete(ItineraryItem u) {
 			throw new NotImplementedException();
 		}
 
-		public IEnumerable<User> GetAll() {
+		public IEnumerable<ItineraryItem> GetAll() {
 			throw new NotImplementedException();
 		}
 
-		public User GetByEmail(string email) {
+		public ItineraryItem GetById(int id) {
 			throw new NotImplementedException();
 		}
 
-		public User GetById(int id) {
-			throw new NotImplementedException();
-		}
-
-		public void Update(User u) {
+		public void Update(ItineraryItem u) {
 			throw new NotImplementedException();
 		}
 	}
