@@ -38,7 +38,7 @@ namespace TravelPackerAPI {
 			services.AddScoped<ITaskRepository, TaskRepository>();
 			services.AddScoped<ITravelRepository, TravelRepository>();
 
-			services.AddControllers();
+			services.AddControllers().AddNewtonsoftJson();
 
 			services.AddIdentity<IdentityUser, IdentityRole>(cfg =>
 				cfg.User.RequireUniqueEmail = true
