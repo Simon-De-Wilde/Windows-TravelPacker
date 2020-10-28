@@ -18,5 +18,7 @@ namespace TravelPackerAPI.Models.RepositoryInterfaces {
 
 		void Update(User u);
 
+		void SaveChanges();
+
 	}
 }

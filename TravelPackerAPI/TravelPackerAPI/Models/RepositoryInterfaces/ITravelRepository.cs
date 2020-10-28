@@ -15,5 +15,7 @@ namespace TravelPackerAPI.Models.RepositoryInterfaces {
 		void Delete(Travel t);
 
 		void Update(Travel t);
+
+		void SaveChanges();
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TravelPackerAPI.Models;
@@ -6,24 +7,37 @@ using TravelPackerAPI.Models.RepositoryInterfaces;
 
 namespace TravelPackerAPI.Data.Repositories {
 	public class TaskRepository : ITaskRepository {
+
+		private readonly TravelPackerDbContext _dbContext;
+		private readonly DbSet<Task> _tasks;
+
+		public TaskRepository(TravelPackerDbContext dbcontext) {
+			this._dbContext = dbcontext;
+			this._tasks = _dbContext.Tasks;
+		}
+
 		public void Add(Task t) {
-			throw new NotImplementedException();
+			_tasks.Add(t);
 		}
 
 		public void Delete(Task t) {
-			throw new NotImplementedException();
+			_tasks.Remove(t);
 		}
 
 		public IEnumerable<Task> GetAll() {
-			throw new NotImplementedException();
+			return _tasks;
 		}
 
 		public Models.Task GetById(int id) {
-			throw new NotImplementedException();
+			return _tasks.FirstOrDefault(t => t.Id == id);
+		}
+
+		public void SaveChanges() {
+			_dbContext.SaveChanges();
 		}
 
 		public void Update(Task t) {
-			throw new NotImplementedException();
+			_tasks.Update(t);
 		}
 	}
 }

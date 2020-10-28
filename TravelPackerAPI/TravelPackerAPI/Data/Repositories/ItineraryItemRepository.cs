@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,24 +8,38 @@ using TravelPackerAPI.Models.RepositoryInterfaces;
 
 namespace TravelPackerAPI.Data.Repositories {
 	public class ItineraryItemRepository : IItineraryItemRepository {
+
+
+		private readonly TravelPackerDbContext _dbContext;
+		private readonly DbSet<ItineraryItem> _itineraryItems;
+
+		public ItineraryItemRepository(TravelPackerDbContext dbcontext) {
+			this._dbContext = dbcontext;
+			this._itineraryItems = _dbContext.ItineraryItems;
+		}
+
 		public void Add(ItineraryItem i) {
-			throw new NotImplementedException();
+			_itineraryItems.Add(i);
 		}
 
 		public void Delete(ItineraryItem i) {
-			throw new NotImplementedException();
+			_itineraryItems.Remove(i);
 		}
 
 		public IEnumerable<ItineraryItem> GetAll() {
-			throw new NotImplementedException();
+			return _itineraryItems;
 		}
 
 		public ItineraryItem GetById(int id) {
-			throw new NotImplementedException();
+			return _itineraryItems.FirstOrDefault(i => i.Id == id);
+		}
+
+		public void SaveChanges() {
+			_dbContext.SaveChanges();
 		}
 
 		public void Update(ItineraryItem i) {
-			throw new NotImplementedException();
+			_itineraryItems.Update(i);
 		}
 	}
 }
