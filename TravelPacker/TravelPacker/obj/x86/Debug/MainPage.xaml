@@ -8,14 +8,25 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
       RequestedTheme="Light">
 
-    <NavigationView x:ConnectionId='2' x:Name="navigation">
+    <NavigationView x:ConnectionId='2' x:Name="navigation"
+                    PaneDisplayMode="Top"
+                    IsSettingsVisible="False">
         <NavigationView.MenuItems>
             <NavigationViewItem x:ConnectionId='3' Content="Home"
                                 Icon="Home"
                                                      />
+
+
         </NavigationView.MenuItems>
+        <NavigationView.PaneFooter>
+            <NavigationViewItem x:ConnectionId='4' Content="Logout"
+                                Icon="Switch"
+                                Padding="0, 0, 20, 0"
+                                                       />
+        </NavigationView.PaneFooter>
         <NavigationView.Content>
-            <Frame x:ConnectionId='4' x:Name="mainframe" />
+            <Frame x:ConnectionId='5' x:Name="mainframe"
+                   Padding="20,0,0,0" />
         </NavigationView.Content>
 
     </NavigationView>

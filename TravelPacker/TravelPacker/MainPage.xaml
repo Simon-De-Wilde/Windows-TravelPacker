@@ -9,14 +9,24 @@
       RequestedTheme="Light">
 
     <NavigationView x:Name="navigation"
-                    IsPaneOpen="False">
+                    PaneDisplayMode="Top"
+                    IsSettingsVisible="False">
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Home"
                                 Icon="Home"
                                 Tapped="Home_Tapped" />
+
+
         </NavigationView.MenuItems>
+        <NavigationView.PaneFooter>
+            <NavigationViewItem Content="Logout"
+                                Icon="Switch"
+                                Padding="0, 0, 20, 0"
+                                Tapped="Logout_Tapped" />
+        </NavigationView.PaneFooter>
         <NavigationView.Content>
-            <Frame x:Name="mainframe" />
+            <Frame x:Name="mainframe"
+                   Padding="20,0,0,0" />
         </NavigationView.Content>
 
     </NavigationView>

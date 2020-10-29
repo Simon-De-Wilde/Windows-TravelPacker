@@ -30,5 +30,10 @@ namespace TravelPacker {
 		private void Home_Tapped(object sender, TappedRoutedEventArgs e) {
 			mainframe.Navigate(typeof(TravelsPage));
 		}
+
+		private void Logout_Tapped(object sender, TappedRoutedEventArgs e) {
+			ContentDialog cd = new ContentDialog() { Title = "Logout tapped", PrimaryButtonText = "Close" };
+			cd.ShowAsync();
+		}
 	}
 }
