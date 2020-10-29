@@ -1,14 +1,33 @@
-﻿<Page
-    x:Class="TravelPacker.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TravelPacker"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+﻿<Page x:Class="TravelPacker.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:TravelPacker"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      RequestedTheme="Light">
 
-    <Grid>
+    <NavigationView x:Name="navigation"
+                    PaneDisplayMode="Top"
+                    IsSettingsVisible="False">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home"
+                                Icon="Home"
+                                Tapped="Home_Tapped" />
 
-    </Grid>
+
+        </NavigationView.MenuItems>
+        <NavigationView.PaneFooter>
+            <NavigationViewItem Content="Logout"
+                                Icon="Switch"
+                                Padding="0, 0, 20, 0"
+                                Tapped="Logout_Tapped" />
+        </NavigationView.PaneFooter>
+        <NavigationView.Content>
+            <Frame x:Name="mainframe"
+                   Padding="20,0,0,0" />
+        </NavigationView.Content>
+
+    </NavigationView>
 </Page>
