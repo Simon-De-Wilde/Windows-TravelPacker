@@ -23,12 +23,21 @@ namespace TravelPackerAPI.Controllers {
 			_categoryRepo = categoryRepo;
 		}
 
+		/// <summary>
+		/// Get all Categories
+		/// </summary>
+		/// <returns></returns>
 		// GET: api/Categories
 		[HttpGet]
 		public IEnumerable<Category> GetCategories() {
 			return _categoryRepo.GetAll();
 		}
 
+		/// <summary>
+		/// Get category by id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		// GET: api/Categories/5
 		[HttpGet("{id}")]
 		public async Task<ActionResult<Category>> GetCategory(int id) {
@@ -41,6 +50,12 @@ namespace TravelPackerAPI.Controllers {
 			return category;
 		}
 
+		/// <summary>
+		/// Update an existing categorie
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="category"></param>
+		/// <returns></returns>
 		// PUT: api/Categories/5
 		// To protect from overposting attacks, enable the specific properties you want to bind to, for
 		// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -66,6 +81,11 @@ namespace TravelPackerAPI.Controllers {
 			return NoContent();
 		}
 
+		/// <summary>
+		/// Create a new category
+		/// </summary>
+		/// <param name="category"></param>
+		/// <returns></returns>
 		// POST: api/Categories
 		// To protect from overposting attacks, enable the specific properties you want to bind to, for
 		// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -77,6 +97,11 @@ namespace TravelPackerAPI.Controllers {
 			return CreatedAtAction("GetCategory", new { id = category.Id }, category);
 		}
 
+		/// <summary>
+		/// Delete a category with a specific id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		// DELETE: api/Categories/5
 		[HttpDelete("{id}")]
 		public async Task<ActionResult<Category>> DeleteCategory(int id) {
