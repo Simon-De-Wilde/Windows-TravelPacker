@@ -1,0 +1,15 @@
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\TravelPacker.csprojAssemblyReference.cache
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\App.g.i.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\App.g.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\MainPage.g.i.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\MainPage.g.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\View\TravelsPage.g.i.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\View\TravelsPage.g.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\XamlTypeInfo.g.cs
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\App.xaml
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\MainPage.xaml
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\View\TravelsPage.xaml
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\App.xbf
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\MainPage.xbf
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\View\TravelsPage.xbf
+C:\Users\Kenny Buffel\School\Hogent (hoger)\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\ARM\Debug\XamlSaveStateFile.xml
