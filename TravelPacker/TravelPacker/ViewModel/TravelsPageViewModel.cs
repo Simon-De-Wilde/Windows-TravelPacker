@@ -24,7 +24,9 @@ namespace TravelPacker.ViewModel {
 			try {
 				HttpClient client = new HttpClient();
 
-				var json = await client.GetStringAsync(new Uri("https://localhost:44354/api/Travels"));
+				client.BaseAddress = new Uri("https://localhost:44354/");
+
+				var json = await client.GetStringAsync("/api/Travels");
 
 				var list = JsonConvert.DeserializeObject<List<Travel>>(json);
 
