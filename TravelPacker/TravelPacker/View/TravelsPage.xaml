@@ -4,10 +4,23 @@
       xmlns:local="using:TravelPacker.View"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:model="using:TravelPacker.Model"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock Text="dees werkt" />
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Your Travels"
+                       Style="{ThemeResource HeaderTextBlockStyle}"/>
+            <ListView x:Name="TravelsLV"
+                      ItemsSource="{x:Bind ViewModel.Travels}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Travel">
+                        <TextBlock Text="{x:Bind Name}"></TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+    </ScrollViewer>
 </Page>

@@ -7,7 +7,6 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\TravelPackerAPI.runtimeconfig.dev.json
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\TravelPackerAPI.dll
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\TravelPackerAPI.pdb
-C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csprojAssemblyReference.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.AssemblyInfoInputs.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.AssemblyInfo.cs
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.RazorTargetAssemblyInfo.cache
@@ -169,3 +168,4 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csprojAssemblyReference.cache

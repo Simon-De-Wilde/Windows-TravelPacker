@@ -12,7 +12,6 @@ using TravelPackerAPI.Models.RepositoryInterfaces;
 namespace TravelPackerAPI.Controllers {
 	[Route("api/[controller]")]
 	[ApiController]
-	[Produces("application/json")]
 	public class TravelsController : ControllerBase {
 		private readonly TravelPackerDbContext _context;
 		private readonly ITravelRepository _travelRepo;

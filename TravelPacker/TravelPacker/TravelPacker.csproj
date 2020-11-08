@@ -126,10 +126,11 @@
     <Compile Include="Model\IItem.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItineraryItem.cs" />
-    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\TravelTask.cs" />
     <Compile Include="Model\Travel.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\TravelsPageViewModel.cs" />
     <Compile Include="View\TravelsPage.xaml.cs">
       <DependentUpon>TravelsPage.xaml</DependentUpon>
     </Compile>
@@ -167,10 +168,11 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
