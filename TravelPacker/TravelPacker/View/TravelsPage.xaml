@@ -9,17 +9,35 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <ScrollViewer>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
             <TextBlock Text="Your Travels"
-                       Style="{ThemeResource HeaderTextBlockStyle}"/>
-            <ListView x:Name="TravelsLV"
-                      ItemsSource="{x:Bind ViewModel.Travels}">
-                <ListView.ItemTemplate>
+                       Style="{ThemeResource HeaderTextBlockStyle}" />
+            <GridView x:Name="TravelsGV"
+                      ItemsSource="{x:Bind ViewModel.Travels}"
+                      IsItemClickEnabled="True">
+                <GridView.ItemTemplate>
                     <DataTemplate x:DataType="model:Travel">
-                        <TextBlock Text="{x:Bind Name}"></TextBlock>
+                        <StackPanel x:Name="travelCard"
+                                    Orientation="Horizontal"
+                                    Width="400"
+                                    BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
+                                    BorderThickness="5"
+                                    CornerRadius="10"
+                                    Margin="10">
+                            <Image Source="https://randomwordgenerator.com/img/picture-generator/5ee6d6454d57b10ff3d8992cc12c30771037dbf852547848702a7ed4974c_640.jpg"
+                                   Width="200" 
+                                   Margin="10"/>
+                            <StackPanel Orientation="Vertical"
+                                        Padding="0,10,0,0">
+                                <TextBlock Text="{x:Bind Name}" 
+                                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                                <TextBlock Text="{x:Bind Location}" 
+                                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </GridView.ItemTemplate>
+            </GridView>
 
         </StackPanel>
     </ScrollViewer>

@@ -9,17 +9,25 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <ScrollViewer>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
             <TextBlock Text="Your Travels"
-                       Style="{ThemeResource HeaderTextBlockStyle}"/>
-            <ListView x:ConnectionId='2' x:Name="TravelsLV"
-                                                              >
-                <ListView.ItemTemplate>
+                       Style="{ThemeResource HeaderTextBlockStyle}" />
+            <GridView x:ConnectionId='2' x:Name="TravelsGV"
+                                                              
+                      IsItemClickEnabled="True">
+                <GridView.ItemTemplate>
                     <DataTemplate                          >
-                        <TextBlock x:ConnectionId='3'                     ></TextBlock>
+                        <StackPanel x:Name="travelCard"
+                                    Orientation="Horizontal">
+                            <Image Source="https://randomwordgenerator.com/img/picture-generator/5ee6d6454d57b10ff3d8992cc12c30771037dbf852547848702a7ed4974c_640.jpg"
+                                   Width="20" />
+                            <StackPanel>
+
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </GridView.ItemTemplate>
+            </GridView>
 
         </StackPanel>
     </ScrollViewer>
