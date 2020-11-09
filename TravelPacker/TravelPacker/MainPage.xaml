@@ -10,7 +10,8 @@
 
     <NavigationView x:Name="navigation"
                     PaneDisplayMode="Top"
-                    IsSettingsVisible="False">
+                    IsSettingsVisible="False"
+                    IsBackEnabled="True">
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Home"
                                 Icon="Home"

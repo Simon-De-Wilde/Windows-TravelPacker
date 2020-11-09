@@ -10,7 +10,8 @@
 
     <NavigationView x:ConnectionId='2' x:Name="navigation"
                     PaneDisplayMode="Top"
-                    IsSettingsVisible="False">
+                    IsSettingsVisible="False"
+                    IsBackEnabled="True">
         <NavigationView.MenuItems>
             <NavigationViewItem x:ConnectionId='3' Content="Home"
                                 Icon="Home"
