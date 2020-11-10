@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using TravelPacker.View;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,7 @@ namespace TravelPacker {
 			this.InitializeComponent();
 
 			mainframe.Navigate(typeof(TravelsPage));
+
 		}
 
 		private void Home_Tapped(object sender, TappedRoutedEventArgs e) {
@@ -34,6 +36,13 @@ namespace TravelPacker {
 		private void Logout_Tapped(object sender, TappedRoutedEventArgs e) {
 			ContentDialog cd = new ContentDialog() { Title = "Logout tapped", PrimaryButtonText = "Close" };
 			cd.ShowAsync();
+		}
+
+		private void navigation_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) {
+
+			if (mainframe.CanGoBack) {
+				mainframe.GoBack();
+			}
 		}
 	}
 }
