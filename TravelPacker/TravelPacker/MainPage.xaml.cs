@@ -38,5 +38,11 @@ namespace TravelPacker {
 			cd.ShowAsync();
 		}
 
+		private void navigation_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) {
+
+			if (mainframe.CanGoBack) {
+				mainframe.GoBack();
+			}
+		}
 	}
 }

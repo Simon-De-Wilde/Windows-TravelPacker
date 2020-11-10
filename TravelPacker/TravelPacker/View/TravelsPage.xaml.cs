@@ -41,7 +41,6 @@ namespace TravelPacker.View {
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
 			// TODO viewmodel aanspreken om een travel toe te voegen
-			// TODO deze frame wordt niet op de stack van de navigationview geplaatst
 			Frame.Navigate(typeof(AddTravelPage));
 		}
 

@@ -11,7 +11,8 @@
     <NavigationView x:Name="navigation"
                     PaneDisplayMode="Top"
                     IsSettingsVisible="False"
-                    IsBackEnabled="True">
+                    IsBackEnabled="True"
+                    BackRequested="navigation_BackRequested">
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Home"
                                 Icon="Home"
@@ -25,10 +26,10 @@
                                 Padding="0, 0, 20, 0"
                                 Tapped="Logout_Tapped" />
         </NavigationView.PaneFooter>
-        <NavigationView.Content>
-            <Frame x:Name="mainframe"
-                   Padding="20,0,0,0" />
-        </NavigationView.Content>
+     
+        <Frame x:Name="mainframe"
+               Padding="20,0,0,0" />
+     
 
     </NavigationView>
 </Page>
