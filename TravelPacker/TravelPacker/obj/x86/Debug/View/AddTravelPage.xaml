@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
-      RequestedTheme="Light"
-      Margin="-20,-20,0,0">
+      RequestedTheme="Light">
 
     <Page.Background>
-        <ImageBrush x:Name="bgImage"
+        <ImageBrush x:ConnectionId='2' x:Name="bgImage"
                     ImageSource="../Assets/BackgroundImages/travelBG2.jpg"
                     Stretch="Fill"/>
     </Page.Background>
@@ -34,24 +33,24 @@
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Titel"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="txt_title" />
+                <TextBox x:ConnectionId='6' x:Name="txt_title" />
             </StackPanel>
 
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Location"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="txt_location" />
+                <TextBox x:ConnectionId='5' x:Name="txt_location" />
             </StackPanel>
 
             <!--TODO be able to upload image-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Image"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="txt_image" />
+                <TextBox x:ConnectionId='4' x:Name="txt_image" />
             </StackPanel>
 
-            <Button Content="Add new travel"
-                    Click="Button_Click"
+            <Button x:ConnectionId='3' Content="Add new travel"
+                                        
                     Margin="10"
                     HorizontalAlignment="Center" />
 
@@ -59,3 +58,4 @@
 
     </StackPanel>
 </Page>
+
