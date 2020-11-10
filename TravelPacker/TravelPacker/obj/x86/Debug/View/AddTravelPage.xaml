@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
-      RequestedTheme="Light">
+      RequestedTheme="Light"
+      Margin="-20,-20,0,0">
 
     <Page.Background>
         <ImageBrush x:ConnectionId='2' x:Name="bgImage"
