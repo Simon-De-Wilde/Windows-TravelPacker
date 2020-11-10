@@ -30,6 +30,7 @@ namespace TravelPacker.View {
 		public AddTravelPage() {
 			this.InitializeComponent();
 
+			// TODO make image random --> set imagesource
 			Random rd = new Random();
 			int rdnumber = rd.Next(1, 7);
 
