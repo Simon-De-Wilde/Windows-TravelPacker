@@ -19,31 +19,10 @@ namespace TravelPacker.ViewModel {
 			GetTravels();
 		}
 
-		private async void GetTravels() {
+		public async void GetTravels() {
 
-			//Travel travel = new Travel("Quartier Latin", "Paris");
+			Travels.Clear();
 
-			//Category category = new Category("BathroomStuff");
-			//travel.Categories.Add(category);
-
-			//Item item = new Item("toothbrush");
-			//category.Items.Add(item);
-			//TravelTask task = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
-			//category.Tasks.Add(task);
-
-			//ItineraryItem ii = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
-			//travel.Itineraries.Add(ii);
-
-			//Travels.Add(travel);
-			//Travels.Add(travel);
-			//Travels.Add(travel);
-			//Travels.Add(travel);
-			//Travels.Add(travel);
-			//Travels.Add(travel);
-
-
-
-			//TODO connectie met de api
 			try {
 				HttpClient client = new HttpClient();
 
