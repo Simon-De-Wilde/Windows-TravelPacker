@@ -40,8 +40,14 @@ namespace TravelPacker {
 
 		private void navigation_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) {
 
+			// check if travelsPage --> no return needed
+			if (mainframe.CurrentSourcePageType == typeof(TravelsPage)) {
+				mainframe.BackStack.Clear();
+			}
+
 			if (mainframe.CanGoBack) {
 				mainframe.GoBack();
+
 			}
 		}
 	}

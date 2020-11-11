@@ -28,9 +28,6 @@ namespace TravelPacker.View {
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
 	public sealed partial class AddTravelPage : Page {
-
-		public AddTravelPageViewModel ViewModel { get; private set; }
-
 		public AddTravelPage() {
 			this.InitializeComponent();
 
@@ -42,15 +39,11 @@ namespace TravelPacker.View {
 
 			//this.Background = new ImageBrush() { ImageSource = new Uri("../Assets/BackgroundImages/travelBG1.jpg", UriKind.Relative) };
 
-			ViewModel = new AddTravelPageViewModel();
-
-
-
 		}
 
 		private async void Button_Click(object sender, RoutedEventArgs e) {
 			try {
-				Travel newTravel = new Travel(txt_title.Text, txt_location.Text);
+				Travel newTravel = new Travel(txt_title.Text, txt_location.Text, txt_image.Text.Length == 0 ? null : txt_image.Text);
 				var newTravelJSON = JsonConvert.SerializeObject(newTravel);
 
 				HttpClient client = new HttpClient();

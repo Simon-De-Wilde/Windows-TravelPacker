@@ -22,7 +22,7 @@ namespace TravelPackerAPI.Data {
 			if (!_dbContext.Travels.Any()) {
 
 
-				Travel travel1 = new Travel("Quartier Latin", "Paris");
+				Travel travel1 = new Travel("Quartier Latin", "Paris", null);
 
 				Category category1 = new Category("BathroomStuff");
 				travel1.Categories.Add(category1);
@@ -39,7 +39,7 @@ namespace TravelPackerAPI.Data {
 				_dbContext.SaveChanges();
 				/////////////////////////////
 
-				Travel travel2 = new Travel("Kings Cross", "London");
+				Travel travel2 = new Travel("Kings Cross", "London", null);
 
 				Category category2 = new Category("Snacks");
 				travel2.Categories.Add(category2);

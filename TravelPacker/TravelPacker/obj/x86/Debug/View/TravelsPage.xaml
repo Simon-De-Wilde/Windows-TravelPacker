@@ -28,10 +28,8 @@
             <GridView x:ConnectionId='3' x:Name="TravelsGV"
                                                               
                       IsItemClickEnabled="True"
-                      ReorderMode="Enabled"
-                      CanReorderItems="True"
-                      AllowDrop="True"
                       Margin="0,20,0,0"
+                      HorizontalContentAlignment="Left"
                                                >
                 <GridView.ItemTemplate>
                     <DataTemplate                          >
@@ -41,23 +39,25 @@
                                     Orientation="Horizontal"
                                     Width="auto"
                                     MinWidth="450"
-                                    MaxWidth="500"
+                                    MinHeight="160"
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
                                     CornerRadius="2"
                                     Margin="10">
-                            <Image Source="https://randomwordgenerator.com/img/picture-generator/5ee6d6454d57b10ff3d8992cc12c30771037dbf852547848702a7ed4974c_640.jpg"
+                            <Image x:ConnectionId='5'                           
                                    Width="200"
                                    Margin="10" />
+                            <!--TODO stack panel moet maximale breedte innemen -> progressbar te kort bij kleine namen -->
+                            <!-- TODO wrap de woorden -> WERKT NOG NIET-->
                             <StackPanel Orientation="Vertical"
-                                        Padding="0,10,50,0"
-                                        HorizontalAlignment="Left">
-                                <TextBlock x:ConnectionId='5'                     
+                                        Padding="0,10,50,0">
+                                <TextBlock x:ConnectionId='6'                     
+                                           TextWrapping="Wrap"
                                            Style="{ThemeResource TitleTextBlockStyle}" />
-                                <TextBlock x:ConnectionId='6'                         
+                                <TextBlock x:ConnectionId='7'                         
+                                           TextWrapping="Wrap"
                                            Style="{ThemeResource SubtitleTextBlockStyle}" />
-                                <muxc:ProgressBar Width="auto"
-                                                  Value="80" />
+                                <muxc:ProgressBar Value="80" />
                                 <!-- TODO progressbar value op basis van aantal items mee en taken gedaan-->
                             </StackPanel>
                         </StackPanel>

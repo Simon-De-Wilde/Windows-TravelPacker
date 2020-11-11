@@ -46,7 +46,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="MinWidth" />
-      <RootProperty Name="MaxWidth" />
+      <RootProperty Name="MinHeight" />
       <RootProperty Name="CornerRadius" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.AcrylicBrush">
@@ -56,6 +56,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Text" />
       <RootProperty Name="Style" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
@@ -72,10 +73,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ReorderMode" />
-      <RootProperty Name="CanReorderItems" />
-      <RootProperty Name="AllowDrop" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="Tapped" />
     </RootType>
@@ -89,7 +88,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
-      <RootProperty Name="Width" />
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
