@@ -17,9 +17,9 @@ namespace TravelPackerAPI.Data {
 		}
 
 		public async System.Threading.Tasks.Task InitializeData() {
-			_dbContext.Database.EnsureDeleted();
-			if (_dbContext.Database.EnsureCreated()) {
-				//if (!_dbContext.Travels.Any()) {
+			//_dbContext.Database.EnsureDeleted();
+			//if (_dbContext.Database.EnsureCreated()) {
+			if (!_dbContext.Travels.Any()) {
 
 
 				Travel travel1 = new Travel("Quartier Latin", "Paris");
@@ -29,7 +29,7 @@ namespace TravelPackerAPI.Data {
 
 				Item iter1 = new Item("toothbrush");
 				category1.Items.Add(iter1);
-				Models.Task task1 = new Models.Task("Refill shampoo", new TimeSpan(0, 20, 0));
+				Models.TravelTask task1 = new Models.TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
 				category1.Tasks.Add(task1);
 
 				ItineraryItem ii1 = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
@@ -46,7 +46,7 @@ namespace TravelPackerAPI.Data {
 
 				Item item2 = new Item("chips");
 				category2.Items.Add(item2);
-				Models.Task task2 = new Models.Task("Make popcorn", new TimeSpan(0, 20, 0));
+				Models.TravelTask task2 = new Models.TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
 				category2.Tasks.Add(task2);
 
 				ItineraryItem ii2 = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
