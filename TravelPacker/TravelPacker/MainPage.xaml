@@ -26,10 +26,12 @@
                                 Padding="0, 0, 20, 0"
                                 Tapped="Logout_Tapped" />
         </NavigationView.PaneFooter>
-     
-        <Frame x:Name="mainframe"
-               Padding="20,0,0,0" />
-     
+
+        <NavigationView.Content>
+            <Frame x:Name="mainframe"
+                   Padding="20,0,0,0" />
+        </NavigationView.Content>
+
 
     </NavigationView>
 </Page>

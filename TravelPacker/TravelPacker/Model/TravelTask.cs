@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class TravelTask : IItem {
+		public int Id { get; set; }
 		[Required]
 		public TimeSpan Duration { get; }
 

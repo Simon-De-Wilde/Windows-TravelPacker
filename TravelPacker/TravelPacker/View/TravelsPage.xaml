@@ -28,10 +28,8 @@
             <GridView x:Name="TravelsGV"
                       ItemsSource="{x:Bind ViewModel.Travels}"
                       IsItemClickEnabled="True"
-                      ReorderMode="Enabled"
-                      CanReorderItems="True"
-                      AllowDrop="True"
                       Margin="0,20,0,0"
+                      HorizontalContentAlignment="Left"
                       Tapped="TravelsGV_Tapped">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="model:Travel">
@@ -40,22 +38,26 @@
                         <StackPanel x:Name="travelCard"
                                     Orientation="Horizontal"
                                     Width="auto"
+                                    MinWidth="450"
+                                    MinHeight="160"
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
                                     CornerRadius="2"
                                     Margin="10">
-                            <Image Source="https://randomwordgenerator.com/img/picture-generator/5ee6d6454d57b10ff3d8992cc12c30771037dbf852547848702a7ed4974c_640.jpg"
+                            <Image Source="{x:Bind ImageUrl}"
                                    Width="200"
                                    Margin="10" />
+                            <!--TODO stack panel moet maximale breedte innemen -> progressbar te kort bij kleine namen -->
+                            <!-- TODO wrap de woorden -> WERKT NOG NIET-->
                             <StackPanel Orientation="Vertical"
-                                        Padding="0,10,50,0"
-                                        HorizontalAlignment="Left">
+                                        Padding="0,10,50,0">
                                 <TextBlock Text="{x:Bind Name}"
+                                           TextWrapping="Wrap"
                                            Style="{ThemeResource TitleTextBlockStyle}" />
                                 <TextBlock Text="{x:Bind Location}"
+                                           TextWrapping="Wrap"
                                            Style="{ThemeResource SubtitleTextBlockStyle}" />
-                                <muxc:ProgressBar Width="auto"
-                                                  Value="80" />
+                                <muxc:ProgressBar Value="80" />
                                 <!-- TODO progressbar value op basis van aantal items mee en taken gedaan-->
                             </StackPanel>
                         </StackPanel>

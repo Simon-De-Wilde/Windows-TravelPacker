@@ -9,26 +9,26 @@ namespace TravelPackerAPI.Data.Repositories {
 	public class TaskRepository : ITaskRepository {
 
 		private readonly TravelPackerDbContext _dbContext;
-		private readonly DbSet<Task> _tasks;
+		private readonly DbSet<TravelTask> _tasks;
 
 		public TaskRepository(TravelPackerDbContext dbcontext) {
 			this._dbContext = dbcontext;
 			this._tasks = _dbContext.Tasks;
 		}
 
-		public void Add(Task t) {
+		public void Add(TravelTask t) {
 			_tasks.Add(t);
 		}
 
-		public void Delete(Task t) {
+		public void Delete(TravelTask t) {
 			_tasks.Remove(t);
 		}
 
-		public IEnumerable<Task> GetAll() {
+		public IEnumerable<TravelTask> GetAll() {
 			return _tasks;
 		}
 
-		public Models.Task GetById(int id) {
+		public Models.TravelTask GetById(int id) {
 			return _tasks.FirstOrDefault(t => t.Id == id);
 		}
 
@@ -36,7 +36,7 @@ namespace TravelPackerAPI.Data.Repositories {
 			_dbContext.SaveChanges();
 		}
 
-		public void Update(Task t) {
+		public void Update(TravelTask t) {
 			_tasks.Update(t);
 		}
 	}

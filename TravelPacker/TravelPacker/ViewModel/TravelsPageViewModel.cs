@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
-using Windows.Web.Http;
+using System.Net.Http;
 
 namespace TravelPacker.ViewModel {
 	public class TravelsPageViewModel {
