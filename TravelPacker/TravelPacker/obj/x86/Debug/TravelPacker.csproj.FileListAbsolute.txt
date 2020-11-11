@@ -53,3 +53,4 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\Tra
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\AddTravelPage.xaml
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\AddTravelPage.xbf
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\AddTravelPage.xbf
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\TravelPacker.csprojAssemblyReference.cache
