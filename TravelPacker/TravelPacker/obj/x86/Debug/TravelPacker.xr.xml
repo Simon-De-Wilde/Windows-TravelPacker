@@ -45,6 +45,8 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Width" />
       <RootProperty Name="Orientation" />
+      <RootProperty Name="MinWidth" />
+      <RootProperty Name="MaxWidth" />
       <RootProperty Name="CornerRadius" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.AcrylicBrush">

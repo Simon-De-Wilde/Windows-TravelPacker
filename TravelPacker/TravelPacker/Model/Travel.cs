@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace TravelPacker.Model {
 	public class Travel {
+		public int Id { get; set; }
 		[Required]
 		public string Name { get; }
 

@@ -40,6 +40,8 @@
                         <StackPanel x:ConnectionId='4' x:Name="travelCard"
                                     Orientation="Horizontal"
                                     Width="auto"
+                                    MinWidth="450"
+                                    MaxWidth="500"
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
                                     CornerRadius="2"

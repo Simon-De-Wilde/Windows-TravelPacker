@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class ItineraryItem : IItem {
+		public int Id { get; set; }
 		[Required]
 		public DateTime Start { get; }
 

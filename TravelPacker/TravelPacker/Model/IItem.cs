@@ -2,6 +2,7 @@
 
 namespace TravelPacker.Model {
 	public abstract class IItem {
+		public int Id { get; set; }
 		[Required]
 		public string Title { get; }
 
