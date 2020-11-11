@@ -22,14 +22,14 @@ namespace TravelPackerAPI.Data {
 			if (!_dbContext.Travels.Any()) {
 
 
-				Travel travel1 = new Travel("Quartier Latin", "Paris");
+				Travel travel1 = new Travel("Quartier Latin", "Paris", null);
 
 				Category category1 = new Category("BathroomStuff");
 				travel1.Categories.Add(category1);
 
 				Item iter1 = new Item("toothbrush");
 				category1.Items.Add(iter1);
-				Models.Task task1 = new Models.Task("Refill shampoo", new TimeSpan(0, 20, 0));
+				Models.TravelTask task1 = new Models.TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
 				category1.Tasks.Add(task1);
 
 				ItineraryItem ii1 = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
@@ -39,14 +39,14 @@ namespace TravelPackerAPI.Data {
 				_dbContext.SaveChanges();
 				/////////////////////////////
 
-				Travel travel2 = new Travel("Kings Cross", "London");
+				Travel travel2 = new Travel("Kings Cross", "London", null);
 
 				Category category2 = new Category("Snacks");
 				travel2.Categories.Add(category2);
 
 				Item item2 = new Item("chips");
 				category2.Items.Add(item2);
-				Models.Task task2 = new Models.Task("Make popcorn", new TimeSpan(0, 20, 0));
+				Models.TravelTask task2 = new Models.TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
 				category2.Tasks.Add(task2);
 
 				ItineraryItem ii2 = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));

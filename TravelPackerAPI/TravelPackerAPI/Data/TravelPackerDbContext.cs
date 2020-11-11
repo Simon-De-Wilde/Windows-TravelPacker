@@ -13,7 +13,7 @@ namespace TravelPackerAPI.Data {
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<ItineraryItem> ItineraryItems { get; set; }
 		public DbSet<Item> Items { get; set; }
-		public DbSet<Task> Tasks { get; set; }
+		public DbSet<TravelTask> Tasks { get; set; }
 
 		public TravelPackerDbContext(DbContextOptions<TravelPackerDbContext> options) : base(options) {
 		}
@@ -29,7 +29,7 @@ namespace TravelPackerAPI.Data {
 			modelBuilder.Entity<ItineraryItem>();
 
 			modelBuilder.Entity<Item>();
-			modelBuilder.Entity<Task>();
+			modelBuilder.Entity<TravelTask>();
 
 		}
 

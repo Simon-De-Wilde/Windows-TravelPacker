@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace TravelPackerAPI.Models.RepositoryInterfaces {
 	public interface ITaskRepository {
-		IEnumerable<Task> GetAll();
+		IEnumerable<TravelTask> GetAll();
 
-		Task GetById(int id);
+		TravelTask GetById(int id);
 
-		void Add(Task t);
+		void Add(TravelTask t);
 
-		void Delete(Task t);
+		void Delete(TravelTask t);
 
-		void Update(Task t);
+		void Update(TravelTask t);
 
 		void SaveChanges();
 	}
