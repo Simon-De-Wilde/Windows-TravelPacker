@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using TravelPacker.Model;
@@ -44,10 +45,38 @@ namespace TravelPacker.View {
 			Frame.Navigate(typeof(AddTravelPage));
 		}
 
-		private void TravelsGV_RightTapped(object sender, RightTappedRoutedEventArgs e) {
-			var selectedTravel = TravelsGV.SelectedItem as Travel;
+		private async void TravelsGV_RightTapped(object sender, RightTappedRoutedEventArgs e) {
+			var selectedTravel = (sender as StackPanel).DataContext as Travel;
 
-			// TODO open update screen met optie om te deleten
+			ContentDialog cd = new ContentDialog() {
+				Title = "Delete travel",
+				Content = $"Do you wish to delete travel '{selectedTravel.Name}'? This action cannot be undone.",
+				CloseButtonText = "Close",
+				PrimaryButtonText = "Delete"
+			};
+
+			ContentDialogResult result = await cd.ShowAsync();
+
+			if (result == ContentDialogResult.Primary) {
+				HttpClient client = new HttpClient();
+
+				var deleteResult = await client.DeleteAsync(new Uri($"https://localhost:44354/api/Travels/{selectedTravel.Id}"));
+
+				if (deleteResult.IsSuccessStatusCode) {
+					ViewModel.Travels.Remove(selectedTravel);
+
+					ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
+					diag.ShowAsync();
+				}
+				else {
+
+					ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+					diag.ShowAsync();
+				}
+
+			}
+
+
 
 
 		}

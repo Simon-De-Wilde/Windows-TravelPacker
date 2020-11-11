@@ -34,7 +34,7 @@ namespace TravelPacker {
 		}
 
 		private void Logout_Tapped(object sender, TappedRoutedEventArgs e) {
-			ContentDialog cd = new ContentDialog() { Title = "Logout tapped", PrimaryButtonText = "Close" };
+			ContentDialog cd = new ContentDialog() { Title = "Logout tapped", CloseButtonText = "Close" };
 			cd.ShowAsync();
 		}
 
