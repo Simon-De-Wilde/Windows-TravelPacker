@@ -15,6 +15,14 @@ namespace TravelPacker.View
 
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        private global::Windows.UI.Xaml.Media.ImageBrush bgImage; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        private global::Windows.UI.Xaml.Controls.TextBox txt_image; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        private global::Windows.UI.Xaml.Controls.TextBox txt_location; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        private global::Windows.UI.Xaml.Controls.TextBox txt_title; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         private bool _contentLoaded;
 
         /// <summary>
