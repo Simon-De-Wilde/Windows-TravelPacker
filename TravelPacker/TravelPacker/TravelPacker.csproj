@@ -131,11 +131,16 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\TravelsPageViewModel.cs" />
+    <Compile Include="ViewModel\UpdateTravelPageViewModel.cs" />
     <Compile Include="View\AddTravelPage.xaml.cs">
       <DependentUpon>AddTravelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddTravelPageViewModel.cs" />
     <Compile Include="View\TravelsPage.xaml.cs">
       <DependentUpon>TravelsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateTravelPage.xaml.cs">
+      <DependentUpon>UpdateTravelPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TravelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateTravelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

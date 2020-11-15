@@ -27,11 +27,11 @@ namespace TravelPacker.Model {
 			_travels = new List<Travel>();
 		}
 
-		public void addTravelToList(Travel newTravel) {
+		public void AddTravelToList(Travel newTravel) {
 			_travels.Add(newTravel);
 		}
 
-		public void removeTravelFromList(Travel travel) {
+		public void RemoveTravelFromList(Travel travel) {
 			_travels.Remove(travel);
 		}
 	}

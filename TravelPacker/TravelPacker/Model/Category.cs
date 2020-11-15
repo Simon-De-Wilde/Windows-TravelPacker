@@ -22,19 +22,19 @@ namespace TravelPacker.Model {
 			_tasks = new List<TravelTask>();
 		}
 
-		public void addItemToList(Item newItem) {
+		public void AddItemToList(Item newItem) {
 			_items.Add(newItem);
 		}
 
-		public void removeItemFromList(Item item) {
+		public void RemoveItemFromList(Item item) {
 			Items.Remove(item);
 		}
 
-		public void addTaskToList(TravelTask newTask) {
+		public void AddTaskToList(TravelTask newTask) {
 			_tasks.Add(newTask);
 		}
 
-		public void removeTaskFromList(TravelTask task) {
+		public void RemoveTaskFromList(TravelTask task) {
 			_tasks.Remove(task);
 		}
 	}
