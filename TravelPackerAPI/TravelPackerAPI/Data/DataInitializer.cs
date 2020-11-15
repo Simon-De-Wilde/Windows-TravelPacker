@@ -17,9 +17,9 @@ namespace TravelPackerAPI.Data {
 		}
 
 		public async System.Threading.Tasks.Task InitializeData() {
-			//_dbContext.Database.EnsureDeleted();
-			//if (_dbContext.Database.EnsureCreated()) {
-			if (!_dbContext.Travels.Any()) {
+			_dbContext.Database.EnsureDeleted();
+			if (_dbContext.Database.EnsureCreated()) {
+				//if (!_dbContext.Travels.Any()) {
 
 
 				Travel travel1 = new Travel("Quartier Latin", "Paris", null);

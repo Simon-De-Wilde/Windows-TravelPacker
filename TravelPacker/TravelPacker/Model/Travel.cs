@@ -7,10 +7,10 @@ namespace TravelPacker.Model {
 	public class Travel {
 		public int Id { get; set; }
 		[Required]
-		public string Name { get; }
+		public string Name { get; set; }
 
 		[Required]
-		public string Location { get; }
+		public string Location { get; set; }
 
 		private string _imageUrl;
 
@@ -43,7 +43,7 @@ namespace TravelPacker.Model {
 			_itineraries = new List<ItineraryItem>();
 		}
 
-		public IList<TravelTask> getAllTasks() {
+		public IList<TravelTask> GetAllTasks() {
 			var list = new List<TravelTask>();
 
 			foreach (Category c in Categories) {

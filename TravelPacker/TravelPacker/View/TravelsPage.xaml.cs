@@ -58,13 +58,10 @@ namespace TravelPacker.View {
 			ContentDialogResult result = await cd.ShowAsync();
 
 			if (result == ContentDialogResult.Primary) {
-				HttpClient client = new HttpClient();
 
-				var deleteResult = await client.DeleteAsync(new Uri($"https://localhost:44354/api/Travels/{selectedTravel.Id}"));
+				bool success = await ViewModel.DeleteTravel(selectedTravel);
 
-				if (deleteResult.IsSuccessStatusCode) {
-					ViewModel.Travels.Remove(selectedTravel);
-
+				if (success) {
 					ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
 					diag.ShowAsync();
 				}

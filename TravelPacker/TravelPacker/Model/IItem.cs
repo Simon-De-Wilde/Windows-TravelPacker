@@ -15,7 +15,7 @@ namespace TravelPacker.Model {
 			_done = false;
 		}
 
-		public void isDone() {
+		public void IsDone() {
 			_done = true;
 		}
 	}

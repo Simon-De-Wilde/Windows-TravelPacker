@@ -29,7 +29,7 @@ namespace TravelPacker.Model {
 			else { throw new ArgumentException("De start van een itinerary item moet in de toekomst liggen."); }
 		}
 
-		public bool isDoing() {
+		public bool IsDoing() {
 			_doing = End < DateTime.Now;
 			return Doing;
 		}

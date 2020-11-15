@@ -40,5 +40,26 @@ namespace TravelPacker.ViewModel {
 
 
 		}
+
+		public async Task<bool> DeleteTravel(Travel selectedTravel) {
+			try {
+				HttpClient client = new HttpClient();
+
+				var deleteResult = await client.DeleteAsync(new Uri($"https://localhost:44354/api/Travels/{selectedTravel.Id}"));
+
+				if (deleteResult.IsSuccessStatusCode) {
+					Travels.Remove(selectedTravel);
+					return true;
+				}
+				else {
+					throw new Exception();
+				}
+			}
+			catch (Exception e) {
+				return false;
+			}
+
+
+		}
 	}
 }

@@ -99,5 +99,6 @@
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="TravelPacker.View.TravelsPage" />
+    <RootType FullName="TravelPacker.View.UpdateTravelPage" />
   </Roots.RootTypes>
 </Roots>
