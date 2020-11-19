@@ -165,7 +165,8 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csprojAssemblyReference.cache
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csprojAssemblyReference.cache

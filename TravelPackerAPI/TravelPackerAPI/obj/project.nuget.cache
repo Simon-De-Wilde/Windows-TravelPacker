@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cqY04xn/Mba3SGr3wjEBdEGr2A1PAu2sACvVHOykveqLtw+YwCNd0+6GFMQ8BFOGok9ywcX5Nbfeom7zEUEqgQ==",
+  "dgSpecHash": "4GpUjoaUOLAPLmUG6MnSLYxiRTHi9Yhe/Wyd1rYCsMIPSjTUbZNUUgD6GgoJqYBoRg/ki8fX2cr62/LpZxxXKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.0.3\\microsoft.aspnetcore.authorization.1.0.3.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
