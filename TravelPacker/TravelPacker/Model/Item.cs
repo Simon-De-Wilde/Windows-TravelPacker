@@ -9,5 +9,9 @@ namespace TravelPacker.Model {
 		public Item(string title, int amount = 1) : base(title) {
 			Amount = amount;
 		}
+
+		protected Item() {
+			// Deserializeren
+		}
 	}
 }

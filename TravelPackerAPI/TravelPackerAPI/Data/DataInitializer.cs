@@ -29,7 +29,7 @@ namespace TravelPackerAPI.Data {
 
 				Item iter1 = new Item("toothbrush");
 				category1.Items.Add(iter1);
-				Models.TravelTask task1 = new Models.TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
+				TravelTask task1 = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
 				category1.Tasks.Add(task1);
 
 				ItineraryItem ii1 = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
@@ -46,7 +46,7 @@ namespace TravelPackerAPI.Data {
 
 				Item item2 = new Item("chips");
 				category2.Items.Add(item2);
-				Models.TravelTask task2 = new Models.TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
+				TravelTask task2 = new TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
 				category2.Tasks.Add(task2);
 
 				ItineraryItem ii2 = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));

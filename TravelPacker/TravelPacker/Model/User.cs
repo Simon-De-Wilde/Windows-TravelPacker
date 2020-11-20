@@ -16,23 +16,18 @@ namespace TravelPacker.Model {
 		private string Email { get; }
 
 		[Required]
-		private IList<Travel> _travels;
-		public IList<Travel> Travels { get { return _travels; } }
+		public IList<Travel> Travels { get; set; }
 
 		public User(string firstname, string lastname, string email) {
 			FirstName = firstname;
 			LastName = lastname;
 			Email = email;
 
-			_travels = new List<Travel>();
+			Travels = new List<Travel>();
 		}
 
-		public void AddTravelToList(Travel newTravel) {
-			_travels.Add(newTravel);
-		}
-
-		public void RemoveTravelFromList(Travel travel) {
-			_travels.Remove(travel);
+		protected User() {
+			// Deserializeren
 		}
 	}
 }

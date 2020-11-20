@@ -26,21 +26,33 @@ namespace TravelPacker.Model {
 			}
 		}
 
+		public double Progress {
+			get {
+				double progressSum = Categories.Sum(c => c.Progress);
+				double calculated = progressSum / Categories.Count;
+				return calculated;
+			}
+			set { }
+		}
+
 
 		[Required]
-		private IList<Category> _categories;
-		public IList<Category> Categories { get { return _categories; } }
+		public IList<Category> Categories { get; set; }
 
 		[Required]
 		private IList<ItineraryItem> _itineraries;
-		public IList<ItineraryItem> Itineraries { get { return _itineraries; } }
+		public IList<ItineraryItem> Itineraries { get; set; }
 
 		public Travel(string name, string location, string imageUrl) {
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
-			_categories = new List<Category>();
-			_itineraries = new List<ItineraryItem>();
+			Categories = new List<Category>();
+			Itineraries = new List<ItineraryItem>();
+		}
+
+		protected Travel() {
+			// Deserializeren
 		}
 
 		public IList<TravelTask> GetAllTasks() {

@@ -24,6 +24,10 @@ namespace TravelPacker.Model {
 			End = Start.AddSeconds(Duration.Seconds);
 		}
 
+		protected ItineraryItem() {
+			// Deserializeren
+		}
+
 		private DateTime StartTimeValidation(DateTime startTime) {
 			if (startTime > DateTime.Now) { return startTime; }
 			else { throw new ArgumentException("De start van een itinerary item moet in de toekomst liggen."); }

@@ -41,7 +41,6 @@ namespace TravelPacker.View {
 		}
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
-			// TODO viewmodel aanspreken om een travel toe te voegen
 			Frame.Navigate(typeof(AddTravelPage));
 		}
 
@@ -81,10 +80,12 @@ namespace TravelPacker.View {
 		private void TravelsGV_Tapped(object sender, TappedRoutedEventArgs e) {
 			var selectedTravel = TravelsGV.SelectedItem as Travel;
 
-			MessageDialog md = new MessageDialog(selectedTravel.Name);
-			md.ShowAsync();
-
+			if(selectedTravel != null) {
+				MessageDialog md = new MessageDialog(selectedTravel.Name);
+				md.ShowAsync();
 			// TODO routen naar detailscherm
+			}
+
 		}
 
 	}

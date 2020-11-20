@@ -12,10 +12,13 @@ namespace TravelPacker.Model {
 
 		public IItem(string title) {
 			Title = title;
-			_done = false;
 		}
 
-		public void IsDone() {
+		protected IItem() {
+			// Deserializeren
+		}
+
+		public void SetDone() {
 			_done = true;
 		}
 	}

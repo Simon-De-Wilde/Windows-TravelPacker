@@ -12,5 +12,9 @@ namespace TravelPacker.Model {
 		public TravelTask(string title, TimeSpan duration) : base(title) {
 			Duration = duration;
 		}
+
+		protected TravelTask() {
+			//deserializeren
+		}
 	}
 }
