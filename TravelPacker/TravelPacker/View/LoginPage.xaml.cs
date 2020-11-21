@@ -23,5 +23,14 @@ namespace TravelPacker.View {
 		public LoginPage() {
 			this.InitializeComponent();
 		}
+
+		private void LoginClicked(object sender, RoutedEventArgs e) {
+
+
+		}
+
+		private void RegisterClicked(object sender, RoutedEventArgs e) {
+
+		}
 	}
 }

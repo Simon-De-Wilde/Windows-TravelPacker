@@ -16,6 +16,7 @@ App.xbf
 MainPage.xbf
 TravelPacker.xr.xml
 View\AddTravelPage.xbf
+View\LoginPage.xbf
 View\TravelDetailPage.xbf
 View\TravelsPage.xbf
 View\UpdateTravelPage.xbf

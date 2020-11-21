@@ -7,7 +7,7 @@
       mc:Ignorable="d">
 
     <Page.Background>
-        <ImageBrush x:Name="bgImage"
+        <ImageBrush x:ConnectionId='2' x:Name="bgImage"
                     ImageSource="../Assets/BackgroundImages/travelBG4.jpg"
                     Stretch="None" />
     </Page.Background>
@@ -36,24 +36,24 @@
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="E-mail"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="txt_email" />
+                <TextBox x:ConnectionId='6' x:Name="txt_email" />
             </StackPanel>
 
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Password"
                            HorizontalAlignment="Left" />
-                <PasswordBox x:Name="txt_password" />
+                <PasswordBox x:ConnectionId='5' x:Name="txt_password" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"
                         Padding="-9"
                         HorizontalAlignment="Center">
-                <Button Content="Login"
-                        Click="LoginClicked"
+                <Button x:ConnectionId='3' Content="Login"
+                                            
                         Margin="10"
                         HorizontalAlignment="Center" />
-                <Button Content="Register"
-                        Click="RegisterClicked"
+                <Button x:ConnectionId='4' Content="Register"
+                                               
                         Margin="10"
                         HorizontalAlignment="Center" />
             </StackPanel>
@@ -62,3 +62,4 @@
 
     </StackPanel>
 </Page>
+
