@@ -16,21 +16,34 @@ namespace TravelPackerAPI.Controllers {
 	public class CategoriesController : ControllerBase {
 		private readonly TravelPackerDbContext _context;
 		private readonly ICategoryRepository _categoryRepo;
+		private readonly ITravelRepository _travelRepo;
 
-		public CategoriesController(TravelPackerDbContext context,
-			ICategoryRepository categoryRepo) {
+		public CategoriesController(
+			TravelPackerDbContext context,
+			ICategoryRepository categoryRepo,
+			ITravelRepository travelRepo) {
 			_context = context;
 			_categoryRepo = categoryRepo;
+			_travelRepo = travelRepo;
 		}
 
 		/// <summary>
-		/// Get all Categories
+		/// Get all Categories from a travel
 		/// </summary>
+		/// <param name="travelId"></param>
 		/// <returns></returns>
 		// GET: api/Categories
-		[HttpGet]
-		public IEnumerable<Category> GetCategories() {
-			return _categoryRepo.GetAll();
+		[HttpGet("[action]/{travelId}")]
+		public ActionResult<IEnumerable<Category>> GetCategoriesFromTravel(int travelId) {
+
+			Travel travel = _travelRepo.GetById(travelId);
+
+			if (travel == null) {
+				return NotFound("Travel not found");
+			}
+
+			return travel.Categories.ToList();
+			;
 		}
 
 		/// <summary>
@@ -44,7 +57,7 @@ namespace TravelPackerAPI.Controllers {
 			var category = _categoryRepo.GetById(id);
 
 			if (category == null) {
-				return NotFound();
+				return NotFound("Categorie not found");
 			}
 
 			return category;
@@ -62,7 +75,7 @@ namespace TravelPackerAPI.Controllers {
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutCategory(int id, Category category) {
 			if (id != category.Id) {
-				return BadRequest();
+				return BadRequest("Id's don't match");
 			}
 
 			try {
@@ -82,17 +95,25 @@ namespace TravelPackerAPI.Controllers {
 		}
 
 		/// <summary>
-		/// Create a new category
+		/// Create a new category to a travel
 		/// </summary>
 		/// <param name="category"></param>
+		/// <param name="travelId"></param>
 		/// <returns></returns>
 		// POST: api/Categories
 		// To protect from overposting attacks, enable the specific properties you want to bind to, for
 		// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-		[HttpPost]
-		public async Task<ActionResult<Category>> PostCategory(Category category) {
-			_categoryRepo.Add(category);
-			_categoryRepo.SaveChanges();
+		[HttpPost("[action]/{travelId}")]
+		public async Task<ActionResult<Category>> PostCategoryToTravel(int travelId, Category category) {
+
+			Travel travel = _travelRepo.GetById(travelId);
+
+			if (travel == null) {
+				return NotFound("Travel not found");
+			}
+
+			travel.Categories.Add(category);
+			_travelRepo.SaveChanges();
 
 			return CreatedAtAction("GetCategory", new { id = category.Id }, category);
 		}
