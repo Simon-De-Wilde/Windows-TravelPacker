@@ -36,7 +36,8 @@
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="E-mail"
                            HorizontalAlignment="Left" />
-                <TextBox x:ConnectionId='6' x:Name="txt_email" />
+                <TextBox x:ConnectionId='6' x:Name="txt_email"
+                         IsSpellCheckEnabled="False" />
             </StackPanel>
 
             <StackPanel Margin="0,0,0,20">

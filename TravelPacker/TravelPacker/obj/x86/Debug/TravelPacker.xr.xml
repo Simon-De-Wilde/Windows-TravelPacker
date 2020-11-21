@@ -70,7 +70,9 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="IsSpellCheckEnabled" />
+    </RootType>
     <RootType FullName="TravelPacker.View.AddTravelPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox" />
     <RootType FullName="TravelPacker.View.LoginPage" />
