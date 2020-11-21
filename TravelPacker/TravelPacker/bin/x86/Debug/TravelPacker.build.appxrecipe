@@ -97,6 +97,9 @@
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\AddTravelPage.xbf">
       <PackagePath>View\AddTravelPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\TravelDetailPage.xbf">
+      <PackagePath>View\TravelDetailPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\TravelsPage.xbf">
       <PackagePath>View\TravelsPage.xbf</PackagePath>
     </AppxPackagedFile>

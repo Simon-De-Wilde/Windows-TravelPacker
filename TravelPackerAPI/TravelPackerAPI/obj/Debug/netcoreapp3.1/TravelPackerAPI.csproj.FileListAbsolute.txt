@@ -170,3 +170,4 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.MvcApplicationPartsAssemblyInfo.cache
+
