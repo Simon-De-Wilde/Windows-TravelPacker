@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TravelPacker.Util;
 using TravelPacker.View;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -34,8 +35,12 @@ namespace TravelPacker {
 		}
 
 		private void Logout_Tapped(object sender, TappedRoutedEventArgs e) {
-			ContentDialog cd = new ContentDialog() { Title = "Logout tapped", CloseButtonText = "Close" };
+			Globals.BearerToken = null;
+
+			ContentDialog cd = new ContentDialog() { Title = "Logged out successfully", CloseButtonText = "Close" };
 			cd.ShowAsync();
+
+			Frame.Navigate(typeof(LoginPage));
 		}
 
 		private void navigation_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) {

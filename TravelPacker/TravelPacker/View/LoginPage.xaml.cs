@@ -36,6 +36,12 @@ namespace TravelPacker.View {
 			bool success = await LoginPageViewModel.LoginUser(txt_email.Text, txt_password.Password);
 
 			if (success) {
+				// TODO remove
+				MessageDialog md = new MessageDialog(Globals.LoggedInUserName + " is logged in");
+				md.ShowAsync();
+				////////
+
+
 				Frame.Navigate(typeof(MainPage));
 			}
 			else {
