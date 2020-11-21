@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "no+TNRr2867x/VxS9IEz1HWy2DIJvsJIpf2CsiUf2K5ePYsL2Or+KOwdjy4kkPEXNWtQne7VnkdCnWZAZENDMg==",
+  "dgSpecHash": "sdLqWuOXTk5qrs7mwB6sOLIkUcyZXb9z5AhDmG3lvkTUQXrBc3akCgc+mnt3sZLab3jhQyViBOvElKqRACEUlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marbo\\git\\Projecten3A\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.0.3\\microsoft.aspnetcore.authorization.1.0.3.nupkg.sha512",
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\marbo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
