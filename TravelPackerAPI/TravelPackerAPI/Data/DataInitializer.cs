@@ -72,7 +72,7 @@ namespace TravelPackerAPI.Data {
 
 		private async Task RegisterUsers(IList<User> users) {
 			foreach (User u in users) {
-				var user = new IdentityUser() { UserName = $"{u.FirstName}_{u.LastName}", Email = u.Email };
+				var user = new IdentityUser() { UserName = u.Email, Email = u.Email };
 				await _usermanager.CreateAsync(user, "Root1234");
 			}
 		}
