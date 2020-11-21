@@ -48,43 +48,42 @@ namespace TravelPacker.View {
 		private async void TravelsGV_RightTapped(object sender, RightTappedRoutedEventArgs e) {
 			var selectedTravel = (sender as StackPanel).DataContext as Travel;
 
-			ContentDialog cd = new ContentDialog() {
-				Title = "Delete travel",
-				Content = $"Do you wish to delete travel '{selectedTravel.Name}'? This action cannot be undone.",
-				CloseButtonText = "Close",
-				PrimaryButtonText = "Delete"
-			};
+			if (selectedTravel != null) {
+				ContentDialog cd = new ContentDialog() {
+					Title = "Delete travel",
+					Content = $"Do you wish to delete travel '{selectedTravel.Name}'? This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
 
-			ContentDialogResult result = await cd.ShowAsync();
+				ContentDialogResult result = await cd.ShowAsync();
 
-			if (result == ContentDialogResult.Primary) {
+				if (result == ContentDialogResult.Primary) {
 
-				bool success = await ViewModel.DeleteTravel(selectedTravel);
+					bool success = await ViewModel.DeleteTravel(selectedTravel);
 
-				if (success) {
-					ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
-					diag.ShowAsync();
+					if (success) {
+						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+					else {
+
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
 				}
-				else {
-
-					ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
-					diag.ShowAsync();
-				}
-
 			}
-
-
-
-
 		}
 
 		private void TravelsGV_Tapped(object sender, TappedRoutedEventArgs e) {
 			var selectedTravel = TravelsGV.SelectedItem as Travel;
 
-			MessageDialog md = new MessageDialog(selectedTravel.Name);
-			md.ShowAsync();
+			if (selectedTravel != null) {
+				MessageDialog md = new MessageDialog(selectedTravel.Name);
+				md.ShowAsync();
 
-			// TODO routen naar detailscherm
+				// TODO routen naar detailscherm
+			}
 		}
 
 	}

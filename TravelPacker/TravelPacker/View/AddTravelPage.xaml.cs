@@ -52,8 +52,6 @@ namespace TravelPacker.View {
 			bool success = await ViewModel.AddTravel(txt_title.Text, txt_location.Text, txt_image.Text);
 
 			if (success) {
-				MessageDialog md = new MessageDialog("Travel successfully created");
-				await md.ShowAsync();
 				Frame.GoBack();
 			}
 			else {

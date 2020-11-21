@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
 using System.Net.Http;
+using TravelPacker.Util;
 
 namespace TravelPacker.ViewModel {
 	public class TravelsPageViewModel {
@@ -26,7 +27,7 @@ namespace TravelPacker.ViewModel {
 			try {
 				HttpClient client = new HttpClient();
 
-				var json = await client.GetStringAsync(new Uri("https://localhost:44354/api/Travels"));
+				var json = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"));
 
 				var list = JsonConvert.DeserializeObject<List<Travel>>(json);
 
@@ -45,7 +46,7 @@ namespace TravelPacker.ViewModel {
 			try {
 				HttpClient client = new HttpClient();
 
-				var deleteResult = await client.DeleteAsync(new Uri($"https://localhost:44354/api/Travels/{selectedTravel.Id}"));
+				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{selectedTravel.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode) {
 					Travels.Remove(selectedTravel);
