@@ -132,3 +132,7 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\Tra
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\LoginPage.g.cs
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\LoginPage.xaml
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\LoginPage.xbf
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\System.IdentityModel.Tokens.Jwt.dll

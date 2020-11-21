@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using TravelPacker.Model;
+using TravelPacker.Util;
 using Windows.UI.Xaml.Controls;
 using Windows.Web.Http;
 
@@ -16,7 +17,7 @@ namespace TravelPacker.View {
 
 				HttpClient client = new HttpClient();
 
-				var result = await client.PostAsync(new Uri("https://localhost:44354/api/Travels"),
+				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"),
 					new HttpStringContent(newTravelJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {

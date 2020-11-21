@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
+using TravelPacker.Util;
 using Windows.Web.Http;
 
 namespace TravelPacker.ViewModel {
@@ -23,7 +24,7 @@ namespace TravelPacker.ViewModel {
 
 				HttpClient client = new HttpClient();
 
-				var result = await client.PutAsync(new Uri($"https://localhost:44354/api/Travels/{Travel.Id}"),
+				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{Travel.Id}"),
 					new HttpStringContent(updatedTravelJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
