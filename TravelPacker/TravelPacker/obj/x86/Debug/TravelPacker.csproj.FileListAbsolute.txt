@@ -121,3 +121,9 @@ C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\ob
 C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758480200000000.json
 C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758516200000000.json
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\TravelDetailPage.xbf
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\TravelDetailPage.g.i.cs
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\TravelDetailPage.g.cs
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\TravelDetailPage.xaml
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\TravelDetailPage.xbf
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758516200000000.json
