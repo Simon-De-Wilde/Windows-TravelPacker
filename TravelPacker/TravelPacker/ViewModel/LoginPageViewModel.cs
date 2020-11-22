@@ -13,25 +13,30 @@ namespace TravelPacker.ViewModel {
 
 		public async Task<bool> LoginUser(String email, String password) {
 
-			HttpClient client = new HttpClient();
+			try {
+				HttpClient client = new HttpClient();
 
-			var postObj = new { email, password };
+				var postObj = new { email, password };
 
-			var postJson = JsonConvert.SerializeObject(postObj);
+				var postJson = JsonConvert.SerializeObject(postObj);
 
-			var result= await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Account/login"), 
-				new HttpStringContent(postJson, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
+				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Account/Login"),
+					new HttpStringContent(postJson, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
-			if (result.IsSuccessStatusCode) {
-				Globals.BearerToken = result.Content.ToString();
+				if (result.IsSuccessStatusCode) {
+					Globals.BearerToken = result.Content.ToString();
 
-				return true;
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
-			else{
+			catch {
 				return false;
 			}
 
-			
+
 
 		}
 	}

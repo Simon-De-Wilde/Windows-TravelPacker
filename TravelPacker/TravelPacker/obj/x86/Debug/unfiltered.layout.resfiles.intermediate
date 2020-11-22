@@ -15,9 +15,10 @@ Assets\Wide310x150Logo.scale-200.png
 App.xbf
 MainPage.xbf
 TravelPacker.xr.xml
-View\AddTravelPage.xbf
-View\LoginPage.xbf
-View\TravelDetailPage.xbf
-View\TravelsPage.xbf
-View\UpdateTravelPage.xbf
+View\Travels\AddTravelPage.xbf
+View\Travels\TravelDetailPage.xbf
+View\Travels\TravelsPage.xbf
+View\Travels\UpdateTravelPage.xbf
+View\Users\LoginPage.xbf
+View\Users\RegistrationPage.xbf
 Properties\Default.rd.xml

@@ -60,7 +60,6 @@
       <RootProperty Name="Style" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="Padding" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
@@ -73,20 +72,24 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="IsSpellCheckEnabled" />
     </RootType>
-    <RootType FullName="TravelPacker.View.AddTravelPage" />
+    <RootType FullName="TravelPacker.View.Travels.AddTravelPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
+      <RootProperty Name="Symbol" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox" />
-    <RootType FullName="TravelPacker.View.LoginPage" />
+    <RootType FullName="TravelPacker.View.Users.LoginPage" />
+    <RootType FullName="TravelPacker.View.Users.RegistrationPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="BorderBrush" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Children" />
-      <RootMethod Name="GetColumn" />
-      <RootMethod Name="SetColumn" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -116,12 +119,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
-      <RootProperty Name="Symbol" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="TravelPacker.View.TravelsPage" />
-    <RootType FullName="TravelPacker.View.UpdateTravelPage" />
+    <RootType FullName="TravelPacker.View.Travels.TravelsPage" />
+    <RootType FullName="TravelPacker.View.Travels.UpdateTravelPage" />
   </Roots.RootTypes>
 </Roots>

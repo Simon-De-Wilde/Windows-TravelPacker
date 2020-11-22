@@ -9,30 +9,22 @@ namespace TravelPacker.Model {
 	public class User {
 		public int Id { get; set; }
 		[Required]
-		private string FirstName { get; }
+		public string FirstName { get; }
 		[Required]
-		private string LastName { get; }
+		public string LastName { get; }
 		[Required]
-		private string Email { get; }
+		public string Email { get; }
 
 		[Required]
-		private IList<Travel> _travels;
-		public IList<Travel> Travels { get { return _travels; } }
+		public IList<Travel> Travels { get; set; }
 
 		public User(string firstname, string lastname, string email) {
 			FirstName = firstname;
 			LastName = lastname;
 			Email = email;
 
-			_travels = new List<Travel>();
+			Travels = new List<Travel>();
 		}
 
-		public void AddTravelToList(Travel newTravel) {
-			_travels.Add(newTravel);
-		}
-
-		public void RemoveTravelFromList(Travel travel) {
-			_travels.Remove(travel);
-		}
 	}
 }
