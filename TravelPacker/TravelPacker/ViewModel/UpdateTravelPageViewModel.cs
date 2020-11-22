@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TravelPacker.Model;
 using TravelPacker.Util;
 using Windows.Web.Http;
+using Windows.Web.Http.Headers;
 
 namespace TravelPacker.ViewModel {
 	public class UpdateTravelPageViewModel {
@@ -23,6 +24,8 @@ namespace TravelPacker.ViewModel {
 				var updatedTravelJSON = JsonConvert.SerializeObject(Travel);
 
 				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
 				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{Travel.Id}"),
 					new HttpStringContent(updatedTravelJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));

@@ -30,6 +30,10 @@ namespace TravelPacker.View.Users {
 		public LoginPage() {
 			LoginPageViewModel = new LoginPageViewModel();
 			this.InitializeComponent();
+
+			// TODO REMOVE
+			txt_email.Text = "student@hogent.be";
+			txt_password.Password = "Root1234";
 		}
 
 		private async void LoginClicked(object sender, RoutedEventArgs e) {

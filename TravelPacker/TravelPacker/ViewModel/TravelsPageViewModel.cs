@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
-using System.Net.Http;
 using TravelPacker.Util;
+using Windows.Web.Http;
+using Windows.Web.Http.Headers;
 
 namespace TravelPacker.ViewModel {
 	public class TravelsPageViewModel {
@@ -26,6 +27,8 @@ namespace TravelPacker.ViewModel {
 
 			try {
 				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
 				var json = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"));
 

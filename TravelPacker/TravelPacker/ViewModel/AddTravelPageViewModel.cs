@@ -5,6 +5,7 @@ using TravelPacker.Model;
 using TravelPacker.Util;
 using Windows.UI.Xaml.Controls;
 using Windows.Web.Http;
+using Windows.Web.Http.Headers;
 
 namespace TravelPacker.View {
 	public class AddTravelPageViewModel {
@@ -16,6 +17,7 @@ namespace TravelPacker.View {
 				var newTravelJSON = JsonConvert.SerializeObject(newTravel);
 
 				HttpClient client = new HttpClient();
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
 				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"),
 					new HttpStringContent(newTravelJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
