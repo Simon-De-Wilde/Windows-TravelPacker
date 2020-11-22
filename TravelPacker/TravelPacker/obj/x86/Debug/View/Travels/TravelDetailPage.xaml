@@ -1,0 +1,42 @@
+﻿<Page x:Class="TravelPacker.TravelDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:TravelPacker"
+      xmlns:model="using:TravelPacker.Model"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="10 0 0 20"
+                       Style="{ThemeResource HeaderTextBlockStyle}">Name</TextBlock>
+            <Grid BorderThickness="0 0 0 1"
+                  BorderBrush="black"
+                  Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!--<DataTemplate x:DataType="model:Travel">
+                    -->
+                <!-- List of items to pack -->
+                <!--
+                    <TextBlock Text="Tasks" HorizontalAlignment="Center"  Grid.Column="1" Padding="25 0 25 0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                    -->
+                <!-- List of tasks -->
+                <!--
+                    <TextBlock Text="Route" HorizontalAlignment="Center"  Grid.Column="2" Padding="25 0 25 0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                    -->
+                <!-- Map + address -->
+                <!--
+                </DataTemplate>-->
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+

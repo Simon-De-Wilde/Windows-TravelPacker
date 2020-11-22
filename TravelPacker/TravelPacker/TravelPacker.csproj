@@ -133,19 +133,23 @@
     <Compile Include="Util\EnvironmentsProperties.cs" />
     <Compile Include="Util\Globals.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\RegistrationPageViewModel.cs" />
     <Compile Include="ViewModel\TravelsPageViewModel.cs" />
     <Compile Include="ViewModel\UpdateTravelPageViewModel.cs" />
-    <Compile Include="View\AddTravelPage.xaml.cs">
+    <Compile Include="View\Travels\AddTravelPage.xaml.cs">
       <DependentUpon>AddTravelPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddTravelPageViewModel.cs" />
-    <Compile Include="View\LoginPage.xaml.cs">
+    <Compile Include="View\Users\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TravelsPage.xaml.cs">
+    <Compile Include="View\Users\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Travels\TravelsPage.xaml.cs">
       <DependentUpon>TravelsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateTravelPage.xaml.cs">
+    <Compile Include="View\Travels\UpdateTravelPage.xaml.cs">
       <DependentUpon>UpdateTravelPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -179,23 +183,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AddTravelPage.xaml">
+    <Page Include="View\Travels\AddTravelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LoginPage.xaml">
+    <Page Include="View\Users\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TravelDetailPage.xaml">
+    <Page Include="View\Users\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TravelsPage.xaml">
+    <Page Include="View\Travels\TravelDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpdateTravelPage.xaml">
+    <Page Include="View\Travels\TravelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Travels\UpdateTravelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

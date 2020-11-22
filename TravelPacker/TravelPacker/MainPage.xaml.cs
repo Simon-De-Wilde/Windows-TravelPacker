@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TravelPacker.Util;
 using TravelPacker.View;
+using TravelPacker.View.Travels;
+using TravelPacker.View.Users;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
