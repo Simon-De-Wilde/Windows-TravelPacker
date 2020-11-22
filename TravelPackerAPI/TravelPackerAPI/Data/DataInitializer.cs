@@ -17,9 +17,9 @@ namespace TravelPackerAPI.Data {
 		}
 
 		public async Task InitializeData() {
-			_dbContext.Database.EnsureDeleted();
-			if (_dbContext.Database.EnsureCreated()) {
-				//if (!_dbContext.Users.Any()) {
+			//_dbContext.Database.EnsureDeleted();
+			//if (_dbContext.Database.EnsureCreated()) {
+			if (!_dbContext.Users.Any()) {
 
 				User student = new User("Student", "McStudent", "student@hogent.be");
 				User prof = new User("Prof", "McProf", "prof@hogent.be");

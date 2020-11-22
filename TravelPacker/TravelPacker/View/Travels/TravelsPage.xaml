@@ -41,8 +41,7 @@
                                     IsRightTapEnabled="True"
                                     Background="White"
                                     Orientation="Horizontal"
-                                    Width="auto"
-                                    MinWidth="450"
+                                    Width="450"
                                     MinHeight="160"
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
@@ -51,10 +50,9 @@
                             <Image Source="{x:Bind ImageUrl}"
                                    Width="200"
                                    Margin="10" />
-                            <!--TODO stack panel moet maximale breedte innemen -> progressbar te kort bij kleine namen -->
-                            <!-- TODO wrap de woorden -> WERKT NOG NIET-->
                             <StackPanel Orientation="Vertical"
-                                        Padding="0,10,50,0">
+                                        Padding="0,10,50,0"
+                                        Width="225">
                                 <TextBlock Text="{x:Bind Name}"
                                            TextWrapping="Wrap"
                                            Style="{ThemeResource TitleTextBlockStyle}" />
