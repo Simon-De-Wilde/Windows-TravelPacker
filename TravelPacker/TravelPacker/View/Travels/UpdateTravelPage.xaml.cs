@@ -8,6 +8,7 @@ using TravelPacker.Model;
 using TravelPacker.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -45,16 +46,21 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private async void Button_Click(object sender, RoutedEventArgs e) {
-			bool success = await ViewModel.UpdateTravel(txt_title.Text, txt_location.Text, txt_image.Text);
 
-			if (success) {
-				MessageDialog md = new MessageDialog("Travel successfully updated");
-				await md.ShowAsync();
-				Frame.GoBack();
-			}
-			else {
-				MessageDialog md = new MessageDialog("There were mistakes in het form, please fill in all inputs");
-				await md.ShowAsync();
+			errorbox.Children.Clear();
+
+			CheckForm();
+
+			if (!errorbox.Children.Any()) { // no errors
+				bool success = await ViewModel.UpdateTravel(txt_title.Text, txt_location.Text, txt_image.Text);
+
+				if (success) {
+					Frame.GoBack();
+				}
+				else {
+					MessageDialog md = new MessageDialog("Something went wrong, travel was not updated. Try again later");
+					await md.ShowAsync();
+				}
 			}
 		}
 
@@ -68,6 +74,26 @@ namespace TravelPacker.View.Travels {
 			txt_image.Text = travel.ImageUrl;
 
 			ViewModel.Travel = travel;
+
+		}
+
+		private void CheckForm() {
+			// Check title
+			if (string.IsNullOrEmpty(txt_title.Text) || string.IsNullOrWhiteSpace(txt_title.Text)) {
+				TextBlock titleError = new TextBlock() {
+					Text = "Title may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(titleError);
+			}
+			// Check location
+			if (string.IsNullOrEmpty(txt_location.Text) || string.IsNullOrWhiteSpace(txt_location.Text)) {
+				TextBlock locationError = new TextBlock() {
+					Text = "Location may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(locationError);
+			}
 
 		}
 	}

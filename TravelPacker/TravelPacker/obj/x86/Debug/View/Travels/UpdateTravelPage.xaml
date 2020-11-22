@@ -31,25 +31,36 @@
                     BorderThickness="2"
                     Width="400">
 
+            <!--Name-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Titel"
                            HorizontalAlignment="Left" />
-                <TextBox x:ConnectionId='6' x:Name="txt_title" />
+                <TextBox x:ConnectionId='7' x:Name="txt_title" />
             </StackPanel>
 
+            <!--Location-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Location"
                            HorizontalAlignment="Left" />
-                <TextBox x:ConnectionId='5' x:Name="txt_location" />
+                <TextBox x:ConnectionId='6' x:Name="txt_location" />
             </StackPanel>
 
+            <!--Image-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Image"
                            HorizontalAlignment="Left" />
-                <TextBox x:ConnectionId='4' x:Name="txt_image" />
+                <TextBox x:ConnectionId='5' x:Name="txt_image" />
             </StackPanel>
 
-            <Button x:ConnectionId='3' Content="Update Travel"
+            <!--Errors-->
+            <StackPanel x:ConnectionId='3' Orientation="Vertical"
+                        Margin="0,0,0,20"
+                        x:Name="errorbox">
+
+            </StackPanel>
+
+            <!--Buttons-->
+            <Button x:ConnectionId='4' Content="Update Travel"
                                         
                     Margin="10"
                     HorizontalAlignment="Center" />

@@ -31,24 +31,35 @@
                     BorderThickness="2"
                     Width="400">
 
+            <!--Name-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Titel"
                            HorizontalAlignment="Left" />
                 <TextBox x:Name="txt_title" />
             </StackPanel>
 
+            <!--Location-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Location"
                            HorizontalAlignment="Left" />
                 <TextBox x:Name="txt_location" />
             </StackPanel>
 
+            <!--Image-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Image"
                            HorizontalAlignment="Left" />
                 <TextBox x:Name="txt_image" />
             </StackPanel>
 
+            <!--Errors-->
+            <StackPanel Orientation="Vertical"
+                        Margin="0,0,0,20"
+                        x:Name="errorbox">
+
+            </StackPanel>
+
+            <!--Buttons-->
             <Button Content="Update Travel"
                     Click="Button_Click"
                     Margin="10"

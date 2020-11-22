@@ -34,8 +34,6 @@
                       Tapped="TravelsGV_Tapped">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="model:Travel">
-                        <!--TODO een beetje responsive maken bij het vergroten en verkleinen van het scherm-->
-                        <!--TODO reorder animation zou leuk zijn-->
                         <StackPanel x:Name="travelCard"
                                     RightTapped="TravelsGV_RightTapped"
                                     IsRightTapEnabled="True"
@@ -52,7 +50,7 @@
                                    Margin="10" />
                             <StackPanel Orientation="Vertical"
                                         Padding="0,10,50,0"
-                                        Width="225">
+                                        Width="220">
                                 <TextBlock Text="{x:Bind Name}"
                                            TextWrapping="Wrap"
                                            Style="{ThemeResource TitleTextBlockStyle}" />

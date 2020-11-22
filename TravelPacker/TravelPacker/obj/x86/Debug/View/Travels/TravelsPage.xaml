@@ -34,15 +34,12 @@
                                                >
                 <GridView.ItemTemplate>
                     <DataTemplate                          >
-                        <!--TODO een beetje responsive maken bij het vergroten en verkleinen van het scherm-->
-                        <!--TODO reorder animation zou leuk zijn-->
                         <StackPanel x:ConnectionId='4' x:Name="travelCard"
                                                                        
                                     IsRightTapEnabled="True"
                                     Background="White"
                                     Orientation="Horizontal"
-                                    Width="auto"
-                                    MinWidth="450"
+                                    Width="450"
                                     MinHeight="160"
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
@@ -51,10 +48,9 @@
                             <Image x:ConnectionId='5'                           
                                    Width="200"
                                    Margin="10" />
-                            <!--TODO stack panel moet maximale breedte innemen -> progressbar te kort bij kleine namen -->
-                            <!-- TODO wrap de woorden -> WERKT NOG NIET-->
                             <StackPanel Orientation="Vertical"
-                                        Padding="0,10,50,0">
+                                        Padding="0,10,50,0"
+                                        Width="220">
                                 <TextBlock x:ConnectionId='6'                     
                                            TextWrapping="Wrap"
                                            Style="{ThemeResource TitleTextBlockStyle}" />

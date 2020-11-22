@@ -61,7 +61,7 @@ namespace TravelPacker.View.Travels {
 					Frame.GoBack();
 				}
 				else {
-					MessageDialog md = new MessageDialog("There were mistakes in het form, please fill in all inputs");
+					MessageDialog md = new MessageDialog("Something went wrong, travel was not created. Try again later");
 					await md.ShowAsync();
 				}
 			}

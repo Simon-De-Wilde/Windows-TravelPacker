@@ -46,7 +46,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="IsRightTapEnabled" />
-      <RootProperty Name="MinWidth" />
       <RootProperty Name="MinHeight" />
       <RootProperty Name="CornerRadius" />
       <RootEvent Name="RightTapped" />
