@@ -39,8 +39,12 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public Category() {
+		protected Category(int id, string name, IList<Item> items, IList<TravelTask> tasks) {
 			// Deserializeren
+			Id = id;
+			Name = name;
+			Items = items;
+			Tasks = tasks;
 		}
 
 	}

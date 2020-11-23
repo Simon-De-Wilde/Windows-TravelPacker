@@ -5,8 +5,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class ItineraryItem : IItem {
-		[JsonProperty("id")]
-		public int Id { get; set; }
 		[Required]
 		[JsonProperty("start")]
 		public DateTime Start { get; }
@@ -31,8 +29,12 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public ItineraryItem() : base() {
+		protected ItineraryItem(int id, string title, bool done, DateTime start, TimeSpan duration, DateTime end, bool doing) : base(id, title, done) {
 			// Deserializeren
+			Start = start;
+			Duration = duration;
+			End = end;
+			_doing = doing;
 		}
 
 		private DateTime StartTimeValidation(DateTime startTime) {

@@ -3,8 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class Item : IItem {
-		[JsonProperty("id")]
-		public int Id { get; set; }
 		[Required]
 		[JsonProperty("amount")]
 		public int Amount { get; }
@@ -14,8 +12,9 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public Item() : base() {
+		protected Item(int id, string title, bool done, int amount) : base(id, title, done) {
 			// Deserializeren
+			Amount = amount;
 		}
 	}
 }

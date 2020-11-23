@@ -11,10 +11,10 @@ namespace TravelPacker.Model {
 		[JsonProperty("id")]
 		public int Id { get; set; }
 		[Required]
-		[JsonProperty("firstname")]
+		[JsonProperty("firstName")]
 		private string FirstName { get; }
 		[Required]
-		[JsonProperty("lastname")]
+		[JsonProperty("lastName")]
 		private string LastName { get; }
 		[Required]
 		[JsonProperty("email")]
@@ -33,8 +33,13 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public User() {
+		protected User(int id, string firstName, string lastName, string email, IList<Travel> travels) {
 			// Deserializeren
+			Id = id;
+			FirstName = firstName;
+			LastName = lastName;
+			Email = email;
+			Travels = travels;
 		}
 	}
 }

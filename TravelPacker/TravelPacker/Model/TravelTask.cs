@@ -6,8 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class TravelTask : IItem {
-		[JsonProperty("id")]
-		public int Id { get; set; }
 		[Required]
 		[JsonProperty("duration")]
 		public TimeSpan Duration { get; }
@@ -17,8 +15,9 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public TravelTask() : base() {
+		protected TravelTask(int id, string title, bool done, TimeSpan duration) : base(id, title, done) {
 			//deserializeren
+			Duration = duration;
 		}
 	}
 }

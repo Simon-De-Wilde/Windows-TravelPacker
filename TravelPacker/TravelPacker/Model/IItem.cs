@@ -19,8 +19,11 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public IItem() {
+		protected IItem(int id, string title, bool done) {
 			// Deserializeren
+			Id = id;
+			Title = title;
+			_done = done;
 		}
 
 		public void SetDone() {

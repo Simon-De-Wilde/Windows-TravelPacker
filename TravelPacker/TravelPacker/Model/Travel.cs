@@ -58,8 +58,14 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		public Travel() {
+		protected Travel(int id, string name, string location, string imageUrl, IList<Category> categories, IList<ItineraryItem> itineraries) {
 			// Deserializeren
+			Id = id;
+			Name = name;
+			Location = location;
+			ImageUrl = imageUrl;
+			Categories = categories;
+			Itineraries = itineraries;
 		}
 
 		public IList<TravelTask> GetAllTasks() {
