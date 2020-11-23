@@ -17,8 +17,6 @@ namespace TravelPacker.ViewModel {
 
 		public TravelsPageViewModel() {
 			Travels = new ObservableCollection<Travel>();
-
-			GetTravels();
 		}
 
 		public async void GetTravels() {
@@ -48,6 +46,8 @@ namespace TravelPacker.ViewModel {
 		public async Task<bool> DeleteTravel(Travel selectedTravel) {
 			try {
 				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
 				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{selectedTravel.Id}"));
 

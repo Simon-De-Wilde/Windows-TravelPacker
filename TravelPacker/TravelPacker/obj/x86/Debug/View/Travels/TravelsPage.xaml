@@ -57,8 +57,7 @@
                                 <TextBlock x:ConnectionId='7'                         
                                            TextWrapping="Wrap"
                                            Style="{ThemeResource SubtitleTextBlockStyle}" />
-                                <!-- TODO progressbar value op basis van aantal items mee en taken gedaan-->
-                                <muxc:ProgressBar Value="80" />
+                                <muxc:ProgressBar x:ConnectionId='8'                           />
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

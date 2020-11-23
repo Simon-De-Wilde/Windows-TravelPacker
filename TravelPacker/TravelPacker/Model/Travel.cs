@@ -34,8 +34,7 @@ namespace TravelPacker.Model {
 		public double Progress {
 			get {
 				double progressSum = Categories.Sum(c => c.Progress);
-				double calculated = progressSum / Categories.Count;
-				return calculated;
+				return Categories.Count == 0 ? 0 : progressSum / Categories.Count;
 			}
 			set { }
 		}

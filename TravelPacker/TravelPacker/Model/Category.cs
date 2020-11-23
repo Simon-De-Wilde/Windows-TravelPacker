@@ -23,8 +23,8 @@ namespace TravelPacker.Model {
 
 		public double Progress {
 			get {
-				double itemProgress = Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
-				double taskProgress = Convert.ToDouble(Tasks.Count(t => t.Done)) / Tasks.Count * 100;
+				double itemProgress = Items.Count == 0 ? 0 : Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
+				double taskProgress = Tasks.Count == 0 ? 0 : Convert.ToDouble(Tasks.Count(t => t.Done)) / Tasks.Count * 100;
 
 				double calculated = (itemProgress + taskProgress) / 2;
 				return calculated;

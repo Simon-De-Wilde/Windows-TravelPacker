@@ -129,7 +129,6 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\Tra
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758480200000000.json
-C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\TravelPacker.csprojAssemblyReference.cache
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\Users\LoginPage.g.i.cs
@@ -140,3 +139,4 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\Tra
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\Users\RegistrationPage.xaml
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\Users\LoginPage.xbf
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\View\Users\RegistrationPage.xbf
+C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\obj\x86\Debug\TravelPacker.csprojAssemblyReference.cache

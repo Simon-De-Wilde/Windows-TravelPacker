@@ -58,7 +58,6 @@
                                            TextWrapping="Wrap"
                                            Style="{ThemeResource SubtitleTextBlockStyle}" />
                                 <muxc:ProgressBar Value="{x:Bind Progress}" />
-                                <!-- TODO progressbar value op basis van aantal items mee en taken gedaan-->
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
