@@ -1,20 +1,24 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TravelPacker.Model {
 	public class ItineraryItem : IItem {
-		public int Id { get; set; }
 		[Required]
+		[JsonProperty("start")]
 		public DateTime Start { get; }
 
 		[Required]
+		[JsonProperty("duration")]
 		public TimeSpan Duration { get; }
 
 		[Required]
+		[JsonProperty("end")]
 		public DateTime End { get; }
 
 		[Required]
+		[JsonProperty("doing")]
 		private bool _doing;
 		public bool Doing { get { return _doing; } }
 
@@ -24,8 +28,13 @@ namespace TravelPacker.Model {
 			End = Start.AddSeconds(Duration.Seconds);
 		}
 
-		protected ItineraryItem() {
+		[JsonConstructor]
+		protected ItineraryItem(int id, string title, bool done, DateTime start, TimeSpan duration, DateTime end, bool doing) : base(id, title, done) {
 			// Deserializeren
+			Start = start;
+			Duration = duration;
+			End = end;
+			_doing = doing;
 		}
 
 		private DateTime StartTimeValidation(DateTime startTime) {

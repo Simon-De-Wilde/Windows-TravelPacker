@@ -1,20 +1,24 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace TravelPacker.Model {
 	public class Category {
+		[JsonProperty("id")]
 		public int Id { get; set; }
 
 		[Required]
+		[JsonProperty("name")]
 		public string Name { get; }
 
 		[Required]
+		[JsonProperty("items")]
 		public IList<Item> Items { get; set; }
 
 		[Required]
-		private IList<TravelTask> _tasks;
+		[JsonProperty("tasks")]
 		public IList<TravelTask> Tasks { get; set; }
 
 		public double Progress {
@@ -34,8 +38,13 @@ namespace TravelPacker.Model {
 			Tasks = new List<TravelTask>();
 		}
 
-		protected Category() {
+		[JsonConstructor]
+		protected Category(int id, string name, IList<Item> items, IList<TravelTask> tasks) {
 			// Deserializeren
+			Id = id;
+			Name = name;
+			Items = items;
+			Tasks = tasks;
 		}
 
 	}
