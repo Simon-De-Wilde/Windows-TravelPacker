@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,15 +8,20 @@ using System.Threading.Tasks;
 
 namespace TravelPacker.Model {
 	public class User {
+		[JsonProperty("id")]
 		public int Id { get; set; }
 		[Required]
-		public string FirstName { get; }
+		[JsonProperty("firstName")]
+		private string FirstName { get; }
 		[Required]
-		public string LastName { get; }
+		[JsonProperty("lastName")]
+		private string LastName { get; }
 		[Required]
-		public string Email { get; }
+		[JsonProperty("email")]
+		private string Email { get; }
 
 		[Required]
+		[JsonProperty("travels")]
 		public IList<Travel> Travels { get; set; }
 
 		public User(string firstname, string lastname, string email) {
@@ -26,5 +32,14 @@ namespace TravelPacker.Model {
 			Travels = new List<Travel>();
 		}
 
+		[JsonConstructor]
+		protected User(int id, string firstName, string lastName, string email, IList<Travel> travels) {
+			// Deserializeren
+			Id = id;
+			FirstName = firstName;
+			LastName = lastName;
+			Email = email;
+			Travels = travels;
+		}
 	}
 }

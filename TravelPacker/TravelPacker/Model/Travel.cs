@@ -1,17 +1,22 @@
 ﻿
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace TravelPacker.Model {
 	public class Travel {
+		[JsonProperty("id")]
 		public int Id { get; set; }
 		[Required]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
 		[Required]
+		[JsonProperty("location")]
 		public string Location { get; set; }
 
+		[JsonProperty("imageUrl")]
 		private string _imageUrl;
 
 		public string ImageUrl {
@@ -26,21 +31,41 @@ namespace TravelPacker.Model {
 			}
 		}
 
+		public double Progress {
+			get {
+				double progressSum = Categories.Sum(c => c.Progress);
+				double calculated = progressSum / Categories.Count;
+				return calculated;
+			}
+			set { }
+		}
+
 
 		[Required]
-		private IList<Category> _categories;
-		public IList<Category> Categories { get { return _categories; } }
+		[JsonProperty("categories")]
+		public IList<Category> Categories { get; set; }
 
 		[Required]
-		private IList<ItineraryItem> _itineraries;
-		public IList<ItineraryItem> Itineraries { get { return _itineraries; } }
+		[JsonProperty("itineraries")]
+		public IList<ItineraryItem> Itineraries { get; set; }
 
 		public Travel(string name, string location, string imageUrl) {
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
-			_categories = new List<Category>();
-			_itineraries = new List<ItineraryItem>();
+			Categories = new List<Category>();
+			Itineraries = new List<ItineraryItem>();
+		}
+
+		[JsonConstructor]
+		protected Travel(int id, string name, string location, string imageUrl, IList<Category> categories, IList<ItineraryItem> itineraries) {
+			// Deserializeren
+			Id = id;
+			Name = name;
+			Location = location;
+			ImageUrl = imageUrl;
+			Categories = categories;
+			Itineraries = itineraries;
 		}
 
 		public IList<TravelTask> GetAllTasks() {
