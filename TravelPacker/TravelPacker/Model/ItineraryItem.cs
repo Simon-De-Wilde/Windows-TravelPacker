@@ -14,8 +14,7 @@ namespace TravelPacker.Model {
 		public TimeSpan Duration { get; }
 
 		[Required]
-		[JsonProperty("end")]
-		public DateTime End { get; }
+		public DateTime End { get => Start.AddSeconds(Duration.Seconds); }
 
 		[Required]
 		[JsonProperty("doing")]
@@ -25,15 +24,13 @@ namespace TravelPacker.Model {
 		public ItineraryItem(string title, DateTime start, TimeSpan duration) : base(title) {
 			Start = StartTimeValidation(start);
 			Duration = duration;
-			End = Start.AddSeconds(Duration.Seconds);
 		}
 
 		[JsonConstructor]
-		protected ItineraryItem(int id, string title, bool done, DateTime start, TimeSpan duration, DateTime end, bool doing) : base(id, title, done) {
+		protected ItineraryItem(int id, string title, bool done, DateTime start, TimeSpan duration, bool doing) : base(id, title, done) {
 			// Deserializeren
 			Start = start;
 			Duration = duration;
-			End = end;
 			_doing = doing;
 		}
 
