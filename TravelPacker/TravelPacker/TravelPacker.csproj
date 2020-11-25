@@ -134,12 +134,16 @@
     <Compile Include="Util\Globals.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationPageViewModel.cs" />
+    <Compile Include="ViewModel\TravelsDetailPageViewModel.cs" />
     <Compile Include="ViewModel\TravelsPageViewModel.cs" />
     <Compile Include="ViewModel\UpdateTravelPageViewModel.cs" />
     <Compile Include="View\Travels\AddTravelPage.xaml.cs">
       <DependentUpon>AddTravelPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddTravelPageViewModel.cs" />
+    <Compile Include="View\Travels\TravelListPage.xaml.cs">
+      <DependentUpon>TravelListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -187,15 +191,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Travels\TravelListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Users\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Users\RegistrationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Travels\TravelDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +215,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>6.1.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
