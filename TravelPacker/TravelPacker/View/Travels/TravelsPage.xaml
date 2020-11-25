@@ -2,6 +2,7 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="using:TravelPacker.View.Travels"
+      xmlns:devicefam="using:TravelPacker.Util"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:model="using:TravelPacker.Model"
@@ -10,12 +11,48 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
       RequestedTheme="Light">
 
+
+
     <ScrollViewer>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="desktopView">
+                    <VisualState.StateTriggers>
+                        <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.HorizontalAlignment"
+                                Value="Left" />
+                        <Setter Target="btn_addTravel.HorizontalAlignment"
+                                Value="Left" />
+                        <Setter Target="TravelsGV.HorizontalAlignment"
+                                Value="Left" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="tabletView">
+                    <VisualState.StateTriggers>
+                        <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.HorizontalAlignment"
+                                Value="Center" />
+                        <Setter Target="btn_addTravel.HorizontalAlignment"
+                                Value="Center" />
+                        <Setter Target="TravelsGV.HorizontalAlignment"
+                                Value="Center" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Your Travels"
-                       Style="{ThemeResource HeaderTextBlockStyle}" />
-            <Button Margin="0,10,0,0"
-                    Click="Add_Travel_Btn">
+            <TextBlock x:Name="txt_header"
+                       Text="Your Travels"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
+                       HorizontalAlignment="Left" />
+            <Button x:Name="btn_addTravel"
+                    Margin="0,10,0,0"
+                    Click="Add_Travel_Btn"
+                    HorizontalAlignment="Left">
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center">
                     <SymbolIcon Symbol="Add"
@@ -30,6 +67,7 @@
                       IsItemClickEnabled="True"
                       Margin="0,20,0,0"
                       HorizontalContentAlignment="Left"
+                      HorizontalAlignment="Left"
                       IsRightTapEnabled="True"
                       Tapped="TravelsGV_Tapped">
                 <GridView.ItemTemplate>
