@@ -59,6 +59,7 @@ namespace TravelPacker.Model {
 			Location = location;
 			ImageUrl = imageUrl;
 			Categories = new List<Category>();
+			Tasks = new List<TravelTask>();
 			Itineraries = new List<ItineraryItem>();
 		}
 

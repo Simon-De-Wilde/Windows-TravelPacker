@@ -145,6 +145,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualState">
       <RootProperty Name="Setters" />
+      <RootProperty Name="StateTriggers" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
@@ -191,11 +192,18 @@
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox" />
     <RootType FullName="TravelPacker.View.Users.LoginPage" />
     <RootType FullName="TravelPacker.View.Users.RegistrationPage" />
+    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
+      <RootProperty Name="MinWindowWidth" />
+    </RootType>
+    <RootType FullName="TravelPacker.Util.DeviceFamilyStateTrigger">
+      <RootProperty Name="TargetDeviceFamily" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="IsRightTapEnabled" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="Tapped" />
