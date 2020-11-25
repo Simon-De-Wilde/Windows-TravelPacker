@@ -32,7 +32,7 @@ namespace TravelPackerAPI.Data.Repositories {
 		public User GetByEmail(string email) {
 			return _users
 				.Include(u => u.Travels).ThenInclude(t => t.Categories).ThenInclude(c => c.Items)
-				.Include(u => u.Travels).ThenInclude(t => t.Categories).ThenInclude(c => c.Tasks)
+				.Include(u => u.Travels).ThenInclude(t => t.Tasks)
 				.Include(u => u.Travels).ThenInclude(t => t.Itineraries)
 				.FirstOrDefault(u => u.Email == email);
 		}

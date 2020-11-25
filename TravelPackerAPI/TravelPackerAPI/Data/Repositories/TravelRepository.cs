@@ -28,7 +28,7 @@ namespace TravelPackerAPI.Data.Repositories {
 		public IEnumerable<Travel> GetAll() {
 			return _travels
 				.Include(t => t.Categories).ThenInclude(c => c.Items)
-				.Include(t => t.Categories).ThenInclude(c => c.Tasks)
+				.Include(t => t.Tasks)
 				.Include(t => t.Itineraries);
 
 		}
@@ -36,7 +36,7 @@ namespace TravelPackerAPI.Data.Repositories {
 		public Travel GetById(int id) {
 			return _travels
 				.Include(t => t.Categories).ThenInclude(c => c.Items)
-				.Include(t => t.Categories).ThenInclude(c => c.Tasks)
+				.Include(t => t.Tasks)
 				.Include(t => t.Itineraries)
 				.FirstOrDefault(t => t.Id == id);
 		}

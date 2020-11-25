@@ -24,7 +24,7 @@ namespace TravelPackerAPI.Models {
 		}
 
 		public IList<Category> Categories { get; set; }
-
+		public IList<TravelTask> Tasks { get; set; }
 		public IList<ItineraryItem> Itineraries { get; set; }
 
 		public Travel(string name, string location, string imageUrl) {
@@ -33,7 +33,7 @@ namespace TravelPackerAPI.Models {
 			ImageUrl = imageUrl;
 
 			Categories = new List<Category>();
-
+			Tasks = new List<TravelTask>();
 			Itineraries = new List<ItineraryItem>();
 		}
 

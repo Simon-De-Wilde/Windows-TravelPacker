@@ -107,15 +107,15 @@
       <RootProperty Name="StateTriggers" />
       <RootProperty Name="Setters" />
     </RootType>
-    <RootType FullName="TravelPacker.Util.DeviceFamilyStateTrigger">
-      <RootProperty Name="TargetDeviceFamily" />
+    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
+      <RootProperty Name="MinWindowWidth" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Target" />
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
-      <RootProperty Name="MinWindowWidth" />
+    <RootType FullName="TravelPacker.Util.DeviceFamilyStateTrigger">
+      <RootProperty Name="TargetDeviceFamily" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />

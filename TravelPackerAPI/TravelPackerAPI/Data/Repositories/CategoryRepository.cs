@@ -27,11 +27,11 @@ namespace TravelPackerAPI.Data.Repositories {
 		}
 
 		public IEnumerable<Category> GetAll() {
-			return _categories.Include(c => c.Items).Include(c => c.Tasks);
+			return _categories.Include(c => c.Items);
 		}
 
 		public Category GetById(int id) {
-			return _categories.Include(c => c.Items).Include(c => c.Tasks).FirstOrDefault(c => c.Id == id);
+			return _categories.Include(c => c.Items).FirstOrDefault(c => c.Id == id);
 		}
 
 		public void SaveChanges() {

@@ -169,4 +169,3 @@ C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.dll
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.pdb
 C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.genruntimeconfig.cache
-C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPackerAPI\TravelPackerAPI\obj\Debug\netcoreapp3.1\TravelPackerAPI.csprojAssemblyReference.cache

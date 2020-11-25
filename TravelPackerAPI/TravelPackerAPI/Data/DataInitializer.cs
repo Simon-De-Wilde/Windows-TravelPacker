@@ -46,7 +46,7 @@ namespace TravelPackerAPI.Data {
 				catBathroomStuff.Items.Add(toothbrush);
 
 				TravelTask refillShampoo = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
-				catBathroomStuff.Tasks.Add(refillShampoo);
+				travelQL.Tasks.Add(refillShampoo);
 
 				ItineraryItem itinBoard = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
 				travelQL.Itineraries.Add(itinBoard);
@@ -60,7 +60,7 @@ namespace TravelPackerAPI.Data {
 				catSnacks.Items.Add(chips);
 				TravelTask makePopcorn = new TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
 				makePopcorn.Done = true;
-				catSnacks.Tasks.Add(makePopcorn);
+				travelKC.Tasks.Add(makePopcorn);
 
 				ItineraryItem itinTaxi = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
 				travelKC.Itineraries.Add(itinTaxi);
