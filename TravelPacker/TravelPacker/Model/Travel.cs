@@ -1,5 +1,6 @@
 ﻿
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -33,8 +34,9 @@ namespace TravelPacker.Model {
 
 		public double Progress {
 			get {
-				double progressSum = Categories.Sum(c => c.Progress);
-				return Categories.Count == 0 ? 0 : progressSum / Categories.Count;
+				double catProgress = Categories.Sum(c => c.Progress);
+				double tasksProgress = Tasks.Count == 0 ? 0 : Convert.ToDouble(Tasks.Count(i => i.Done)) / Tasks.Count * 100;
+				return (catProgress + tasksProgress) / 2;
 			}
 			set { }
 		}
@@ -43,6 +45,10 @@ namespace TravelPacker.Model {
 		[Required]
 		[JsonProperty("categories")]
 		public IList<Category> Categories { get; set; }
+
+		[Required]
+		[JsonProperty("tasks")]
+		public IList<TravelTask> Tasks { get; set; }
 
 		[Required]
 		[JsonProperty("itineraries")]
@@ -57,26 +63,15 @@ namespace TravelPacker.Model {
 		}
 
 		[JsonConstructor]
-		protected Travel(int id, string name, string location, string imageUrl, IList<Category> categories, IList<ItineraryItem> itineraries) {
+		protected Travel(int id, string name, string location, string imageUrl, IList<Category> categories, IList<TravelTask> tasks, IList<ItineraryItem> itineraries) {
 			// Deserializeren
 			Id = id;
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
 			Categories = categories;
+			Tasks = tasks;
 			Itineraries = itineraries;
-		}
-
-		public IList<TravelTask> GetAllTasks() {
-			var list = new List<TravelTask>();
-
-			foreach (Category c in Categories) {
-				foreach (TravelTask t in c.Tasks) {
-					list.Add(t);
-				}
-			}
-
-			return list;
 		}
 	}
 }

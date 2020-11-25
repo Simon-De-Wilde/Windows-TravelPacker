@@ -17,17 +17,9 @@ namespace TravelPacker.Model {
 		[JsonProperty("items")]
 		public IList<Item> Items { get; set; }
 
-		[Required]
-		[JsonProperty("tasks")]
-		public IList<TravelTask> Tasks { get; set; }
-
 		public double Progress {
 			get {
-				double itemProgress = Items.Count == 0 ? 0 : Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
-				double taskProgress = Tasks.Count == 0 ? 0 : Convert.ToDouble(Tasks.Count(t => t.Done)) / Tasks.Count * 100;
-
-				double calculated = (itemProgress + taskProgress) / 2;
-				return calculated;
+				return Items.Count == 0 ? 0 : Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
 			}
 			set { }
 		}
@@ -35,16 +27,14 @@ namespace TravelPacker.Model {
 		public Category(string name) {
 			Name = name;
 			Items = new List<Item>();
-			Tasks = new List<TravelTask>();
 		}
 
 		[JsonConstructor]
-		protected Category(int id, string name, IList<Item> items, IList<TravelTask> tasks) {
+		protected Category(int id, string name, IList<Item> items) {
 			// Deserializeren
 			Id = id;
 			Name = name;
 			Items = items;
-			Tasks = tasks;
 		}
 
 	}
