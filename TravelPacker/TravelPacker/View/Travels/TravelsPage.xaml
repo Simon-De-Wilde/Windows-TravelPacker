@@ -16,20 +16,7 @@
     <ScrollViewer>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
-                <VisualState x:Name="desktopView">
-                    <VisualState.StateTriggers>
-                        <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="txt_header.HorizontalAlignment"
-                                Value="Left" />
-                        <Setter Target="btn_addTravel.HorizontalAlignment"
-                                Value="Left" />
-                        <Setter Target="TravelsGV.HorizontalAlignment"
-                                Value="Left" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="tabletView">
+                <VisualState x:Name="mobileView">
                     <VisualState.StateTriggers>
                         <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
                     </VisualState.StateTriggers>
@@ -42,6 +29,36 @@
                                 Value="Center" />
                     </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="tabletView">
+                    <VisualState.StateTriggers>
+                        <!--<devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />-->
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.HorizontalAlignment"
+                                Value="Center" />
+                        <Setter Target="btn_addTravel.HorizontalAlignment"
+                                Value="Center" />
+                        <Setter Target="TravelsGV.HorizontalAlignment"
+                                Value="Center" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="desktopView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="670" />
+                        <!--<devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />-->
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.HorizontalAlignment"
+                                Value="Left" />
+                        <Setter Target="btn_addTravel.HorizontalAlignment"
+                                Value="Left" />
+                        <Setter Target="TravelsGV.HorizontalAlignment"
+                                Value="Left" />
+                    </VisualState.Setters>
+                </VisualState>
+                
+                
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
