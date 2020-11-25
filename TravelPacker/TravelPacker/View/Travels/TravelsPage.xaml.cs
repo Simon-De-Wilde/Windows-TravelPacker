@@ -80,8 +80,7 @@ namespace TravelPacker.View.Travels {
 			if (selectedTravel != null) {
 				MessageDialog md = new MessageDialog(selectedTravel.Name);
 				md.ShowAsync();
-
-				// TODO routen naar detailscherm
+				Frame.Navigate(typeof (TravelListPage), selectedTravel);
 			}
 		}
 
