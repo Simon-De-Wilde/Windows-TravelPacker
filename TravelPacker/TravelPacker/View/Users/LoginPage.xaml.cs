@@ -48,7 +48,7 @@ namespace TravelPacker.View.Users {
 			}
 			else {
 				TextBlock loginError = new TextBlock() {
-					Text = "Unable to login with these credentials",
+					Text = "Unable to log in with these credentials",
 					Foreground = new SolidColorBrush(Colors.DarkRed)
 				};
 
