@@ -57,8 +57,8 @@
                                 Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
-                
-                
+
+
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
@@ -99,7 +99,8 @@
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
                                     CornerRadius="2"
-                                    Margin="10"                          >
+                                    Margin="10"
+                                                             >
                             <Image x:ConnectionId='9'                           
                                    Width="200"
                                    Margin="10" />

@@ -57,8 +57,8 @@
                                 Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
-                
-                
+
+
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
@@ -99,7 +99,8 @@
                                     BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
                                     BorderThickness="3"
                                     CornerRadius="2"
-                                    Margin="10" Tapped="TravelsGV_Tapped">
+                                    Margin="10"
+                                    Tapped="TravelsGV_Tapped">
                             <Image Source="{x:Bind ImageUrl}"
                                    Width="200"
                                    Margin="10" />
