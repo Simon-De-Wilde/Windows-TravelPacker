@@ -175,7 +175,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <!-- List of items to pack -->
-                <ListView ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                <ListView x:Name="listView" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
                           ItemsSource="{x:Bind viewModel.Travel.Categories}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="model:Category">
@@ -187,7 +187,7 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate x:DataType="model:Item">
                                             <StackPanel Orientation="Vertical">
-                                                <TextBlock Text="{x:Bind Title}" />
+                                                <CheckBox Content="{x:Bind Title}" Checked="onItemChecked"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
