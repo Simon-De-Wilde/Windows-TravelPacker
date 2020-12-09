@@ -17,11 +17,13 @@ namespace TravelPackerAPI.Controllers
 	public class TaskController : ControllerBase
     {
 		private readonly TravelPackerDbContext _context;
+		private readonly ITravelRepository _travelRepository;
 		private readonly ITaskRepository _taskRepository;
 		
-		public TaskController(TravelPackerDbContext context, ITaskRepository taskRepository)
+		public TaskController(TravelPackerDbContext context, ITravelRepository travelRepository, ITaskRepository taskRepository)
 		{
 			_context = context;
+			_travelRepository = travelRepository;
 			_taskRepository = taskRepository;
 		}
 
@@ -90,16 +92,19 @@ namespace TravelPackerAPI.Controllers
 		}
 
 		/// <summary>
-		/// Create a new task
+		/// Create a new task for a trip
 		/// </summary>
 		/// <param name="task"></param>
 		/// <returns></returns>
 		// POST: api/Tasks
-		[HttpPost]
-		public async Task<ActionResult<TravelTask>> PostTask(TravelTask task)
+		[HttpPost("{id}")]
+		public async Task<ActionResult<TravelTask>> PostTask(TravelTask task, int id)
 		{
+			Travel t = _travelRepository.GetById(id);
+			t.Tasks.Add(task);
 			_taskRepository.Add(task);
 			_taskRepository.SaveChanges();
+			_travelRepository.SaveChanges();
 
 			return CreatedAtAction("GetTravelTask", new { id = task.Id }, task);
 		}

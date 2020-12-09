@@ -172,12 +172,12 @@
         <StackPanel Orientation="Vertical">
             <!--header-->
             <StackPanel x:ConnectionId='7' Orientation="Horizontal" x:Name="txt_header" HorizontalAlignment="Left">
-                <TextBlock x:ConnectionId='16' Margin="10 0 40 20"
+                <TextBlock x:ConnectionId='18' Margin="10 0 40 20"
                            TextWrapping="Wrap"
                            Style="{ThemeResource HeaderTextBlockStyle}"
                                                                  />
                 <StackPanel Orientation="Horizontal">
-                    <Button x:ConnectionId='17' x:Name="btn_updateTravel"
+                    <Button x:ConnectionId='19' x:Name="btn_updateTravel"
                         Margin="0,-15,0,0"
                                                       
                         HorizontalAlignment="Left">
@@ -190,7 +190,7 @@
                                    VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
-                    <Button x:ConnectionId='18' x:Name="btn_route"  Margin="20,-15,0,0"                        >
+                    <Button x:ConnectionId='20' x:Name="btn_route"  Margin="20,-15,0,0"                        >
                         <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
                             <SymbolIcon Symbol="MapPin"
@@ -217,17 +217,21 @@
                            HorizontalAlignment="Center"
                            Grid.Column="0"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
-                <TextBlock Text="Tasks"
-                           HorizontalAlignment="Center"
-                           Grid.Column="1"
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Tasks"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                    <Button x:ConnectionId='17' x:Name="btnAddTask"                          >
+                        <SymbolIcon Symbol="Add" />
+                    </Button>
+                </StackPanel>
+
                 <TextBlock Text="Route"
                            HorizontalAlignment="Center"
                            Grid.Column="2"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
             </Grid>
             <Grid Padding="10">
                 <Grid.ColumnDefinitions>
@@ -244,16 +248,16 @@
                                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate                            >
-                            <controls:Expander x:ConnectionId='12' HorizontalContentAlignment="Left"
+                            <controls:Expander x:ConnectionId='13' HorizontalContentAlignment="Left"
                                                                              
                                                Width="400">
 
-                                <ListView x:ConnectionId='13' HorizontalAlignment="Left"
+                                <ListView x:ConnectionId='14' HorizontalAlignment="Left"
                                                                       >
                                     <ListView.ItemTemplate>
                                         <DataTemplate                        >
-                                            <StackPanel x:ConnectionId='14' Orientation="Vertical">
-                                                <CheckBox x:ConnectionId='15'                         
+                                            <StackPanel x:ConnectionId='15' Orientation="Vertical">
+                                                <CheckBox x:ConnectionId='16'                         
                                                                                   />
                                             </StackPanel>
                                         </DataTemplate>
@@ -271,7 +275,12 @@
                     <ListView.ItemTemplate>
                         <DataTemplate                              >
                             <StackPanel x:ConnectionId='10' Orientation="Vertical">
-                                <CheckBox x:ConnectionId='11'                                                 />
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:ConnectionId='11'                                                 />
+                                    <Button x:ConnectionId='12' HorizontalAlignment="Right" Margin="200 0 0 0"                             >
+                                        <SymbolIcon Symbol="Delete" />
+                                    </Button>
+                                </StackPanel>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

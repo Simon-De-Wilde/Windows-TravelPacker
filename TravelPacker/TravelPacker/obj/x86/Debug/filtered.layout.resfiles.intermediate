@@ -1,4 +1,9 @@
 WinMetadata\Windows.winmd
+Assets\BackgroundImages\taskBG.jpg
+Assets\BackgroundImages\taskBG2.jpg
+Assets\BackgroundImages\taskBG3.jpg
+Assets\BackgroundImages\taskBG4.jpg
+Assets\BackgroundImages\taskBG5.jpg
 Assets\BackgroundImages\travelBG1.jpg
 Assets\BackgroundImages\travelBG2.jpg
 Assets\BackgroundImages\travelBG3.jpg
@@ -15,6 +20,7 @@ Assets\Wide310x150Logo.scale-200.png
 App.xbf
 MainPage.xbf
 TravelPacker.xr.xml
+View\Travels\AddTaskPage.xbf
 View\Travels\AddTravelPage.xbf
 View\Travels\RoutePage.xbf
 View\Travels\TravelListPage.xbf

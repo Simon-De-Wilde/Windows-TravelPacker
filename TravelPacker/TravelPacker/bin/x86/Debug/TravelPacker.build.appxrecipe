@@ -91,6 +91,21 @@
     <AppxPackagedFile Include="C:\Users\marbo\.nuget\packages\microsoft.toolkit.uwp.ui.controls\6.1.1\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\taskBG.jpg">
+      <PackagePath>Assets\BackgroundImages\taskBG.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\taskBG2.jpg">
+      <PackagePath>Assets\BackgroundImages\taskBG2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\taskBG3.jpg">
+      <PackagePath>Assets\BackgroundImages\taskBG3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\taskBG4.jpg">
+      <PackagePath>Assets\BackgroundImages\taskBG4.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\taskBG5.jpg">
+      <PackagePath>Assets\BackgroundImages\taskBG5.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BackgroundImages\travelBG1.jpg">
       <PackagePath>Assets\BackgroundImages\travelBG1.jpg</PackagePath>
     </AppxPackagedFile>
@@ -147,6 +162,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTaskPage.xbf">
+      <PackagePath>View\Travels\AddTaskPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
