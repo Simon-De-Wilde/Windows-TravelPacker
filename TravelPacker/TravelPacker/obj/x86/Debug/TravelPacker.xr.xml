@@ -146,7 +146,9 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
+      <RootProperty Name="IsChecked" />
       <RootProperty Name="VerticalAlignment" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="TravelPacker.View.Travels.TravelListPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">

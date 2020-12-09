@@ -83,8 +83,13 @@ namespace TravelPacker.View.Travels
 
         private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            await viewModel.addCategory(NewCategoryTitle.Text);
-            NewCategoryTitle.Text = "";
+            var newCategoryTitle = NewCategoryTitle.Text;
+
+            if (newCategoryTitle != null)
+            {
+                await viewModel.addCategory(newCategoryTitle);
+                 NewCategoryTitle.Text = "";
+            }            
         }
 
         private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e)
@@ -92,7 +97,24 @@ namespace TravelPacker.View.Travels
             var categoryID = ((sender as FontIcon).DataContext as Category).Id;
             var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
 
-            await viewModel.addItem(newItemTitle, categoryID);
+            if (newItemTitle != null)
+            {
+                await viewModel.addItem(newItemTitle, categoryID);
+            }      
+        }
+
+        private async void CheckItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var selectedItem = (sender as CheckBox).DataContext as Item;
+            var done = (selectedItem.Done) ? false : true;
+
+            if (selectedItem != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
+                //md.ShowAsync();
+
+                await viewModel.updateItem(selectedItem, done);
+            }
         }
     }
 }

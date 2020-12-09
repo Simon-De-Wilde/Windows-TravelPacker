@@ -18,6 +18,8 @@ namespace TravelPacker.Model {
 		[JsonProperty("items")]
 		public ObservableCollection<Item> Items { get; set; }
 
+		public int ItemsDone { get; set; }
+
 		public double Progress {
 			get {
 				return Items.Count == 0 ? 0 : Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
@@ -28,6 +30,7 @@ namespace TravelPacker.Model {
 		public Category(string name) {
 			Name = name;
 			Items = new ObservableCollection<Item>();
+			ItemsDone = Items.Where(i => i.Done == true).Count();
 		}
 
 		[JsonConstructor]
@@ -36,6 +39,7 @@ namespace TravelPacker.Model {
 			Id = id;
 			Name = name;
 			Items = items;
+			ItemsDone = Items.Where(i => i.Done == true).Count();
 		}
 
 	}

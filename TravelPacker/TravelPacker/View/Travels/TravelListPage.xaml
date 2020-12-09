@@ -96,7 +96,9 @@
                                                             <CheckBox x:Name="checkItem"
                                                                       Grid.Column="0"
                                                                       Content="{x:Bind Title}" 
-                                                                      VerticalAlignment="Center" />
+                                                                      IsChecked="{x:Bind Done}"
+                                                                      VerticalAlignment="Center" 
+                                                                      Tapped="CheckItem_Tapped" />
 
                                                             <FontIcon x:Name="RemoveItem" 
                                                                        Grid.Column="1" 
@@ -141,8 +143,8 @@
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
                                         Margin="10,10,10,0">
-                                        <TextBlock Text="0/" />
-
+                                        <TextBlock Text="{x:Bind ItemsDone}" />
+                                        <TextBlock Text="/" FontWeight="Bold"/>
                                         <TextBlock Text="{Binding Items.Count}" FontWeight="Bold"/>
 
                                         <FontIcon x:Name="RemoveCategory" 

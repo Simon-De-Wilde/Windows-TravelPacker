@@ -35,6 +35,19 @@ namespace TravelPacker.ViewModel
 			return null;
 		}
 
+		private Item GetItem(int itemID)
+		{
+			foreach (Category c in Travel.Categories)
+			{
+				foreach (Item i in c.Items)
+				{
+					if (i.Id == itemID) { return i; }
+				}
+			}
+
+			return null;
+		}
+
 		public async Task<bool> GetCategories()
 		{
 			Travel.Categories.Clear();
@@ -131,6 +144,33 @@ namespace TravelPacker.ViewModel
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
 				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/PostItemToCategory/{categoryID}"),
+					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
+
+				if (result.IsSuccessStatusCode)
+				{
+					await GetCategories();
+					return true;
+				}
+				else { throw new Exception(); }
+			}
+			catch (Exception e) { return false; }
+		}
+
+		public async Task<bool> updateItem(Item item, bool done)
+		{
+			try
+			{
+				var itemToUpdate = GetItem(item.Id);
+				if (done) { itemToUpdate.SetDone(); }
+				else { itemToUpdate.SetNotDone(); }
+
+				var json = JsonConvert.SerializeObject(itemToUpdate);
+
+				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+
+				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{item.Id}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode)
