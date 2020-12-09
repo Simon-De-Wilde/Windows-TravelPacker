@@ -1,0 +1,79 @@
+﻿<Page x:Class="TravelPacker.View.Itinerary.AddItineraryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:TravelPacker.View.Itinerary"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      RequestedTheme="Light"
+      Margin="-20,-20,-20,-20">
+
+    <Page.Background>
+        <ImageBrush x:ConnectionId='2' x:Name="bgImage"
+                    ImageSource="../../Assets/BackgroundImages/travelBG6.jpg"
+                    Stretch="None" />
+    </Page.Background>
+
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+        <StackPanel.Background>
+            <AcrylicBrush TintOpacity="0.02"></AcrylicBrush>
+        </StackPanel.Background>
+
+        <TextBlock HorizontalAlignment="Center"
+                   Text="New Itinerary"
+                   Style="{ThemeResource SubtitleTextBlockStyle}" />
+        <StackPanel HorizontalAlignment="Center"
+                    Padding="50"
+                    Margin="25"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    Width="400">
+
+            <!--Title-->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Titel"
+                           HorizontalAlignment="Left" />
+                <TextBox x:ConnectionId='8' x:Name="txt_title" />
+            </StackPanel>
+
+            <!--Date-->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Date"
+                           HorizontalAlignment="Left" />
+                <CalendarDatePicker x:ConnectionId='7'  x:Name="date" />
+            </StackPanel>
+
+            <!--Start-->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Start"
+                           HorizontalAlignment="Left" />
+                <TimePicker x:ConnectionId='6' x:Name="time_start" />
+            </StackPanel>
+
+            <!--duration-->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Duration in minutes"
+                           HorizontalAlignment="Left" />
+                <TextBox x:ConnectionId='5' x:Name="duration" />
+            </StackPanel>
+
+            <!--Errors-->
+            <StackPanel x:ConnectionId='3' Orientation="Vertical"
+                        Margin="0,0,0,20"
+                        x:Name="errorbox">
+
+            </StackPanel>
+
+            <!--Buttons-->
+            <Button x:ConnectionId='4' Content="Add new itinerary"
+                                        
+                    Margin="10"
+                    HorizontalAlignment="Center" />
+
+        </StackPanel>
+
+    </StackPanel>
+</Page>
+
