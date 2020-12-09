@@ -24,20 +24,24 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-namespace TravelPacker.View.Travels {
+namespace TravelPacker.View.Travels
+{
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class TravelListPage : Page {
+	public sealed partial class TravelListPage : Page
+	{
 		public TravelsDetailPageViewModel ViewModel { get; set; }
 
-		public TravelListPage() {
+		public TravelListPage()
+		{
 			this.InitializeComponent();
 			this.ViewModel = new TravelsDetailPageViewModel();
 			this.DataContext = this.ViewModel;
 		}
 
-		protected override void OnNavigatedTo(NavigationEventArgs e) {
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
 			base.OnNavigatedTo(e);
 
 			Travel travel = (Travel)e.Parameter;
@@ -49,29 +53,36 @@ namespace TravelPacker.View.Travels {
 			ViewModel.Travel = travel;
 		}
 
-		private void onItemChecked(object sender, RoutedEventArgs e) {
+		private void onItemChecked(object sender, RoutedEventArgs e)
+		{
 			var selectedItem = (sender as CheckBox).Content;
 			(sender as CheckBox).Foreground.Opacity = 100;
 			//TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
 		}
 
-		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
+		private void btn_updateTravel_Click(object sender, RoutedEventArgs e)
+		{
 			Frame.Navigate(typeof(UpdateTravelPage), ViewModel.Travel);
 		}
 
-		private void btn_route_Click(object sender, RoutedEventArgs e) {
+		private void btn_route_Click(object sender, RoutedEventArgs e)
+		{
 			Frame.Navigate(typeof(RoutePage), ViewModel.Travel);
 		}
 
-		private void add_itineraryItem_Click(object sender, RoutedEventArgs e) {
+		private void add_itineraryItem_Click(object sender, RoutedEventArgs e)
+		{
 			Frame.Navigate(typeof(AddItineraryPage), ViewModel.Travel);
 		}
 
-		private async void GV_itineraryCard_RightTapped(object sender, RightTappedRoutedEventArgs e) {
+		private async void GV_itineraryCard_RightTapped(object sender, RightTappedRoutedEventArgs e)
+		{
 			var selectedItineraryItem = (sender as Grid).DataContext as ItineraryItem;
 
-			if (selectedItineraryItem != null) {
-				ContentDialog cd = new ContentDialog() {
+			if (selectedItineraryItem != null)
+			{
+				ContentDialog cd = new ContentDialog()
+				{
 					Title = "Delete itinerary item",
 					Content = $"Do you wish to delete itinerary item '{selectedItineraryItem.Title}'? This action cannot be undone.",
 					CloseButtonText = "Close",
@@ -79,16 +90,19 @@ namespace TravelPacker.View.Travels {
 				};
 
 				ContentDialogResult result = await cd.ShowAsync();
-				if (result == ContentDialogResult.Primary) {
+				if (result == ContentDialogResult.Primary)
+				{
 
 					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
 
-					if (success) {
+					if (success)
+					{
 						// TODO De lijst wordt niet geupdate in de view
 						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
 						//DataContext = ViewModel; WERKT OOK NIET...
 					}
-					else {
+					else
+					{
 
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
@@ -97,82 +111,75 @@ namespace TravelPacker.View.Travels {
 			}
 		}
 		private void btn_AddTask_Click(object sender, RoutedEventArgs e)
-        {
+		{
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
-        }
+		}
 
-        private void onItemChecked(object sender, RoutedEventArgs e)
-        {
-            var selectedItem = (sender as CheckBox).Content;
-            (sender as CheckBox).Foreground.Opacity = 1;
-            // TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
-        }
+		private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var selectedCategory = (sender as FontIcon).DataContext as Category;
 
-        private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var selectedCategory = (sender as FontIcon).DataContext as Category;
+			if (selectedCategory != null)
+			{
+				//MessageDialog md = new MessageDialog(selectedCategory.Name);
+				//md.ShowAsync();
 
-            if (selectedCategory != null)
-            {
-                //MessageDialog md = new MessageDialog(selectedCategory.Name);
-                //md.ShowAsync();
-                
-                await viewModel.DeleteCategory(selectedCategory);
-            }
+				await ViewModel.DeleteCategory(selectedCategory);
+			}
 
-        }
+		}
 
-        private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var selectedItem = (sender as FontIcon).DataContext as Item;
+		private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var selectedItem = (sender as FontIcon).DataContext as Item;
 
-            if (selectedItem != null)
-            {
-                //MessageDialog md = new MessageDialog(selectedItem.Title);
-                //md.ShowAsync();
+			if (selectedItem != null)
+			{
+				//MessageDialog md = new MessageDialog(selectedItem.Title);
+				//md.ShowAsync();
 
-                await viewModel.DeleteItem(selectedItem);
-            }
-        }
+				await ViewModel.DeleteItem(selectedItem);
+			}
+		}
 
-        private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var newCategoryTitle = NewCategoryTitle.Text;
+		private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var newCategoryTitle = NewCategoryTitle.Text;
 
-            if (newCategoryTitle != null)
-            {
-                await viewModel.addCategory(newCategoryTitle);
-                 NewCategoryTitle.Text = "";
-            }            
-        }
+			if (newCategoryTitle != null)
+			{
+				await ViewModel.addCategory(newCategoryTitle);
+				NewCategoryTitle.Text = "";
+			}
+		}
 
-        private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var categoryID = ((sender as FontIcon).DataContext as Category).Id;
-            var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
+		private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var categoryID = ((sender as FontIcon).DataContext as Category).Id;
+			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
 
-            if (newItemTitle != null)
-            {
-                await viewModel.addItem(newItemTitle, categoryID);
-            }      
-        }
+			if (newItemTitle != null)
+			{
+				await ViewModel.addItem(newItemTitle, categoryID);
+			}
+		}
 
-        private async void CheckItem_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var selectedItem = (sender as CheckBox).DataContext as Item;
-            var done = (selectedItem.Done) ? false : true;
+		private async void CheckItem_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var selectedItem = (sender as CheckBox).DataContext as Item;
+			var done = (selectedItem.Done) ? false : true;
 
-            if (selectedItem != null)
-            {
-                //MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
-                //md.ShowAsync();
+			if (selectedItem != null)
+			{
+				//MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
+				//md.ShowAsync();
 
-                await viewModel.updateItem(selectedItem, done);
-            }
-        }
-    }
-        private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e)
-        {
+				await ViewModel.updateItem(selectedItem, done);
+			}
+		}
+
+		private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e)
+		{
 			var selectedTask = (sender as Button).DataContext as TravelTask;
 
 			if (selectedTask != null)
@@ -200,7 +207,7 @@ namespace TravelPacker.View.Travels {
 					}
 					else
 					{
-						
+
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}

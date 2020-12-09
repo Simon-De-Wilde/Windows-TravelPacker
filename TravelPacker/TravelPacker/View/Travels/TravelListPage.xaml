@@ -256,7 +256,7 @@
 
                 <StackPanel>
                     <ListView x:Name="LVCategories"
-                          ItemsSource="{x:Bind viewModel.Travel.Categories}"
+                          ItemsSource="{x:Bind ViewModel.Travel.Categories}"
                           Grid.Column="0">
 
                         <ListView.ItemContainerStyle>
