@@ -283,6 +283,23 @@
                     <SymbolIcon Symbol="World" />
                 </Viewbox>
                 <!-- List of tasks -->
+                 <ListView x:ConnectionId='9' Grid.Column="1" Grid.Row="0" Padding="10" Margin="50 0 0 0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView2" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"                                              >
+                    <ListView.ItemTemplate>
+                        <DataTemplate                              >
+                            <StackPanel x:ConnectionId='10' Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:ConnectionId='11'                                                 />
+                                    <Button x:ConnectionId='12' HorizontalAlignment="Right" Margin="200 0 0 0"                             >
+                                        <SymbolIcon Symbol="Delete" />
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Viewbox Grid.Column="1" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
+                    <SymbolIcon Symbol="Bullets"/>
+                </Viewbox>
                 <!-- Itinerary -->
                 <ScrollViewer Grid.Row="0"
                               Grid.Column="2">

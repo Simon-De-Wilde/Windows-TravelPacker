@@ -223,17 +223,20 @@
                            HorizontalAlignment="Center"
                            Grid.Column="0"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
-                <TextBlock Text="Tasks"
-                           HorizontalAlignment="Center"
-                           Grid.Column="1"
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Tasks"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                    <Button x:Name="btnAddTask" Click="btn_AddTask_Click">
+                        <SymbolIcon Symbol="Add" />
+                    </Button>
+                </StackPanel>
                 <TextBlock Text="Itinerary"
                            HorizontalAlignment="Center"
                            Grid.Column="2"
                            Padding="25 0 25 0"
-                           Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                           Style="{ThemeResource TitleTextBlockStyle}"/>
             </Grid>
             <Grid Padding="10">
                 <Grid.ColumnDefinitions>
@@ -283,6 +286,23 @@
                     <SymbolIcon Symbol="World" />
                 </Viewbox>
                 <!-- List of tasks -->
+                <ListView Grid.Column="1" Grid.Row="0" Padding="10" Margin="50 0 0 0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView2" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" ItemsSource="{x:Bind ViewModel.Travel.Tasks}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:TravelTask">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Content="{x:Bind Title}" Checked="onItemChecked"/>
+                                    <Button HorizontalAlignment="Right" Margin="200 0 0 0" Click="btn_DeleteTask_Click">
+                                        <SymbolIcon Symbol="Delete" />
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Viewbox Grid.Column="1" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
+                    <SymbolIcon Symbol="Bullets"/>
+                </Viewbox>
                 <!-- Itinerary -->
                 <ScrollViewer Grid.Row="0"
                               Grid.Column="2">

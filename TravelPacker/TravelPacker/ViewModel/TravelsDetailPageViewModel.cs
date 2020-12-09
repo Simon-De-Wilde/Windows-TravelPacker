@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,6 @@ namespace TravelPacker.ViewModel {
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
-
 				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/ItineraryItems/{ii.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode) {
@@ -31,6 +31,28 @@ namespace TravelPacker.ViewModel {
 				}
 			}
 			catch (Exception e) {
+				return false;
+			}
+		}
+		
+		public async Task<bool> DeleteTask(TravelTask task)
+		{
+			try
+			{				
+				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"));
+
+				if (deleteResult.IsSuccessStatusCode)
+				{
+					Travel.Tasks.Remove(task);
+					return true;
+				}
+				else
+				{
+					throw new Exception();
+				}
+			}
+			catch (Exception e)
+			{
 				return false;
 			}
 		}

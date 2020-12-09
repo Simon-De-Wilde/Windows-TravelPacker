@@ -143,7 +143,7 @@ namespace TravelPacker.View.Travels
 
         public void OnCloseButtonClicked(object sender, ContentDialogButtonClickEventArgs e)
         {
-            Frame.Navigate(typeof(TravelListPage), viewModel.Travel);
+            Frame.GoBack();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
+using System.Threading.Tasks;
 using TravelPacker.Model;
 using TravelPacker.View.Itinerary;
 using TravelPacker.ViewModel;
@@ -27,12 +28,12 @@ namespace TravelPacker.View.Travels {
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
 	public sealed partial class TravelListPage : Page {
-		public TravelsDetailPageViewModel ViewModel;
+		public TravelsDetailPageViewModel ViewModel { get; set; }
 
 		public TravelListPage() {
-			InitializeComponent();
-			ViewModel = new TravelsDetailPageViewModel();
-			DataContext = ViewModel;
+			this.InitializeComponent();
+			this.ViewModel = new TravelsDetailPageViewModel();
+			this.DataContext = this.ViewModel;
 		}
 
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
@@ -77,7 +78,6 @@ namespace TravelPacker.View.Travels {
 				};
 
 				ContentDialogResult result = await cd.ShowAsync();
-
 				if (result == ContentDialogResult.Primary) {
 
 					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
@@ -89,6 +89,47 @@ namespace TravelPacker.View.Travels {
 					}
 					else {
 
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+				}
+			}
+		}
+		private void btn_AddTask_Click(object sender, RoutedEventArgs e)
+        {
+			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
+        }
+
+        private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e)
+        {
+			var selectedTask = (sender as Button).DataContext as TravelTask;
+
+			if (selectedTask != null)
+			{
+				ContentDialog cd = new ContentDialog()
+				{
+					Title = "Delete task",
+					Content = $"Do you wish to delete the task '{selectedTask.Title}'? This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
+
+				ContentDialogResult result = await cd.ShowAsync();
+				if (result == ContentDialogResult.Primary)
+				{
+
+					bool success = await ViewModel.DeleteTask(selectedTask);
+
+					if (success)
+					{
+						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
+						diag.ShowAsync();
+						Frame.Navigate(Frame.Content.GetType(), ViewModel.Travel);
+						Frame.GoBack();
+					}
+					else
+					{
+						
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
