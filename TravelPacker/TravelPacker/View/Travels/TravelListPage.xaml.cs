@@ -49,8 +49,16 @@ namespace TravelPacker.View.Travels
         private void onItemChecked(object sender, RoutedEventArgs e)
         {
             var selectedItem = (sender as CheckBox).Content;
-            (sender as CheckBox).Foreground.Opacity = 100%;
-           // TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
+            (sender as CheckBox).Foreground.Opacity = 1;
+            // TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
+        }
+
+        private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //e.Handled = true;
+            var selectedCategory = (sender as FontIcon).DataContext as Category;
+
+            //bool result = await ViewModel.DeleteCategory(selectedCategory);
         }
     }
 }
