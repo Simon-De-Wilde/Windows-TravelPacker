@@ -6,6 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:devicefam="using:TravelPacker.Util"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -134,10 +135,73 @@
     </Page.Resources>
 
     <ScrollViewer>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:ConnectionId='4' x:Name="mobileView">
+                    <VisualState.StateTriggers>
+                        <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.Orientation"
+                                Value="vertical" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='5' x:Name="tabletView">
+                    <VisualState.StateTriggers>
+                        <!--<devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />-->
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.Orientation"
+                                Value="vertical" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='6' x:Name="desktopView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="750" />
+                        <!--<devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />-->
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txt_header.Orientation"
+                                Value="horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
-            <TextBlock x:ConnectionId='4' Margin="10 0 0 20"
-                       Style="{ThemeResource HeaderTextBlockStyle}"
-                                                             />
+            <!--header-->
+            <StackPanel x:ConnectionId='7' Orientation="Horizontal" x:Name="txt_header" HorizontalAlignment="Left">
+                <TextBlock x:ConnectionId='16' Margin="10 0 40 20"
+                           TextWrapping="Wrap"
+                           Style="{ThemeResource HeaderTextBlockStyle}"
+                                                                 />
+                <StackPanel Orientation="Horizontal">
+                    <Button x:ConnectionId='17' x:Name="btn_updateTravel"
+                        Margin="0,-15,0,0"
+                                                      
+                        HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                            <SymbolIcon Symbol="Edit"
+                                    Margin="5"
+                                    VerticalAlignment="Center" />
+                            <TextBlock Text="Update"
+                                   VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:ConnectionId='18' x:Name="btn_route"  Margin="20,-15,0,0"                        >
+                        <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                            <SymbolIcon Symbol="MapPin"
+                                    Margin="5"
+                                    VerticalAlignment="Center" />
+                            <TextBlock Text="See route"
+                                   VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
             <Grid BorderThickness="0 0 0 1"
                   BorderBrush="black"
                   Padding="10">
@@ -176,20 +240,21 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <!-- List of items to pack -->
-                <ListView x:ConnectionId='5' Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                <ListView x:ConnectionId='8' Grid.Column="0" Grid.Row="0" Padding="10"  BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
                                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate                            >
-                            <controls:Expander x:ConnectionId='10' HorizontalContentAlignment="Left"
+                            <controls:Expander x:ConnectionId='12' HorizontalContentAlignment="Left"
                                                                              
                                                Width="400">
 
-                                <ListView x:ConnectionId='11' HorizontalAlignment="Left"
+                                <ListView x:ConnectionId='13' HorizontalAlignment="Left"
                                                                       >
                                     <ListView.ItemTemplate>
                                         <DataTemplate                        >
-                                            <StackPanel x:ConnectionId='12' Orientation="Vertical">
-                                                <CheckBox x:ConnectionId='13'                                                 />
+                                            <StackPanel x:ConnectionId='14' Orientation="Vertical">
+                                                <CheckBox x:ConnectionId='15'                         
+                                                                                  />
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -202,11 +267,11 @@
                     <SymbolIcon Symbol="World"/>
                 </Viewbox>
                 <!-- List of tasks -->
-                <ListView x:ConnectionId='6' Grid.Column="1" Grid.Row="0" Margin="50 0 0 0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView2" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"                                              >
+                <ListView x:ConnectionId='9' Grid.Column="1" Grid.Row="0" Padding="10" Margin="50 0 0 0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView2" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"                                              >
                     <ListView.ItemTemplate>
                         <DataTemplate                              >
-                            <StackPanel x:ConnectionId='8' Orientation="Vertical">
-                                <CheckBox x:ConnectionId='9'                                                 />
+                            <StackPanel x:ConnectionId='10' Orientation="Vertical">
+                                <CheckBox x:ConnectionId='11'                                                 />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -215,9 +280,8 @@
                     <SymbolIcon Symbol="Bullets"/>
                 </Viewbox>
                 <!-- Map + address -->
-                <my:MapControl x:ConnectionId='7' x:Name="MapWithRoute" Grid.Column="2" Grid.Row="0" MapServiceToken="JVqojfdIaPkyuzaFrYBV~bJgxian6HGZniryNCkjkig~Ai-9hZk3QI246eAOo7FRy7GWRZ8SaAROhSMzO7SRqR5mhNAenozBLI2Fq6UfL6Yd"/>
                 <Viewbox Grid.Column="2" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
-                    <SymbolIcon Symbol="Map"/>
+                    <SymbolIcon Symbol="Calendar"/>
                 </Viewbox>
             </Grid>
         </StackPanel>

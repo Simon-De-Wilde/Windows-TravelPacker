@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>4343B488385F9EF798448156AC5D69A352B6B42DE676D53BF58D861C55B6C853</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>27BBBA7766F5B36833EBDE86136A00FAE4A594ABF1483A7845899E1AEF7DB57A</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5b963e10-8b99-4ff0-805f-f559c37989c7_1.0.0.0_x86__ggxdvrfmnj0tt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5b963e10-8b99-4ff0-805f-f559c37989c7_ggxdvrfmnj0tt!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5b963e10-8b99-4ff0-805f-f559c37989c7</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-09T10:10:13.279</Modified>
+      <Modified>2020-12-09T13:22:13.675</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.exe">
       <PackagePath>entrypoint\TravelPacker.exe</PackagePath>
-      <Modified>2020-12-09T10:10:11.628</Modified>
+      <Modified>2020-12-09T13:22:12.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -186,39 +186,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.xr.xml">
       <PackagePath>TravelPacker.xr.xml</PackagePath>
-      <Modified>2020-12-09T09:46:59.063</Modified>
+      <Modified>2020-12-09T13:22:11.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.394</Modified>
+      <Modified>2020-12-09T13:22:11.980</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.395</Modified>
+      <Modified>2020-12-09T13:22:11.980</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.395</Modified>
+      <Modified>2020-12-09T13:22:11.981</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\RoutePage.xbf">
+      <PackagePath>View\Travels\RoutePage.xbf</PackagePath>
+      <Modified>2020-12-09T13:22:11.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelListPage.xbf">
       <PackagePath>View\Travels\TravelListPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.387</Modified>
+      <Modified>2020-12-09T13:22:11.973</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf">
       <PackagePath>View\Users\LoginPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.396</Modified>
+      <Modified>2020-12-09T13:22:11.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf">
       <PackagePath>View\Users\RegistrationPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.396</Modified>
+      <Modified>2020-12-09T13:22:11.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelsPage.xbf">
       <PackagePath>View\Travels\TravelsPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.396</Modified>
+      <Modified>2020-12-09T13:22:11.982</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\UpdateTravelPage.xbf">
       <PackagePath>View\Travels\UpdateTravelPage.xbf</PackagePath>
-      <Modified>2020-12-09T10:10:11.396</Modified>
+      <Modified>2020-12-09T13:22:11.982</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -226,11 +230,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-09T09:45:38.297</Modified>
+      <Modified>2020-12-09T12:41:20.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\TravelPacker.exe">
       <PackagePath>TravelPacker.exe</PackagePath>
-      <Modified>2020-12-09T10:10:13.262</Modified>
+      <Modified>2020-12-09T13:22:13.660</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

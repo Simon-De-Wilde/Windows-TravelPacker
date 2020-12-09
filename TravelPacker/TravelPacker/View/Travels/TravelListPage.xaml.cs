@@ -52,71 +52,14 @@ namespace TravelPacker.View.Travels {
 			//TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
 		}
 
-        private async void ShowRouteOnMap()
-        {
-            // The address or business to geocode.
-            string addressToGeocode = "Paris";
-
-            // The nearby location to use as a query hint.
-            BasicGeoposition queryHint = new BasicGeoposition();
-            queryHint.Latitude = 50.8505;
-            queryHint.Longitude = 4.3488;
-            Geopoint hintPoint = new Geopoint(queryHint);
-
-            BasicGeoposition startLocation = new BasicGeoposition() { Latitude = 50.8505, Longitude = 4.3488 };
-            BasicGeoposition endLocation;
-
-            // Geocode the specified address, using the specified reference point
-            // as a query hint. Return no more than 3 results.
-            MapLocationFinderResult result =
-                  await MapLocationFinder.FindLocationsAsync(
-                                    addressToGeocode,
-                                    hintPoint,
-                                    3);
-
-            // If the query returns results, display the coordinates
-            // of the first result.
-            if (result.Status == MapLocationFinderStatus.Success)
-            {
-                // End at the city of Seattle, Washington.
-                endLocation = new BasicGeoposition() { Latitude = result.Locations[0].Point.Position.Latitude, Longitude = result.Locations[0].Point.Position.Longitude };
-            }
-            else
-            {
-                endLocation = new BasicGeoposition() { Latitude = 47.604, Longitude = -122.329 };
-            }
-
-
-            // Get the route between the points.
-            MapRouteFinderResult routeResult =
-                  await MapRouteFinder.GetDrivingRouteAsync(
-                  new Geopoint(startLocation),
-                  new Geopoint(endLocation),
-                  MapRouteOptimization.Time,
-                  MapRouteRestrictions.None);
-
-            if (routeResult.Status == MapRouteFinderStatus.Success)
-            {
-                // Use the route to initialize a MapRouteView.
-                MapRouteView viewOfRoute = new MapRouteView(routeResult.Route);
-                viewOfRoute.RouteColor = Colors.Yellow;
-                viewOfRoute.OutlineColor = Colors.Black;
-
-                // Add the new MapRouteView to the Routes collection
-                // of the MapControl.
-                MapWithRoute.Routes.Add(viewOfRoute);
-
-                // Fit the MapControl to the route.
-                await MapWithRoute.TrySetViewBoundsAsync(
-                      routeResult.Route.BoundingBox,
-                      null,
-                      Windows.UI.Xaml.Controls.Maps.MapAnimationKind.None);
-            }
-        }
-
         private void btn_updateTravel_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(UpdateTravelPage), viewModel.Travel);
+        }
+
+        private void btn_route_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RoutePage), viewModel.Travel);
         }
     }
 }

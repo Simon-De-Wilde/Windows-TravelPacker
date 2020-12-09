@@ -136,6 +136,7 @@
     <Compile Include="Util\Globals.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationPageViewModel.cs" />
+    <Compile Include="ViewModel\RoutePageViewModel.cs" />
     <Compile Include="ViewModel\TravelsDetailPageViewModel.cs" />
     <Compile Include="ViewModel\TravelsPageViewModel.cs" />
     <Compile Include="ViewModel\UpdateTravelPageViewModel.cs" />
@@ -143,6 +144,9 @@
       <DependentUpon>AddTravelPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddTravelPageViewModel.cs" />
+    <Compile Include="View\Travels\RoutePage.xaml.cs">
+      <DependentUpon>RoutePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Travels\TravelListPage.xaml.cs">
       <DependentUpon>TravelListPage.xaml</DependentUpon>
     </Compile>
@@ -190,6 +194,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Travels\AddTravelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Travels\RoutePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
