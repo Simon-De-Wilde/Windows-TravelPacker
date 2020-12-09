@@ -23,12 +23,12 @@ namespace TravelPacker.View.Travels {
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
 	public sealed partial class TravelListPage : Page {
-		public TravelsDetailPageViewModel viewModel;
+		public TravelsDetailPageViewModel ViewModel;
 
 		public TravelListPage() {
-			this.InitializeComponent();
-			this.viewModel = new TravelsDetailPageViewModel();
-			this.DataContext = this.viewModel;
+			InitializeComponent();
+			ViewModel = new TravelsDetailPageViewModel();
+			DataContext = ViewModel;
 		}
 
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
@@ -40,7 +40,7 @@ namespace TravelPacker.View.Travels {
             txt_location.Text = travel.Location;
             txt_image.Text = travel.ImageUrl;*/
 
-			viewModel.Travel = travel;
+			ViewModel.Travel = travel;
 		}
 
 		private void onItemChecked(object sender, RoutedEventArgs e) {
@@ -50,11 +50,42 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
-			Frame.Navigate(typeof(UpdateTravelPage), viewModel.Travel);
+			Frame.Navigate(typeof(UpdateTravelPage), ViewModel.Travel);
 		}
 
 		private void add_itineraryItem_Click(object sender, RoutedEventArgs e) {
-			Frame.Navigate(typeof(AddItineraryPage), viewModel.Travel.Id);
+			Frame.Navigate(typeof(AddItineraryPage), ViewModel.Travel);
+		}
+
+		private async void GV_itineraryCard_RightTapped(object sender, RightTappedRoutedEventArgs e) {
+			var selectedItineraryItem = (sender as Grid).DataContext as ItineraryItem;
+
+			if (selectedItineraryItem != null) {
+				ContentDialog cd = new ContentDialog() {
+					Title = "Delete itinerary item",
+					Content = $"Do you wish to delete itinerary item '{selectedItineraryItem.Title}'? This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
+
+				ContentDialogResult result = await cd.ShowAsync();
+
+				if (result == ContentDialogResult.Primary) {
+
+					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
+
+					if (success) {
+						// TODO De lijst wordt niet geupdate in de view
+						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
+						//DataContext = ViewModel; WERKT OOK NIET...
+					}
+					else {
+
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+				}
+			}
 		}
 	}
 }

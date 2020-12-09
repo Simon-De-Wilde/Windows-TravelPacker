@@ -40,13 +40,13 @@ namespace TravelPacker.View.Itinerary {
 			CheckForm();
 
 			if (!errorbox.Children.Any()) { // no errors
-				var startdatum = date.Date;
-				DateTime start = startdatum.Value.DateTime;
-				start.AddTicks(time_start.Time.Ticks);
+				DateTime start = date.Date.Value.DateTime.Date;
+				start = start.AddTicks(time_start.Time.Ticks);
 
-				bool success = await ViewModel.AddItineraryToTravel(txt_title.Text, start, Convert.ToInt32(duration.Text));
+				ItineraryItem success = await ViewModel.AddItineraryToTravel(txt_title.Text, start, Convert.ToInt32(duration.Text));
 
-				if (success) {
+				if (success != null) {
+					ViewModel.Travel.Itineraries.Add(success);
 					Frame.GoBack();
 				}
 				else {
@@ -74,13 +74,34 @@ namespace TravelPacker.View.Itinerary {
 				};
 				errorbox.Children.Add(dateError);
 			}
+			//else if (date.Date.Value.Date < DateTime.Today) {
+			//	TextBlock dateError = new TextBlock() {
+			//		Text = "Date must be in the future",
+			//		Foreground = new SolidColorBrush(Colors.DarkRed)
+			//	};
+			//	errorbox.Children.Add(dateError);
+			//}
 			// Check start time
-			if (time_start.Time == null) {
+			if (time_start.Time.Ticks == -1) {
 				TextBlock startError = new TextBlock() {
 					Text = "Start time may not be empty",
 					Foreground = new SolidColorBrush(Colors.DarkRed)
 				};
 				errorbox.Children.Add(startError);
+			}
+			// check DateTime
+			if (date.Date != null && time_start.Time.Ticks != -1) {
+				DateTime dt = date.Date.Value.DateTime.Date;
+
+				dt = dt.AddTicks(time_start.Time.Ticks);
+				if (dt < DateTime.Now) {
+					TextBlock dateError = new TextBlock() {
+						Text = "Date must be in future",
+						Foreground = new SolidColorBrush(Colors.DarkRed)
+					};
+					errorbox.Children.Add(dateError);
+				}
+
 			}
 			// Check duration
 			if (string.IsNullOrEmpty(duration.Text) || string.IsNullOrWhiteSpace(duration.Text)) {
@@ -90,27 +111,30 @@ namespace TravelPacker.View.Itinerary {
 				};
 				errorbox.Children.Add(durationError);
 			}
-			// Check duration 2
-			try {
-				Convert.ToInt32(duration.Text);
-			}
-			catch {
-				TextBlock durationError = new TextBlock() {
-					Text = "Please fill in a number as duration",
-					Foreground = new SolidColorBrush(Colors.DarkRed)
-				};
-				errorbox.Children.Add(durationError);
+			else {
+				try {
+					Convert.ToInt32(duration.Text);
+				}
+				catch {
+					TextBlock durationError = new TextBlock() {
+						Text = "Please fill in a number as duration",
+						Foreground = new SolidColorBrush(Colors.DarkRed)
+					};
+					errorbox.Children.Add(durationError);
 
+				}
 			}
+
+
 
 		}
 
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			int travelId = (int)e.Parameter;
+			Travel travel = (Travel)e.Parameter;
 
-			ViewModel.TravelId = travelId;
+			ViewModel.Travel = travel;
 
 
 		}
