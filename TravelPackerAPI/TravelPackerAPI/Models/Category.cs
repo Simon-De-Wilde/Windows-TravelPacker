@@ -8,7 +8,6 @@ namespace TravelPackerAPI.Models {
 		[Required]
 		public string Name { get; set; }
 		public IList<Item> Items { get; set; }
-		public string OverviewName => Name + "	" + Items.Where(i => i.Done).ToList().Count  + "/" + Items.Count;
 
 
 		public Category(string name) {

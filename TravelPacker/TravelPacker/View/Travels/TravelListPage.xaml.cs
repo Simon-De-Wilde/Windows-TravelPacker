@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
 using TravelPacker.Model;
+using TravelPacker.View.Itinerary;
 using TravelPacker.ViewModel;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
@@ -53,16 +54,47 @@ namespace TravelPacker.View.Travels {
 			//TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
 		}
 
-        private void btn_updateTravel_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(UpdateTravelPage), ViewModel.Travel);
-        }
+		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
+			Frame.Navigate(typeof(UpdateTravelPage), ViewModel.Travel);
+		}
 
-        private void btn_route_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(RoutePage), ViewModel.Travel);
-        }
+		private void btn_route_Click(object sender, RoutedEventArgs e) {
+			Frame.Navigate(typeof(RoutePage), ViewModel.Travel);
+		}
 
+		private void add_itineraryItem_Click(object sender, RoutedEventArgs e) {
+			Frame.Navigate(typeof(AddItineraryPage), ViewModel.Travel);
+		}
+
+		private async void GV_itineraryCard_RightTapped(object sender, RightTappedRoutedEventArgs e) {
+			var selectedItineraryItem = (sender as Grid).DataContext as ItineraryItem;
+
+			if (selectedItineraryItem != null) {
+				ContentDialog cd = new ContentDialog() {
+					Title = "Delete itinerary item",
+					Content = $"Do you wish to delete itinerary item '{selectedItineraryItem.Title}'? This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
+
+				ContentDialogResult result = await cd.ShowAsync();
+				if (result == ContentDialogResult.Primary) {
+
+					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
+
+					if (success) {
+						// TODO De lijst wordt niet geupdate in de view
+						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
+						//DataContext = ViewModel; WERKT OOK NIET...
+					}
+					else {
+
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+				}
+			}
+		}
 		private void btn_AddTask_Click(object sender, RoutedEventArgs e)
         {
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
@@ -83,7 +115,6 @@ namespace TravelPacker.View.Travels {
 				};
 
 				ContentDialogResult result = await cd.ShowAsync();
-
 				if (result == ContentDialogResult.Primary)
 				{
 
@@ -98,13 +129,13 @@ namespace TravelPacker.View.Travels {
 					}
 					else
 					{
-
+						
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
 				}
 			}
 		}
-    }
+	}
 }
 

@@ -9,46 +9,36 @@ using TravelPacker.Util;
 using Windows.Web.Http;
 using Windows.Web.Http.Headers;
 
-namespace TravelPacker.ViewModel
-{
-    public class TravelsDetailPageViewModel
-    {
-        public Travel Travel { get; set; }
-        public TravelsDetailPageViewModel()
-        {
-        }
+namespace TravelPacker.ViewModel {
+	public class TravelsDetailPageViewModel {
+		public Travel Travel { get; set; }
 
+		public TravelsDetailPageViewModel() {
+		}
 
-		public async void GetTravel(int id)
-		{
-			Travel = null;
-			try
-			{
+		public async Task<bool> DeleteItineraryItem(ItineraryItem ii) {
+			try {
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/ItineraryItems/{ii.Id}"));
 
-				var json = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/" + id));
-
-				var travel = JsonConvert.DeserializeObject<Travel>(json);
-				Travel = travel;
+				if (deleteResult.IsSuccessStatusCode) {
+					return true;
+				}
+				else {
+					throw new Exception();
+				}
 			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
+			catch (Exception e) {
+				return false;
 			}
-
-
 		}
-
+		
 		public async Task<bool> DeleteTask(TravelTask task)
 		{
 			try
-			{
-				HttpClient client = new HttpClient();
-
-				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
-
+			{				
 				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode)
@@ -65,8 +55,6 @@ namespace TravelPacker.ViewModel
 			{
 				return false;
 			}
-
-
 		}
 	}
 }
