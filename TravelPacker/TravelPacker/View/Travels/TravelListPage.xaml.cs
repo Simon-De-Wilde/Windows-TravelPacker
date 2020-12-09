@@ -45,5 +45,12 @@ namespace TravelPacker.View.Travels
 
             viewModel.Travel = travel;
         }
+
+        private void onItemChecked(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (sender as CheckBox).Content;
+            (sender as CheckBox).Foreground.Opacity = 100%;
+           // TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
+        }
     }
 }

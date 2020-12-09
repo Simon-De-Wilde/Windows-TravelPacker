@@ -17,55 +17,57 @@ namespace TravelPackerAPI.Data {
 		}
 
 		public async Task InitializeData() {
-			//_dbContext.Database.EnsureDeleted();
-			//if (_dbContext.Database.EnsureCreated()) {
-			if (!_dbContext.Users.Any()) {
+			_dbContext.Database.EnsureDeleted();
+			if (_dbContext.Database.EnsureCreated()) {
+				if (!_dbContext.Users.Any())
+				{
 
-				User student = new User("Student", "McStudent", "student@hogent.be");
-				User prof = new User("Prof", "McProf", "prof@hogent.be");
+					User student = new User("Student", "McStudent", "student@hogent.be");
+					User prof = new User("Prof", "McProf", "prof@hogent.be");
 
-				IList<User> users = new List<User>() { student, prof };
+					IList<User> users = new List<User>() { student, prof };
 
-				_dbContext.Users.AddRange(users);
+					_dbContext.Users.AddRange(users);
 
-				await RegisterUsers(users);
+					await RegisterUsers(users);
 
 
-				Travel travelQL = new Travel("Quartier Latin - summer 2023", "Paris", null);
-				Travel travelKC = new Travel("Kings Cross - spring 2024", "London", null);
+					Travel travelQL = new Travel("Quartier Latin - summer 2023", "Paris", null);
+					Travel travelKC = new Travel("Kings Cross - spring 2024", "London", null);
 
-				student.Travels.Add(travelQL);
-				prof.Travels.Add(travelKC);
-				_dbContext.SaveChanges();
+					student.Travels.Add(travelQL);
+					prof.Travels.Add(travelKC);
+					_dbContext.SaveChanges();
 
-				Category catBathroomStuff = new Category("Bathroom Stuff");
-				travelQL.Categories.Add(catBathroomStuff);
+					Category catBathroomStuff = new Category("Bathroom Stuff");
+					travelQL.Categories.Add(catBathroomStuff);
 
-				Item toothbrush = new Item("toothbrush");
-				toothbrush.Done = true;
-				catBathroomStuff.Items.Add(toothbrush);
+					Item toothbrush = new Item("toothbrush");
+					toothbrush.Done = true;
+					catBathroomStuff.Items.Add(toothbrush);
 
-				TravelTask refillShampoo = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
-				travelQL.Tasks.Add(refillShampoo);
+					TravelTask refillShampoo = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
+					travelQL.Tasks.Add(refillShampoo);
 
-				ItineraryItem itinBoard = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
-				travelQL.Itineraries.Add(itinBoard);
+					ItineraryItem itinBoard = new ItineraryItem("Board", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
+					travelQL.Itineraries.Add(itinBoard);
 
-				_dbContext.SaveChanges();
+					_dbContext.SaveChanges();
 
-				Category catSnacks = new Category("Snacks");
-				travelKC.Categories.Add(catSnacks);
+					Category catSnacks = new Category("Snacks");
+					travelKC.Categories.Add(catSnacks);
 
-				Item chips = new Item("chips", 3);
-				catSnacks.Items.Add(chips);
-				TravelTask makePopcorn = new TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
-				makePopcorn.Done = true;
-				travelKC.Tasks.Add(makePopcorn);
+					Item chips = new Item("chips", 3);
+					catSnacks.Items.Add(chips);
+					TravelTask makePopcorn = new TravelTask("Make popcorn", new TimeSpan(0, 20, 0));
+					makePopcorn.Done = true;
+					travelKC.Tasks.Add(makePopcorn);
 
-				ItineraryItem itinTaxi = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
-				travelKC.Itineraries.Add(itinTaxi);
+					ItineraryItem itinTaxi = new ItineraryItem("Taxi ride", DateTime.Now.AddDays(1), new TimeSpan(0, 30, 0));
+					travelKC.Itineraries.Add(itinTaxi);
 
-				_dbContext.SaveChanges();
+					_dbContext.SaveChanges();
+				}
 
 			}
 		}
