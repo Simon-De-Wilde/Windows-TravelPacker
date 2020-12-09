@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TravelPacker.Model;
+using TravelPacker.View.Itinerary;
 using TravelPacker.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -50,6 +51,10 @@ namespace TravelPacker.View.Travels {
 
 		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
 			Frame.Navigate(typeof(UpdateTravelPage), viewModel.Travel);
+		}
+
+		private void add_itineraryItem_Click(object sender, RoutedEventArgs e) {
+			Frame.Navigate(typeof(AddItineraryPage), viewModel.Travel.Id);
 		}
 	}
 }

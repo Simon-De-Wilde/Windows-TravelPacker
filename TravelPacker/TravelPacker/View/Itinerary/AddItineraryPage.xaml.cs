@@ -1,0 +1,118 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using TravelPacker.Model;
+using TravelPacker.ViewModel;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace TravelPacker.View.Itinerary {
+	/// <summary>
+	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// </summary>
+	public sealed partial class AddItineraryPage : Page {
+
+		public AddItineraryPageViewModel ViewModel { get; set; }
+
+		public AddItineraryPage() {
+			this.InitializeComponent();
+			ViewModel = new AddItineraryPageViewModel();
+		}
+
+		private async void Button_Click(object sender, RoutedEventArgs e) {
+
+			errorbox.Children.Clear();
+
+			CheckForm();
+
+			if (!errorbox.Children.Any()) { // no errors
+				var startdatum = date.Date;
+				DateTime start = startdatum.Value.DateTime;
+				start.AddTicks(time_start.Time.Ticks);
+
+				bool success = await ViewModel.AddItineraryToTravel(txt_title.Text, start, Convert.ToInt32(duration.Text));
+
+				if (success) {
+					Frame.GoBack();
+				}
+				else {
+					MessageDialog md = new MessageDialog("Something went wrong, itinerary item was not created. Try again later");
+					await md.ShowAsync();
+				}
+			}
+
+		}
+
+		private void CheckForm() {
+			// Check title
+			if (string.IsNullOrEmpty(txt_title.Text) || string.IsNullOrWhiteSpace(txt_title.Text)) {
+				TextBlock titleError = new TextBlock() {
+					Text = "Title may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(titleError);
+			}
+			// Check date
+			if (date.Date == null) {
+				TextBlock dateError = new TextBlock() {
+					Text = "Date may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(dateError);
+			}
+			// Check start time
+			if (time_start.Time == null) {
+				TextBlock startError = new TextBlock() {
+					Text = "Start time may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(startError);
+			}
+			// Check duration
+			if (string.IsNullOrEmpty(duration.Text) || string.IsNullOrWhiteSpace(duration.Text)) {
+				TextBlock durationError = new TextBlock() {
+					Text = "Duration may not be empty",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(durationError);
+			}
+			// Check duration 2
+			try {
+				Convert.ToInt32(duration.Text);
+			}
+			catch {
+				TextBlock durationError = new TextBlock() {
+					Text = "Please fill in a number as duration",
+					Foreground = new SolidColorBrush(Colors.DarkRed)
+				};
+				errorbox.Children.Add(durationError);
+
+			}
+
+		}
+
+		protected override void OnNavigatedTo(NavigationEventArgs e) {
+			base.OnNavigatedTo(e);
+
+			int travelId = (int)e.Parameter;
+
+			ViewModel.TravelId = travelId;
+
+
+		}
+	}
+}

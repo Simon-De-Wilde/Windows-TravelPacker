@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-09T09:12:07.001</Modified>
+      <Modified>2020-12-09T11:30:56.273</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.exe">
       <PackagePath>entrypoint\TravelPacker.exe</PackagePath>
-      <Modified>2020-12-09T09:12:05.318</Modified>
+      <Modified>2020-12-09T11:30:54.828</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -186,39 +186,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.xr.xml">
       <PackagePath>TravelPacker.xr.xml</PackagePath>
-      <Modified>2020-12-09T09:12:05.030</Modified>
+      <Modified>2020-12-09T10:58:06.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.079</Modified>
+      <Modified>2020-12-09T11:29:04.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.079</Modified>
+      <Modified>2020-12-09T11:29:04.631</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Itinerary\AddItineraryPage.xbf">
+      <PackagePath>View\Itinerary\AddItineraryPage.xbf</PackagePath>
+      <Modified>2020-12-09T11:29:04.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.079</Modified>
+      <Modified>2020-12-09T11:29:04.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelListPage.xbf">
       <PackagePath>View\Travels\TravelListPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.072</Modified>
+      <Modified>2020-12-09T11:29:04.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf">
       <PackagePath>View\Users\LoginPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.079</Modified>
+      <Modified>2020-12-09T11:29:04.632</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf">
       <PackagePath>View\Users\RegistrationPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.080</Modified>
+      <Modified>2020-12-09T11:29:04.632</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelsPage.xbf">
       <PackagePath>View\Travels\TravelsPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.080</Modified>
+      <Modified>2020-12-09T11:29:04.632</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\UpdateTravelPage.xbf">
       <PackagePath>View\Travels\UpdateTravelPage.xbf</PackagePath>
-      <Modified>2020-12-09T09:12:05.080</Modified>
+      <Modified>2020-12-09T11:29:04.632</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -226,11 +230,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-09T08:46:10.215</Modified>
+      <Modified>2020-12-09T10:58:07.769</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\TravelPacker.exe">
       <PackagePath>TravelPacker.exe</PackagePath>
-      <Modified>2020-12-09T09:12:06.985</Modified>
+      <Modified>2020-12-09T11:30:56.267</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
