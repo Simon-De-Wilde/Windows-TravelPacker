@@ -34,25 +34,24 @@ namespace TravelPacker.ViewModel {
 				return false;
 			}
 		}
-		
-		public async Task<bool> DeleteTask(TravelTask task)
-		{
-			try
-			{				
+
+		public async Task<bool> DeleteTask(TravelTask task) {
+			try {
+				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+
 				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"));
 
-				if (deleteResult.IsSuccessStatusCode)
-				{
+				if (deleteResult.IsSuccessStatusCode) {
 					Travel.Tasks.Remove(task);
 					return true;
 				}
-				else
-				{
+				else {
 					throw new Exception();
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				return false;
 			}
 		}
