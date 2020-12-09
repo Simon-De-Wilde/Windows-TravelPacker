@@ -10,9 +10,11 @@ namespace TravelPackerAPI.Models {
 		// own properties
 		[Required]
 		public int Amount { get; set; }
+		public bool Done { get; set; }
 
 		public Item(string title, int amount = 1) : base(title) {
 			Amount = amount;
+			Done = false;
 		}
 
 		protected Item() {

@@ -17,6 +17,10 @@ namespace TravelPacker.Model {
 		[JsonProperty("items")]
 		public IList<Item> Items { get; set; }
 
+		[Required]
+		[JsonProperty("overviewName")]
+		public string OverviewName { get; }
+
 		public double Progress {
 			get {
 				return Items.Count == 0 ? 0 : Convert.ToDouble(Items.Count(i => i.Done)) / Items.Count * 100;
