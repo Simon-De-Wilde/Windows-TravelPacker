@@ -14,7 +14,7 @@ namespace TravelPacker.Model {
 		public TimeSpan Duration { get; }
 
 		[Required]
-		public DateTime End { get => Start.AddSeconds(Duration.Seconds); }
+		public DateTime End { get => Start.AddSeconds(Duration.TotalSeconds); }
 
 		[Required]
 		[JsonProperty("doing")]
@@ -43,5 +43,8 @@ namespace TravelPacker.Model {
 			_doing = End < DateTime.Now;
 			return Doing;
 		}
+
+		public bool Done { get => End < DateTime.Now; }
+
 	}
 }

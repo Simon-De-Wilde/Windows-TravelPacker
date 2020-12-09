@@ -6,10 +6,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-      xmlns:devicefam="using:TravelPacker.Util"
+      xmlns:util="using:TravelPacker.Util"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
+        <util:BooleanToVisibilityConverter x:Key="bool2vis" />
         <Style x:Key="ListViewItemContainerStyle1"
                TargetType="ListViewItem">
             <Setter Property="FontFamily"
@@ -139,7 +140,7 @@
             <VisualStateGroup>
                 <VisualState x:Name="mobileView">
                     <VisualState.StateTriggers>
-                        <devicefam:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
+                        <util:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="txt_header.Orientation"
@@ -171,11 +172,13 @@
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
             <!--header-->
-            <StackPanel Orientation="Horizontal" x:Name="txt_header" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal"
+                        x:Name="txt_header"
+                        HorizontalAlignment="Left">
                 <TextBlock Margin="10 0 40 20"
                            TextWrapping="Wrap"
                            Style="{ThemeResource HeaderTextBlockStyle}"
-                           Text="{x:Bind viewModel.Travel.Name}" />
+                           Text="{x:Bind ViewModel.Travel.Name}" />
                 <Button x:Name="btn_updateTravel"
                         Margin="0,-15,0,0"
                         Click="btn_updateTravel_Click"
@@ -185,7 +188,7 @@
                         <SymbolIcon Symbol="Edit"
                                     Margin="5"
                                     VerticalAlignment="Center" />
-                        <TextBlock Text="Update"
+                        <TextBlock Text="Edit"
                                    VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
@@ -201,7 +204,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Text="Packinglist"
+                <TextBlock Text="Packing list"
                            HorizontalAlignment="Center"
                            Grid.Column="0"
                            Padding="25 0 25 0"
@@ -211,7 +214,7 @@
                            Grid.Column="1"
                            Padding="25 0 25 0"
                            Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
-                <TextBlock Text="Route"
+                <TextBlock Text="Itinerary"
                            HorizontalAlignment="Center"
                            Grid.Column="2"
                            Padding="25 0 25 0"
@@ -229,7 +232,7 @@
                 <!-- List of items to pack -->
                 <ListView x:Name="listView"
                           ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
-                          ItemsSource="{x:Bind viewModel.Travel.Categories}">
+                          ItemsSource="{x:Bind ViewModel.Travel.Categories}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="model:Category">
                             <controls:Expander HorizontalContentAlignment="Left"
@@ -251,7 +254,69 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <!-- List of tasks -->
-                <!-- Map + address -->
+                <!-- Itinerary -->
+                <ScrollViewer Grid.Row="0"
+                              Grid.Column="2">
+                    <StackPanel Orientation="Vertical">
+                        <ListView x:Name="lv_itinerary"
+                                  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                                  IsTapEnabled="False"
+                                  ItemsSource="{x:Bind ViewModel.Travel.Itineraries, Mode=TwoWay}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="model:ItineraryItem">
+                                    <Grid x:Name="GV_itineraryCard"
+                                          Background="LightGray"
+                                          Padding="10"
+                                          Width="500"
+                                          Margin="5"
+                                          IsRightTapEnabled="True"
+                                          IsTapEnabled="False"
+                                          RightTapped="GV_itineraryCard_RightTapped">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Orientation="Horizontal"
+                                                    Grid.Column="0"
+                                                    Grid.Row="0"
+                                                    Grid.ColumnSpan="2">
+                                            <TextBlock Text="{x:Bind Title}" />
+                                            <SymbolIcon Symbol="Accept"
+                                                        Margin="5,0,0,0"
+                                                        Visibility="{Binding Done, Converter={StaticResource bool2vis}}" />
+                                        </StackPanel>
+                                        <TextBlock Text="   From:"
+                                                   Grid.Column="0"
+                                                   Grid.Row="1" />
+                                        <!--TODO formatten-->
+                                        <TextBlock Text="{x:Bind Start}"
+                                                   Grid.Column="1"
+                                                   Grid.Row="1" />
+                                        <TextBlock Text="   Until:"
+                                                   Grid.Column="0"
+                                                   Grid.Row="2" />
+                                        <!--TODO formatten-->
+                                        <TextBlock Text="{x:Bind End, }"
+                                                   Grid.Column="1"
+                                                   Grid.Row="2" />
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Button x:Name="add_itineraryItem"
+                                Click="add_itineraryItem_Click"
+                                Margin="17">
+                            <SymbolIcon Symbol="Add"
+                                        VerticalAlignment="Center" />
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
             </Grid>
         </StackPanel>
     </ScrollViewer>

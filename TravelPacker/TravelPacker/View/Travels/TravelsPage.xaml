@@ -83,7 +83,6 @@
                       Margin="0,20,0,0"
                       HorizontalContentAlignment="Left"
                       HorizontalAlignment="Left"
-                      IsRightTapEnabled="True"
                       Tapped="TravelsGV_Tapped">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="model:Travel">

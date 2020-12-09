@@ -37,14 +37,6 @@ namespace TravelPacker.View.Travels {
 
 			ViewModel = new AddTravelPageViewModel();
 
-			// TODO make image random --> werkt niet omdat de uri niet kan gecontroleerd worden of zoiets...
-			//Random rd = new Random();
-			//int rdnumber = rd.Next(1, 7);
-
-			//String uriString = $"../Assets/BackgroundImages/travelBG{rdnumber}.jpg";
-
-			//bgImage.ImageSource = new BitmapImage(new Uri(uriString, UriKind.Relative));
-
 		}
 
 		private async void Button_Click(object sender, RoutedEventArgs e) {
