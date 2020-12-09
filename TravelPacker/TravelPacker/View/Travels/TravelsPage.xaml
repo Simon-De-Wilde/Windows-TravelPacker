@@ -57,8 +57,6 @@
                                 Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
-
-
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">

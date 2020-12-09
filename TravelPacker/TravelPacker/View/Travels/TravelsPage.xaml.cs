@@ -78,9 +78,7 @@ namespace TravelPacker.View.Travels {
 			var selectedTravel = TravelsGV.SelectedItem as Travel;
 
 			if (selectedTravel != null) {
-				MessageDialog md = new MessageDialog(selectedTravel.Name);
-				md.ShowAsync();
-				Frame.Navigate(typeof (TravelListPage), selectedTravel);
+				Frame.Navigate(typeof(TravelListPage), selectedTravel);
 			}
 		}
 

@@ -59,10 +59,10 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Text" />
       <RootProperty Name="Style" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
-      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -187,12 +187,12 @@
       <RootProperty Name="Content" />
       <RootEvent Name="Checked" />
     </RootType>
-    <RootType FullName="TravelPacker.View.Travels.TravelListPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
       <RootProperty Name="Symbol" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="TravelPacker.View.Travels.TravelListPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox" />
     <RootType FullName="TravelPacker.View.Users.LoginPage" />
     <RootType FullName="TravelPacker.View.Users.RegistrationPage" />
