@@ -57,6 +57,10 @@ namespace TravelPacker.View.Travels {
 			Frame.Navigate(typeof(UpdateTravelPage), ViewModel.Travel);
 		}
 
+		private void btn_route_Click(object sender, RoutedEventArgs e) {
+			Frame.Navigate(typeof(RoutePage), ViewModel.Travel);
+		}
+
 		private void add_itineraryItem_Click(object sender, RoutedEventArgs e) {
 			Frame.Navigate(typeof(AddItineraryPage), ViewModel.Travel);
 		}

@@ -17,9 +17,9 @@ namespace TravelPacker.Model {
 		[JsonProperty("items")]
 		public IList<Item> Items { get; set; }
 
-		[Required]
-		[JsonProperty("overviewName")]
-		public string OverviewName { get; }
+		public string OverviewName => Name + "	" + Items.Where(i => i.Done).ToList().Count + "/" + Items.Count;
+
+
 
 		public double Progress {
 			get {
