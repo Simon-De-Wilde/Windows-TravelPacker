@@ -40,11 +40,18 @@ namespace TravelPackerAPI.Data {
 					_dbContext.SaveChanges();
 
 					Category catBathroomStuff = new Category("Bathroom Stuff");
+					Category catElectronics = new Category("Electronics");
 					travelQL.Categories.Add(catBathroomStuff);
+					travelQL.Categories.Add(catElectronics);
 
 					Item toothbrush = new Item("toothbrush");
 					toothbrush.Done = true;
 					catBathroomStuff.Items.Add(toothbrush);
+
+					Item laptop = new Item("laptop");
+					Item phone = new Item("phone");
+					catElectronics.Items.Add(laptop);
+					catElectronics.Items.Add(phone);
 
 					TravelTask refillShampoo = new TravelTask("Refill shampoo", new TimeSpan(0, 20, 0));
 					travelQL.Tasks.Add(refillShampoo);

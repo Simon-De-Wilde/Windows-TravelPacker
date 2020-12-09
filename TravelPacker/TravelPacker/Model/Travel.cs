@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -44,7 +45,7 @@ namespace TravelPacker.Model {
 
 		[Required]
 		[JsonProperty("categories")]
-		public IList<Category> Categories { get; set; }
+		public ObservableCollection<Category> Categories { get; set; }
 
 		[Required]
 		[JsonProperty("tasks")]
@@ -58,13 +59,13 @@ namespace TravelPacker.Model {
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
-			Categories = new List<Category>();
+			Categories = new ObservableCollection<Category>();
 			Tasks = new List<TravelTask>();
 			Itineraries = new List<ItineraryItem>();
 		}
 
 		[JsonConstructor]
-		protected Travel(int id, string name, string location, string imageUrl, IList<Category> categories, IList<TravelTask> tasks, IList<ItineraryItem> itineraries) {
+		protected Travel(int id, string name, string location, string imageUrl, ObservableCollection<Category> categories, IList<TravelTask> tasks, IList<ItineraryItem> itineraries) {
 			// Deserializeren
 			Id = id;
 			Name = name;

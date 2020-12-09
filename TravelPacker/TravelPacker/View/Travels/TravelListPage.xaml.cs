@@ -7,6 +7,7 @@ using TravelPacker.Model;
 using TravelPacker.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -55,10 +56,29 @@ namespace TravelPacker.View.Travels
 
         private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //e.Handled = true;
             var selectedCategory = (sender as FontIcon).DataContext as Category;
 
-            //bool result = await ViewModel.DeleteCategory(selectedCategory);
+            if (selectedCategory != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedCategory.Name);
+                //md.ShowAsync();
+                
+                await viewModel.DeleteCategory(selectedCategory);
+            }
+
+        }
+
+        private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var selectedItem = (sender as FontIcon).DataContext as Item;
+
+            if (selectedItem != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedItem.Title);
+                //md.ShowAsync();
+
+                await viewModel.DeleteItem(selectedItem);
+            }
         }
     }
 }

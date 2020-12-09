@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -15,7 +16,7 @@ namespace TravelPacker.Model {
 
 		[Required]
 		[JsonProperty("items")]
-		public IList<Item> Items { get; set; }
+		public ObservableCollection<Item> Items { get; set; }
 
 		public double Progress {
 			get {
@@ -26,11 +27,11 @@ namespace TravelPacker.Model {
 
 		public Category(string name) {
 			Name = name;
-			Items = new List<Item>();
+			Items = new ObservableCollection<Item>();
 		}
 
 		[JsonConstructor]
-		protected Category(int id, string name, IList<Item> items) {
+		protected Category(int id, string name, ObservableCollection<Item> items) {
 			// Deserializeren
 			Id = id;
 			Name = name;

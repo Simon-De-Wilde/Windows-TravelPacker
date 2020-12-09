@@ -52,129 +52,138 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <ListView x:Name="LVCategories"
+                <!-- List of Items -->
+
+                <StackPanel>
+                    <ListView x:Name="LVCategories"
+                          ItemsSource="{x:Bind viewModel.Travel.Categories}"
                           Grid.Column="0">
 
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="Padding" Value="0"/>
-                            <Setter Property="Margin" Value="0"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="Margin" Value="0"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
 
-                    <ListViewItem>
-                        <Grid x:Name="CategoryGrid" 
-                              Background="#FFF2F2F2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Category">
+                                <Grid x:Name="CategoryGrid" 
+                                      Background="#FFF2F2F2">
 
-                            <controls:Expander  x:Name="EPCategory"
-                                                IsExpanded="True"
-                                                Background="#FFF2F2F2"
-                                                Grid.Column="0">
+                                    <controls:Expander x:Name="EPCategory"
+                                                       IsExpanded="True"
+                                                       Background="#FFF2F2F2">
 
-                                <controls:Expander.Header>
-                                    <TextBlock Text="Category_1" 
-                                               FontWeight="Bold"/>
-                                </controls:Expander.Header>
+                                        <controls:Expander.Header>
+                                            <TextBlock Text="{x:Bind Name}"
+                                                       FontWeight="Bold"/>
+                                        </controls:Expander.Header>
 
-                                <ListView>
-                                    <ItemsControl x:Name="ItemsIC">
-                                        <Grid x:Name="ItemGrid" 
-                                          Height="40">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150" />
-                                            <ColumnDefinition Width="auto"/>
-                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <ItemsControl x:Name="ItemsIC" 
+                                                          ItemsSource="{Binding Items}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate x:DataType="model:Item">
+                                                        <Grid x:Name="ItemGrid" 
+                                                              Height="40">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="150" />
+                                                                <ColumnDefinition Width="auto"/>
+                                                            </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="checkItem"
-                                                  Grid.Column="0"
-                                                  Content="Item_1" 
-                                                  VerticalAlignment="Center" />
+                                                            <CheckBox x:Name="checkItem"
+                                                                      Grid.Column="0"
+                                                                      Content="{x:Bind Title}" 
+                                                                      VerticalAlignment="Center" />
 
-                                        <FontIcon x:Name="RemoveItem" 
-                                                  Grid.Column="1" 
-                                                  FontFamily="Segoe MDL2 Assets" 
-                                                  Glyph="&#xE74D;" 
-                                                  Margin="10,0,10,0" 
-                                                  HorizontalAlignment="Right" />
-                                    </Grid>
-                                    </ItemsControl>
-                                    <ItemsControl>
-                                        <Grid x:Name="NewItemGrid" 
-                                              Height="40">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="150" />
-                                                <ColumnDefinition Width="auto"/>
-                                            </Grid.ColumnDefinitions>
+                                                            <FontIcon x:Name="RemoveItem" 
+                                                                       Grid.Column="1" 
+                                                                       FontFamily="Segoe MDL2 Assets" 
+                                                                       Glyph="&#xE74D;" 
+                                                                       Margin="10,0,10,0" 
+                                                                       HorizontalAlignment="Right" 
+                                                                       Tapped="RemoveItem_Tapped"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
 
-                                            <TextBox x:Name="NewItemTitle" 
-                                                     Grid.Column="0" 
-                                                     PlaceholderText="Add new Item" 
-                                                     VerticalAlignment="Center"
-                                                     BorderBrush="Transparent"/>
+                                            <ItemsControl>
+                                                <Grid x:Name="NewItemGrid" 
+                                                      Height="40">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="150" />
+                                                        <ColumnDefinition Width="auto"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                            <FontIcon x:Name="AddItem" 
-                                                      Grid.Column="1" 
-                                                      FontFamily="Segoe MDL2 Assets" 
-                                                      Glyph="&#xE710;" 
-                                                      Margin="10,0,10,0" 
-                                                      HorizontalAlignment="Right"/>
-                                        </Grid>
-                                    </ItemsControl>
-                                </ListView>
+                                                    <TextBox x:Name="NewItemTitle" 
+                                                             Grid.Column="0" 
+                                                             PlaceholderText="Add new Item" 
+                                                             VerticalAlignment="Center"
+                                                             BorderBrush="Transparent"/>
 
-                            </controls:Expander>
+                                                    <FontIcon x:Name="AddItem" 
+                                                              Grid.Column="1" 
+                                                              FontFamily="Segoe MDL2 Assets" 
+                                                              Glyph="&#xE710;" 
+                                                              Margin="10,0,10,0" 
+                                                              HorizontalAlignment="Right"/>
+                                                </Grid>
+                                            </ItemsControl>
+                                        </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" 
+                                    </controls:Expander>
+
+                                    <StackPanel Orientation="Horizontal" 
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
                                         Margin="10,10,10,0">
-                                <TextBlock Text="0/" />
+                                        <TextBlock Text="0/" />
 
-                                <TextBlock Text="1" FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding Items.Count}" FontWeight="Bold"/>
 
-                                <FontIcon x:Name="RemoveCategory" 
+                                        <FontIcon x:Name="RemoveCategory" 
                                           FontFamily="Segoe MDL2 Assets" 
                                           Glyph="&#xE74D;" 
                                           Margin="20,0,0,0" 
-                                          HorizontalAlignment="Right"/>
-                            </StackPanel>
-                        </Grid>
-                    </ListViewItem>
+                                          HorizontalAlignment="Right"
+                                          Tapped="RemoveCategory_Tapped"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                    <ItemsControl>
-                        <Grid x:Name="NewCategoryGrid" 
-                              Height="40">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
+                    </ListView>
+                    
+                    <Grid x:Name="NewCategoryGrid" 
+                          Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-                            <TextBox x:Name="NewCategoryTitle" 
-                                     Grid.Column="0" 
-                                     VerticalAlignment="Center" 
-                                     PlaceholderText="Add new category" 
-                                     Margin="30,0,0,0" 
-                                     BorderBrush="Transparent"/>
+                        <TextBox x:Name="NewCategoryTitle" 
+                                         Grid.Column="0" 
+                                         VerticalAlignment="Center" 
+                                         PlaceholderText="Add new category" 
+                                         Margin="30,0,0,0" 
+                                         BorderBrush="Transparent"/>
 
-                            <StackPanel Orientation="Horizontal" 
-                                        HorizontalAlignment="Right" 
-                                        Grid.Column="1">
-                                <FontIcon x:Name="AddCategory" 
-                                          Grid.Column="1" 
-                                          FontFamily="Segoe MDL2 Assets" 
-                                          Glyph="&#xE710;" 
-                                          Margin="10,0,10,0" 
-                                          HorizontalAlignment="Right"/>
-                            </StackPanel>
-                        </Grid>
-                    </ItemsControl>
-
-                </ListView>
-
+                        <StackPanel Orientation="Horizontal" 
+                                            HorizontalAlignment="Right" 
+                                            Grid.Column="1">
+                            <FontIcon x:Name="AddCategory" 
+                                              Grid.Column="1" 
+                                              FontFamily="Segoe MDL2 Assets" 
+                                              Glyph="&#xE710;" 
+                                              Margin="10,0,10,0" 
+                                              HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                
                 <!-- List of tasks -->
                 <!-- Map + address -->
             </Grid>
