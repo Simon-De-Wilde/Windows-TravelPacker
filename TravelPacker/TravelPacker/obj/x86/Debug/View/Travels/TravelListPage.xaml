@@ -1,4 +1,4 @@
-﻿<Page x:ConnectionId='1' x:Class="TravelPacker.View.Travels.TravelListPage"
+﻿<Page x:ConnectionId='1' xmlns:my="using:Windows.UI.Xaml.Controls.Maps"  x:Class="TravelPacker.View.Travels.TravelListPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="using:TravelPacker.View.Travels"
@@ -168,26 +168,28 @@
             <Grid Padding="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="500" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <!-- List of items to pack -->
-                <ListView x:ConnectionId='5' x:Name="listView" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                <ListView x:ConnectionId='5' Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
                                                                             >
                     <ListView.ItemTemplate>
                         <DataTemplate                            >
-                            <controls:Expander x:ConnectionId='6' HorizontalContentAlignment="Left"
-                                                                     
+                            <controls:Expander x:ConnectionId='10' HorizontalContentAlignment="Left"
+                                                                             
                                                Width="400">
-                                <ListView x:ConnectionId='7' HorizontalAlignment="Left"
+
+                                <ListView x:ConnectionId='11' HorizontalAlignment="Left"
                                                                       >
                                     <ListView.ItemTemplate>
                                         <DataTemplate                        >
-                                            <StackPanel x:ConnectionId='8' Orientation="Vertical">
-                                                <CheckBox x:ConnectionId='9'                                                 />
+                                            <StackPanel x:ConnectionId='12' Orientation="Vertical">
+                                                <CheckBox x:ConnectionId='13'                                                 />
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -196,8 +198,27 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Viewbox Grid.Column="0" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
+                    <SymbolIcon Symbol="World"/>
+                </Viewbox>
                 <!-- List of tasks -->
+                <ListView x:ConnectionId='6' Grid.Column="1" Grid.Row="0" Margin="50 0 0 0" BorderBrush="Black" BorderThickness="0 0 1 0"  x:Name="listView2" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"                                              >
+                    <ListView.ItemTemplate>
+                        <DataTemplate                              >
+                            <StackPanel x:ConnectionId='8' Orientation="Vertical">
+                                <CheckBox x:ConnectionId='9'                                                 />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Viewbox Grid.Column="1" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
+                    <SymbolIcon Symbol="Bullets"/>
+                </Viewbox>
                 <!-- Map + address -->
+                <my:MapControl x:ConnectionId='7' x:Name="MapWithRoute" Grid.Column="2" Grid.Row="0" MapServiceToken="JVqojfdIaPkyuzaFrYBV~bJgxian6HGZniryNCkjkig~Ai-9hZk3QI246eAOo7FRy7GWRZ8SaAROhSMzO7SRqR5mhNAenozBLI2Fq6UfL6Yd"/>
+                <Viewbox Grid.Column="2" Grid.Row="1" Margin="0 30 0 0" MaxHeight="60" MaxWidth="60">
+                    <SymbolIcon Symbol="Map"/>
+                </Viewbox>
             </Grid>
         </StackPanel>
     </ScrollViewer>

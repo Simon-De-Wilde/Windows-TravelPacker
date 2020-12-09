@@ -10,7 +10,6 @@ namespace TravelPacker.ViewModel
     public class TravelsDetailPageViewModel
     {
         public Travel Travel { get; set; }
-
         public TravelsDetailPageViewModel()
         {
         }
