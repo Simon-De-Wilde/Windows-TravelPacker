@@ -13,6 +13,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Services.Maps;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -100,6 +101,76 @@ namespace TravelPacker.View.Travels {
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
         }
 
+        private void onItemChecked(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (sender as CheckBox).Content;
+            (sender as CheckBox).Foreground.Opacity = 1;
+            // TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
+        }
+
+        private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var selectedCategory = (sender as FontIcon).DataContext as Category;
+
+            if (selectedCategory != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedCategory.Name);
+                //md.ShowAsync();
+                
+                await viewModel.DeleteCategory(selectedCategory);
+            }
+
+        }
+
+        private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var selectedItem = (sender as FontIcon).DataContext as Item;
+
+            if (selectedItem != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedItem.Title);
+                //md.ShowAsync();
+
+                await viewModel.DeleteItem(selectedItem);
+            }
+        }
+
+        private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var newCategoryTitle = NewCategoryTitle.Text;
+
+            if (newCategoryTitle != null)
+            {
+                await viewModel.addCategory(newCategoryTitle);
+                 NewCategoryTitle.Text = "";
+            }            
+        }
+
+        private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var categoryID = ((sender as FontIcon).DataContext as Category).Id;
+            var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
+
+            if (newItemTitle != null)
+            {
+                await viewModel.addItem(newItemTitle, categoryID);
+            }      
+        }
+
+        private async void CheckItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var selectedItem = (sender as CheckBox).DataContext as Item;
+            var done = (selectedItem.Done) ? false : true;
+
+            if (selectedItem != null)
+            {
+                //MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
+                //md.ShowAsync();
+
+                await viewModel.updateItem(selectedItem, done);
+            }
+        }
+    }
         private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e)
         {
 			var selectedTask = (sender as Button).DataContext as TravelTask;
