@@ -124,12 +124,13 @@
                                                              VerticalAlignment="Center"
                                                              BorderBrush="Transparent"/>
 
-                                                    <FontIcon x:Name="AddItem" 
+                                                    <FontIcon x:Name="AddItem"
                                                               Grid.Column="1" 
                                                               FontFamily="Segoe MDL2 Assets" 
                                                               Glyph="&#xE710;" 
                                                               Margin="10,0,10,0" 
-                                                              HorizontalAlignment="Right"/>
+                                                              HorizontalAlignment="Right"
+                                                              Tapped="AddItem_Tapped"/>
                                                 </Grid>
                                             </ItemsControl>
                                         </StackPanel>
@@ -179,7 +180,8 @@
                                               FontFamily="Segoe MDL2 Assets" 
                                               Glyph="&#xE710;" 
                                               Margin="10,0,10,0" 
-                                              HorizontalAlignment="Right"/>
+                                              HorizontalAlignment="Right"
+                                              Tapped="AddCategory_Tapped"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>

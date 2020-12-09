@@ -95,5 +95,52 @@ namespace TravelPacker.ViewModel
 			catch (Exception e) { return false; }
 		}
 
+		public async Task<bool> addCategory(string title)
+		{
+
+			try
+			{
+				Category newCategory = new Category(title);
+				var json = JsonConvert.SerializeObject(newCategory);
+
+				HttpClient client = new HttpClient();
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+
+				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/PostCategoryToTravel/{Travel.Id}"),
+					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
+
+				if (result.IsSuccessStatusCode)
+				{
+					await GetCategories();
+					return true;
+				}
+				else { throw new Exception(); }
+			}
+			catch (Exception e) { return false; }
+		}
+
+		public async Task<bool> addItem(string title, int categoryID)
+		{
+			try
+			{
+				Item newItem = new Item(title);
+
+				var json = JsonConvert.SerializeObject(newItem);
+
+				HttpClient client = new HttpClient();
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+
+				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/PostItemToCategory/{categoryID}"),
+					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
+
+				if (result.IsSuccessStatusCode)
+				{
+					await GetCategories();
+					return true;
+				}
+				else { throw new Exception(); }
+			}
+			catch (Exception e) { return false; }
+		}
 	}
 }

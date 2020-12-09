@@ -86,19 +86,19 @@
                                                           ItemsSource="{Binding Items}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate                        >
-                                                        <Grid x:ConnectionId='10' x:Name="ItemGrid" 
+                                                        <Grid x:ConnectionId='11' x:Name="ItemGrid" 
                                                               Height="40">
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="150" />
                                                                 <ColumnDefinition Width="auto"/>
                                                             </Grid.ColumnDefinitions>
 
-                                                            <CheckBox x:ConnectionId='11' x:Name="checkItem"
+                                                            <CheckBox x:ConnectionId='12' x:Name="checkItem"
                                                                       Grid.Column="0"
                                                                                                
                                                                       VerticalAlignment="Center" />
 
-                                                            <FontIcon x:ConnectionId='12' x:Name="RemoveItem" 
+                                                            <FontIcon x:ConnectionId='13' x:Name="RemoveItem" 
                                                                        Grid.Column="1" 
                                                                        FontFamily="Segoe MDL2 Assets" 
                                                                        Glyph="&#xE74D;" 
@@ -124,12 +124,13 @@
                                                              VerticalAlignment="Center"
                                                              BorderBrush="Transparent"/>
 
-                                                    <FontIcon x:Name="AddItem" 
+                                                    <FontIcon x:ConnectionId='10' x:Name="AddItem"
                                                               Grid.Column="1" 
                                                               FontFamily="Segoe MDL2 Assets" 
                                                               Glyph="&#xE710;" 
                                                               Margin="10,0,10,0" 
-                                                              HorizontalAlignment="Right"/>
+                                                              HorizontalAlignment="Right"
+                                                                                     />
                                                 </Grid>
                                             </ItemsControl>
                                         </StackPanel>
@@ -179,7 +180,8 @@
                                               FontFamily="Segoe MDL2 Assets" 
                                               Glyph="&#xE710;" 
                                               Margin="10,0,10,0" 
-                                              HorizontalAlignment="Right"/>
+                                              HorizontalAlignment="Right"
+                                                                         />
                         </StackPanel>
                     </Grid>
                 </StackPanel>

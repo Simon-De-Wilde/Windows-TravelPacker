@@ -80,5 +80,19 @@ namespace TravelPacker.View.Travels
                 await viewModel.DeleteItem(selectedItem);
             }
         }
+
+        private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            await viewModel.addCategory(NewCategoryTitle.Text);
+            NewCategoryTitle.Text = "";
+        }
+
+        private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var categoryID = ((sender as FontIcon).DataContext as Category).Id;
+            var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
+
+            await viewModel.addItem(newItemTitle, categoryID);
+        }
     }
 }
