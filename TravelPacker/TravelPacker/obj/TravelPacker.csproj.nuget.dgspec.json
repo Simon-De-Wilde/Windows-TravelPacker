@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj": {}
+    "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj": {
+    "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj",
+        "projectUniqueName": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj",
         "projectName": "TravelPacker",
-        "projectPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj",
-        "packagesPath": "C:\\Users\\Kenny Buffel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\obj\\",
+        "projectPath": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\TravelPacker.csproj",
+        "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPacker\\TravelPacker\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kenny Buffel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
