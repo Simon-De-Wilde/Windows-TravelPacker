@@ -198,37 +198,66 @@
                                 Value="vertical" />
                         <Setter Target="body.HorizontalAlignment"
                                 Value="Center" />
+                        <!--Tabel verbreder-->
+                        <Setter Target="body.MinWidth"
+                                Value="500" />
                         <!--vertical border weghalen-->
                         <Setter Target="SV_items.BorderThickness"
                                 Value="0" />
                         <Setter Target="SV_tasks.BorderThickness"
                                 Value="0" />
+                        <!--Items column verbreden-->
+                        <Setter Target="th_pl.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="SV_items.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="icon_world.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <!--World Icon verplaatsen-->
+                        <Setter Target="th_pl.(Grid.Row)"
+                                Value="1" />
+                        <Setter Target="SV_items.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="icon_world.(Grid.Row)"
+                                Value="0" />
                         <!--Task column verplaatsen-->
                         <Setter Target="th_t.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="th_t.(Grid.Row)"
+                                Value="4" />
+                        <Setter Target="th_t.(Grid.ColumnSpan)"
                                 Value="3" />
                         <Setter Target="SV_tasks.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="SV_tasks.(Grid.Row)"
-                                Value="4" />
+                                Value="5" />
+                        <Setter Target="SV_tasks.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="icon_list.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="icon_list.(Grid.Row)"
-                                Value="5" />
+                                Value="3" />
+                        <Setter Target="icon_list.(Grid.ColumnSpan)"
+                                Value="3" />
                         <!--Itinerary column verplaatsen-->
                         <Setter Target="th_i.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="th_i.(Grid.Row)"
-                                Value="6" />
+                                Value="7" />
+                        <Setter Target="th_i.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="SV_itinerary.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="SV_itinerary.(Grid.Row)"
-                                Value="7" />
+                                Value="8" />
+                        <Setter Target="SV_itinerary.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="icon_calendar.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="icon_calendar.(Grid.Row)"
-                                Value="8" />
+                                Value="6" />
+                        <Setter Target="icon_calendar.(Grid.ColumnSpan)"
+                                Value="3" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="tabletView1">
@@ -241,37 +270,66 @@
                                 Value="vertical" />
                         <Setter Target="body.HorizontalAlignment"
                                 Value="Center" />
+                        <!--Tabel verbreder-->
+                        <Setter Target="body.MinWidth"
+                                Value="500" />
                         <!--vertical border weghalen-->
                         <Setter Target="SV_items.BorderThickness"
                                 Value="0" />
                         <Setter Target="SV_tasks.BorderThickness"
                                 Value="0" />
+                        <!--Items column verbreden-->
+                        <Setter Target="th_pl.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="SV_items.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="icon_world.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <!--World Icon verplaatsen-->
+                        <Setter Target="th_pl.(Grid.Row)"
+                                Value="1" />
+                        <Setter Target="SV_items.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="icon_world.(Grid.Row)"
+                                Value="0" />
                         <!--Task column verplaatsen-->
                         <Setter Target="th_t.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="th_t.(Grid.Row)"
+                                Value="4" />
+                        <Setter Target="th_t.(Grid.ColumnSpan)"
                                 Value="3" />
                         <Setter Target="SV_tasks.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="SV_tasks.(Grid.Row)"
-                                Value="4" />
+                                Value="5" />
+                        <Setter Target="SV_tasks.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="icon_list.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="icon_list.(Grid.Row)"
-                                Value="5" />
+                                Value="3" />
+                        <Setter Target="icon_list.(Grid.ColumnSpan)"
+                                Value="3" />
                         <!--Itinerary column verplaatsen-->
                         <Setter Target="th_i.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="th_i.(Grid.Row)"
-                                Value="6" />
+                                Value="7" />
+                        <Setter Target="th_i.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="SV_itinerary.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="SV_itinerary.(Grid.Row)"
-                                Value="7" />
+                                Value="8" />
+                        <Setter Target="SV_itinerary.(Grid.ColumnSpan)"
+                                Value="3" />
                         <Setter Target="icon_calendar.(Grid.Column)"
                                 Value="0" />
                         <Setter Target="icon_calendar.(Grid.Row)"
-                                Value="8" />
+                                Value="6" />
+                        <Setter Target="icon_calendar.(Grid.ColumnSpan)"
+                                Value="3" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="desktopView1">
@@ -282,38 +340,66 @@
                     <VisualState.Setters>
                         <Setter Target="txt_header.Orientation"
                                 Value="horizontal" />
-
                         <!--vertical border tonen-->
                         <Setter Target="SV_items.BorderThickness"
-                                Value="0,0,0,1" />
+                                Value="0,0,1,0" />
                         <Setter Target="SV_tasks.BorderThickness"
-                                Value="0,0,0,1" />
+                                Value="0,0,1,0" />
+                        <!--Tabel vaste breedte weghalen-->
+                        <Setter Target="body.MinWidth"
+                                Value="" />
+                        <!--Items column verbreden-->
+                        <Setter Target="th_pl.(Grid.ColumnSpan)"
+                                Value="1" />
+                        <Setter Target="SV_items.(Grid.ColumnSpan)"
+                                Value="1" />
+                        <Setter Target="icon_world.(Grid.ColumnSpan)"
+                                Value="1" />
+                        <!--World Icon verplaatsen-->
+                        <Setter Target="th_pl.(Grid.Row)"
+                                Value="0" />
+                        <Setter Target="SV_items.(Grid.Row)"
+                                Value="1" />
+                        <Setter Target="icon_world.(Grid.Row)"
+                                Value="2" />
                         <!--Task column verplaatsen-->
                         <Setter Target="th_t.(Grid.Column)"
                                 Value="1" />
                         <Setter Target="th_t.(Grid.Row)"
                                 Value="0" />
+                        <Setter Target="th_t.(Grid.ColumnSpan)"
+                                Value="1" />
                         <Setter Target="SV_tasks.(Grid.Column)"
                                 Value="1" />
                         <Setter Target="SV_tasks.(Grid.Row)"
+                                Value="1" />
+                        <Setter Target="SV_tasks.(Grid.ColumnSpan)"
                                 Value="1" />
                         <Setter Target="icon_list.(Grid.Column)"
                                 Value="1" />
                         <Setter Target="icon_list.(Grid.Row)"
                                 Value="2" />
+                        <Setter Target="icon_list.(Grid.ColumnSpan)"
+                                Value="1" />
                         <!--Itinerary column verplaatsen-->
                         <Setter Target="th_i.(Grid.Column)"
                                 Value="2" />
                         <Setter Target="th_i.(Grid.Row)"
                                 Value="0" />
+                        <Setter Target="th_i.(Grid.ColumnSpan)"
+                                Value="1" />
                         <Setter Target="SV_itinerary.(Grid.Column)"
                                 Value="2" />
                         <Setter Target="SV_itinerary.(Grid.Row)"
+                                Value="1" />
+                        <Setter Target="SV_itinerary.(Grid.ColumnSpan)"
                                 Value="1" />
                         <Setter Target="icon_calendar.(Grid.Column)"
                                 Value="2" />
                         <Setter Target="icon_calendar.(Grid.Row)"
                                 Value="2" />
+                        <Setter Target="icon_calendar.(Grid.ColumnSpan)"
+                                Value="1" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
