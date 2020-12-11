@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,6 +14,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Services.Maps;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -46,6 +48,7 @@ namespace TravelPacker.View.Travels {
             txt_image.Text = travel.ImageUrl;*/
 
 			ViewModel.Travel = travel;
+			ViewModel.Itinerary = new ObservableCollection<ItineraryItem>(ViewModel.Travel.Itineraries);
 		}
 
 		private void onItemChecked(object sender, RoutedEventArgs e) {
@@ -84,7 +87,7 @@ namespace TravelPacker.View.Travels {
 
 					if (success) {
 						// TODO De lijst wordt niet geupdate in de view
-						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
+						ViewModel.Itinerary.Remove(selectedItineraryItem);
 						//DataContext = ViewModel; WERKT OOK NIET...
 					}
 					else {
@@ -95,19 +98,68 @@ namespace TravelPacker.View.Travels {
 				}
 			}
 		}
-		private void btn_AddTask_Click(object sender, RoutedEventArgs e)
-        {
+		private void btn_AddTask_Click(object sender, RoutedEventArgs e) {
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
-        }
+		}
 
-        private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e)
-        {
+		private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e) {
+			var selectedCategory = (sender as FontIcon).DataContext as Category;
+
+			if (selectedCategory != null) {
+				//MessageDialog md = new MessageDialog(selectedCategory.Name);
+				//md.ShowAsync();
+
+				await ViewModel.DeleteCategory(selectedCategory);
+			}
+
+		}
+
+		private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e) {
+			var selectedItem = (sender as FontIcon).DataContext as Item;
+
+			if (selectedItem != null) {
+				//MessageDialog md = new MessageDialog(selectedItem.Title);
+				//md.ShowAsync();
+
+				await ViewModel.DeleteItem(selectedItem);
+			}
+		}
+
+		private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e) {
+			var newCategoryTitle = NewCategoryTitle.Text;
+
+			if (newCategoryTitle != null) {
+				await ViewModel.addCategory(newCategoryTitle);
+				NewCategoryTitle.Text = "";
+			}
+		}
+
+		private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e) {
+			var categoryID = ((sender as FontIcon).DataContext as Category).Id;
+			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
+
+			if (newItemTitle != null) {
+				await ViewModel.addItem(newItemTitle, categoryID);
+			}
+		}
+
+		private async void CheckItem_Tapped(object sender, TappedRoutedEventArgs e) {
+			var selectedItem = (sender as CheckBox).DataContext as Item;
+			var done = (selectedItem.Done) ? false : true;
+
+			if (selectedItem != null) {
+				//MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
+				//md.ShowAsync();
+
+				await ViewModel.updateItem(selectedItem, done);
+			}
+		}
+
+		private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e) {
 			var selectedTask = (sender as Button).DataContext as TravelTask;
 
-			if (selectedTask != null)
-			{
-				ContentDialog cd = new ContentDialog()
-				{
+			if (selectedTask != null) {
+				ContentDialog cd = new ContentDialog() {
 					Title = "Delete task",
 					Content = $"Do you wish to delete the task '{selectedTask.Title}'? This action cannot be undone.",
 					CloseButtonText = "Close",
@@ -115,21 +167,18 @@ namespace TravelPacker.View.Travels {
 				};
 
 				ContentDialogResult result = await cd.ShowAsync();
-				if (result == ContentDialogResult.Primary)
-				{
+				if (result == ContentDialogResult.Primary) {
 
 					bool success = await ViewModel.DeleteTask(selectedTask);
 
-					if (success)
-					{
+					if (success) {
 						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
 						diag.ShowAsync();
 						Frame.Navigate(Frame.Content.GetType(), ViewModel.Travel);
 						Frame.GoBack();
 					}
-					else
-					{
-						
+					else {
+
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}

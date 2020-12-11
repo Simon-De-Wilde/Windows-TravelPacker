@@ -18,11 +18,13 @@ namespace TravelPackerAPI.Controllers
     {
 		private readonly TravelPackerDbContext _context;
 		private readonly IItemRepository _itemRepository;
+		private readonly ICategoryRepository _categoryRepository;
 
-		public ItemController(TravelPackerDbContext context, IItemRepository itemRepository)
+		public ItemController(TravelPackerDbContext context, IItemRepository itemRepository, ICategoryRepository categoryRepository)
 		{
 			_context = context;
 			_itemRepository = itemRepository;
+			_categoryRepository = categoryRepository;
 		}
 
 		/// <summary>
@@ -92,13 +94,23 @@ namespace TravelPackerAPI.Controllers
 		/// Create a new item
 		/// </summary>
 		/// <param name="item"></param>
+		/// <param name="categoryId"></param>
 		/// <returns></returns>
 		// POST: api/Items
-		[HttpPost]
-		public async Task<ActionResult<Item>> PostItem(Item item)
+		[HttpPost("[action]/{categoryId}")]
+		public async Task<ActionResult<Item>> PostItemToCategory(int categoryId, Item item)
 		{
-			_itemRepository.Add(item);
-			_itemRepository.SaveChanges();
+
+			Category category = _categoryRepository.GetById(categoryId);
+
+
+			if (category == null)
+			{
+				return NotFound("Category not found");
+			}
+
+			category.Items.Add(item);
+			_categoryRepository.SaveChanges();
 
 			return CreatedAtAction("GetItem", new { id = item.Id }, item);
 		}

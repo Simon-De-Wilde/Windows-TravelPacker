@@ -29,5 +29,10 @@ namespace TravelPacker.Model {
 		public void SetDone() {
 			_done = true;
 		}
+
+		public void SetNotDone()
+        {
+			_done = false;
+		}
 	}
 }
