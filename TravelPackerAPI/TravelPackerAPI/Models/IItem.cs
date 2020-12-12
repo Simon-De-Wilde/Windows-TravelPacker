@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace TravelPackerAPI.Models {
 	public abstract class IItem {
@@ -17,6 +18,14 @@ namespace TravelPackerAPI.Models {
 
 		protected IItem() {
 			// EF
+		}
+
+		[JsonConstructor]
+		protected IItem(int id, string title, bool done) {
+			// Deserializeren
+			Id = id;
+			Title = title;
+			_done = done;
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace TravelPackerAPI.Models {
@@ -23,22 +25,34 @@ namespace TravelPackerAPI.Models {
 			}
 		}
 
-		public IList<Category> Categories { get; set; }
-		public IList<TravelTask> Tasks { get; set; }
-		public IList<ItineraryItem> Itineraries { get; set; }
+		public ObservableCollection<Category> Categories { get; set; }
+		public ObservableCollection<TravelTask> Tasks { get; set; }
+		public ObservableCollection<ItineraryItem> Itineraries { get; set; }
 
 		public Travel(string name, string location, string imageUrl) {
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
 
-			Categories = new List<Category>();
-			Tasks = new List<TravelTask>();
-			Itineraries = new List<ItineraryItem>();
+			Categories = new ObservableCollection<Category>();
+			Tasks = new ObservableCollection<TravelTask>();
+			Itineraries = new ObservableCollection<ItineraryItem>();
 		}
 
 		protected Travel() {
 			// EF
+		}
+
+		[JsonConstructor]
+		protected Travel(int id, string name, string location, string imageUrl, ObservableCollection<Category> categories, ObservableCollection<TravelTask> tasks, ObservableCollection<ItineraryItem> itineraries) {
+			// Deserializeren
+			Id = id;
+			Name = name;
+			Location = location;
+			ImageUrl = imageUrl;
+			Categories = categories;
+			Tasks = tasks;
+			Itineraries = itineraries;
 		}
 	}
 }

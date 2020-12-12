@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace TravelPackerAPI.Models {
 		// own properties
 		[Required]
 		public int Amount { get; set; }
-		public bool Done { get; set; }
 
 		public Item(string title, int amount = 1) : base(title) {
 			Amount = amount;
@@ -21,5 +21,10 @@ namespace TravelPackerAPI.Models {
 			// EF
 		}
 
+		[JsonConstructor]
+		protected Item(int id, string title, bool done, int amount) : base(id, title, done) {
+			// Deserializeren
+			Amount = amount;
+		}
 	}
 }

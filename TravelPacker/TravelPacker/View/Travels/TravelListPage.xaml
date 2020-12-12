@@ -684,7 +684,7 @@
                         <ListView x:Name="lv_itinerary"
                                   ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
                                   SelectionMode="None"
-                                  ItemsSource="{x:Bind ViewModel.Itinerary}">
+                                  ItemsSource="{x:Bind ViewModel.Travel.Itineraries}">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="model:ItineraryItem">
                                     <Grid x:Name="GV_itineraryCard"

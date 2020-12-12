@@ -48,7 +48,6 @@ namespace TravelPacker.View.Travels {
             txt_image.Text = travel.ImageUrl;*/
 
 			ViewModel.Travel = travel;
-			ViewModel.Itinerary = new ObservableCollection<ItineraryItem>(ViewModel.Travel.Itineraries);
 		}
 
 		private void onItemChecked(object sender, RoutedEventArgs e) {
@@ -86,9 +85,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
 
 					if (success) {
-						// TODO De lijst wordt niet geupdate in de view
-						ViewModel.Itinerary.Remove(selectedItineraryItem);
-						//DataContext = ViewModel; WERKT OOK NIET...
+						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
 					}
 					else {
 
@@ -109,7 +106,11 @@ namespace TravelPacker.View.Travels {
 				//MessageDialog md = new MessageDialog(selectedCategory.Name);
 				//md.ShowAsync();
 
-				await ViewModel.DeleteCategory(selectedCategory);
+				bool success = await ViewModel.DeleteCategory(selectedCategory);
+				if (success) {
+					ViewModel.Travel.Categories.Remove(selectedCategory);
+				}
+				// TODO else
 			}
 
 		}
