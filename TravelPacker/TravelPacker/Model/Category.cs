@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace TravelPacker.Model {
-	public class Category {
+	public class Category : INotifyPropertyChanged {
 		[JsonProperty("id")]
 		public int Id { get; set; }
 
@@ -18,7 +19,8 @@ namespace TravelPacker.Model {
 		[JsonProperty("items")]
 		public ObservableCollection<Item> Items { get; set; }
 
-		public int ItemsDone { get => Items.Where(i => i.Done == true).Count(); }
+		private int _itemsDone { get; set; }
+		public int ItemsDone { get { return _itemsDone; } set { _itemsDone = value; OnPropertyChanged(nameof(ItemsDone)); } }
 
 		public string OverviewName => Name + "	" + Items.Where(i => i.Done).ToList().Count + "/" + Items.Count;
 
@@ -28,6 +30,8 @@ namespace TravelPacker.Model {
 		public Category(string name) {
 			Name = name;
 			Items = new ObservableCollection<Item>();
+
+			_itemsDone = Items.Where(i => i.Done == true).Count();
 		}
 
 		[JsonConstructor]
@@ -36,7 +40,14 @@ namespace TravelPacker.Model {
 			Id = id;
 			Name = name;
 			Items = items;
+
+			_itemsDone = Items.Where(i => i.Done == true).Count();
 		}
 
-	}
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected void OnPropertyChanged(string propertyName) {
+			if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
+		}
+    }
 }

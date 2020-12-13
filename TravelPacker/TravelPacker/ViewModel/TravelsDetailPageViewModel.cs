@@ -133,9 +133,17 @@ namespace TravelPacker.ViewModel {
 
 		public async Task<bool> updateItem(Item item, bool done) {
 			try {
+				var category = GetCategoryOfItem(item);
 				var itemToUpdate = GetItem(item.Id);
-				if (done) { itemToUpdate.SetDone(); }
-				else { itemToUpdate.SetNotDone(); }
+
+				if (done) { 
+					itemToUpdate.SetDone();
+					category.ItemsDone++;
+				}
+				else { 
+					itemToUpdate.SetNotDone();
+					category.ItemsDone--;
+				}
 
 				var json = JsonConvert.SerializeObject(itemToUpdate);
 
@@ -147,7 +155,6 @@ namespace TravelPacker.ViewModel {
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
-
 					return true;
 				}
 				else { throw new Exception(); }
