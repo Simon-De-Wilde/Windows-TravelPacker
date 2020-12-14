@@ -131,6 +131,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Util\DateFormatConverter.cs" />
     <Compile Include="Util\DeviceFamilyRecognizer.cs" />
     <Compile Include="Util\DeviceFamilyStateTrigger.cs" />
     <Compile Include="Util\EnvironmentsProperties.cs" />
@@ -146,7 +147,7 @@
     <Compile Include="View\Itineraries\AddItineraryPage.xaml.cs">
       <DependentUpon>AddItineraryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Travels\AddTaskPage.xaml.cs">
+    <Compile Include="View\Tasks\AddTaskPage.xaml.cs">
       <DependentUpon>AddTaskPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Travels\AddTravelPage.xaml.cs">
@@ -211,7 +212,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Travels\AddTaskPage.xaml">
+    <Page Include="View\Tasks\AddTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

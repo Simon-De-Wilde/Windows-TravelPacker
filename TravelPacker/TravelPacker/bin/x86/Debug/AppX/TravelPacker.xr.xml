@@ -87,8 +87,12 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="IsSpellCheckEnabled" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker" />
-    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
+      <RootProperty Name="ClockIdentifier" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="DateFormat" />
+    </RootType>
     <RootType FullName="TravelPacker.View.Itinerary.AddItineraryPage" />
     <RootType FullName="TravelPacker.View.Travels.AddTaskPage" />
     <RootType FullName="TravelPacker.View.Travels.AddTravelPage" />
@@ -128,9 +132,12 @@
       <RootProperty Name="KeyTipPlacementMode" />
       <RootProperty Name="MapServiceToken" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Converter" />
+    </RootType>
     <RootType FullName="TravelPacker.View.Travels.RoutePage" />
     <RootType FullName="TravelPacker.Util.BooleanToVisibilityConverter" />
+    <RootType FullName="TravelPacker.Util.DateFormatConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="FontFamily" />

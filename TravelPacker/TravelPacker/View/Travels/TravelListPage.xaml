@@ -12,6 +12,7 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <util:BooleanToVisibilityConverter x:Key="bool2vis" />
+        <util:DateFormatConverter x:Key="dateConverter" />
         <Style x:Key="ListViewItemContainerStyle1"
                TargetType="ListViewItem">
             <Setter Property="FontFamily"
@@ -716,15 +717,13 @@
                                         <TextBlock Text="   From:"
                                                    Grid.Column="0"
                                                    Grid.Row="1" />
-                                        <!--TODO formatten-->
-                                        <TextBlock Text="{x:Bind Start}"
+                                        <TextBlock Text="{x:Bind Start, Converter={StaticResource dateConverter}}"
                                                    Grid.Column="1"
                                                    Grid.Row="1" />
                                         <TextBlock Text="   Until:"
                                                    Grid.Column="0"
                                                    Grid.Row="2" />
-                                        <!--TODO formatten-->
-                                        <TextBlock Text="{x:Bind End, }"
+                                        <TextBlock Text="{x:Bind End, Converter={StaticResource dateConverter}}"
                                                    Grid.Column="1"
                                                    Grid.Row="2" />
 
