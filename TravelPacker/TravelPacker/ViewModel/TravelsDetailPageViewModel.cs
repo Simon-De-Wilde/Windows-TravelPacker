@@ -18,7 +18,7 @@ namespace TravelPacker.ViewModel {
 		public TravelsDetailPageViewModel() {
 		}
 
-		private Category GetCategoryOfItem(Item item) {
+		public Category GetCategoryOfItem(Item item) {
 			foreach (Category c in Travel.Categories) {
 				foreach (Item i in c.Items) {
 					if (i == item) { return c; }
@@ -28,7 +28,7 @@ namespace TravelPacker.ViewModel {
 			return null;
 		}
 
-		private Item GetItem(int itemID) {
+		public Item GetItem(int itemID) {
 			foreach (Category c in Travel.Categories) {
 				foreach (Item i in c.Items) {
 					if (i.Id == itemID) { return i; }
@@ -64,7 +64,6 @@ namespace TravelPacker.ViewModel {
 				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/{selectedCategory.Id}"));
 
 				if (result.IsSuccessStatusCode) {
-					//Travel.Categories.Remove(selectedCategory);
 					return true;
 				}
 				else { throw new Exception(); }
@@ -73,15 +72,12 @@ namespace TravelPacker.ViewModel {
 		}
 
 		public async Task<bool> DeleteItem(Item selectedItem) {
-			var categoryOfItem = GetCategoryOfItem(selectedItem);
-
 			try {
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{selectedItem.Id}"));
 
 				if (result.IsSuccessStatusCode) {
-					Travel.Categories.Where(c => c.Id == categoryOfItem.Id).FirstOrDefault().Items.Remove(selectedItem);
 					return true;
 				}
 				else { throw new Exception(); }
