@@ -179,6 +179,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BackgroundImages\paint-bg.jpg" />
+    <Content Include="Assets\BackgroundImages\soft-background.png" />
     <Content Include="Assets\BackgroundImages\taskBG.jpg" />
     <Content Include="Assets\BackgroundImages\taskBG2.jpg" />
     <Content Include="Assets\BackgroundImages\taskBG3.jpg" />

@@ -9,7 +9,14 @@
       xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
       xmlns:util="using:TravelPacker.Util"
       mc:Ignorable="d"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      Margin="-20,0,0,0">
+
+    <Page.Background>
+        <ImageBrush x:Name="bgImage"
+                    ImageSource="../../Assets/BackgroundImages/soft-background.png"
+                    Stretch="None" />
+    </Page.Background>
+
     <Page.Resources>
         <util:BooleanToVisibilityConverter x:Key="bool2vis" />
         <util:DateFormatConverter x:Key="dateConverter" />
@@ -197,8 +204,8 @@
                     <VisualState.Setters>
                         <Setter Target="txt_header.Orientation"
                                 Value="vertical" />
-                        <Setter Target="body.HorizontalAlignment"
-                                Value="Center" />
+                        <Setter Target="sp_btn_header.Margin"
+                                Value="10" />
                         <!--Tabel verbreder-->
                         <Setter Target="body.MinWidth"
                                 Value="500" />
@@ -269,8 +276,8 @@
                     <VisualState.Setters>
                         <Setter Target="txt_header.Orientation"
                                 Value="vertical" />
-                        <Setter Target="body.HorizontalAlignment"
-                                Value="Center" />
+                        <Setter Target="sp_btn_header.Margin"
+                                Value="10" />
                         <!--Tabel verbreder-->
                         <Setter Target="body.MinWidth"
                                 Value="500" />
@@ -341,6 +348,8 @@
                     <VisualState.Setters>
                         <Setter Target="txt_header.Orientation"
                                 Value="horizontal" />
+                        <Setter Target="sp_btn_header.Margin"
+                                Value="0" />
                         <!--vertical border tonen-->
                         <Setter Target="SV_items.BorderThickness"
                                 Value="0,0,1,0" />
@@ -414,7 +423,9 @@
                            TextWrapping="Wrap"
                            Style="{ThemeResource HeaderTextBlockStyle}"
                            Text="{x:Bind ViewModel.Travel.Name}" />
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            x:Name="sp_btn_header"
+                            Margin="0">
                     <Button x:Name="btn_updateTravel"
                             Margin="0,-15,0,0"
                             Click="btn_updateTravel_Click"
@@ -445,7 +456,8 @@
 
             <!--Table-->
             <Grid x:Name="body"
-                  Padding="10">
+                  Padding="10"
+                  Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -462,6 +474,11 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
+
+                <Grid.Background>
+                    <AcrylicBrush TintOpacity="0.05"
+                                  TintColor="Black" />
+                </Grid.Background>
 
                 <!--Table header-->
                 <Border x:Name="th_pl"
