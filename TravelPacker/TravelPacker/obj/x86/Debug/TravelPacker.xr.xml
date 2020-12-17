@@ -90,12 +90,12 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="IsSpellCheckEnabled" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Text" />
-      <RootProperty Name="IsSpellCheckEnabled" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
       <RootProperty Name="ClockIdentifier" />
