@@ -1512,7 +1512,7 @@
                                                     Grid.Column="0"
                                                     Grid.Row="0"
                                                     Grid.ColumnSpan="2">
-                                            <TextBlock Text="{x:Bind Title}" />
+                                            <TextBlock Text="{x:Bind Title}" TextWrapping="Wrap" MaxWidth="200" />
                                             <SymbolIcon Symbol="Accept"
                                                         Margin="5,0,0,0"
                                                         Visibility="{Binding Done, Converter={StaticResource bool2vis}}" />
