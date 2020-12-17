@@ -87,7 +87,23 @@ namespace TravelPacker.View.Travels
 				};
 				errorbox.Children.Add(locationError);
 			}
+			if (tp_duration.Text !=  null)
+            {
+				try
+				{
+					Convert.ToInt32(tp_duration.Text);
+				}
+				catch
+				{
+					TextBlock durationError = new TextBlock()
+					{
+						Text = "Please fill in a number as duration",
+						Foreground = new SolidColorBrush(Colors.DarkRed)
+					};
+					errorbox.Children.Add(durationError);
 
+				}
+			}
 		}
 	}
 }

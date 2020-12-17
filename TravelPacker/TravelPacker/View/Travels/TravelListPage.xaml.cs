@@ -54,10 +54,14 @@ namespace TravelPacker.View.Travels {
 			ViewModel.Travel = travel;
 		}
 
-		private void onItemChecked(object sender, RoutedEventArgs e) {
-			var selectedItem = (sender as CheckBox).Content;
-			(sender as CheckBox).Foreground.Opacity = 100;
-			//TravelTask selectedTask = viewModel.Travel.Tasks.First(elem => elem.Title.Equals(selectedItem));
+		private async void OnTaskChecked(object sender, RoutedEventArgs e) {
+			var selectedTask = (sender as CheckBox).DataContext as TravelTask;
+			var done = (selectedTask.Done) ? false : true;
+
+			if (selectedTask != null)
+			{
+				await ViewModel.UpdateTask(selectedTask, done);
+			}
 		}
 
 		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
@@ -201,8 +205,8 @@ namespace TravelPacker.View.Travels {
 			}
 		}
 
-		private async void btn_DeleteTask_Click(object sender, RoutedEventArgs e) {
-			var selectedTask = (sender as Button).DataContext as TravelTask;
+		private async void btn_DeleteTask_Click(object sender, RightTappedRoutedEventArgs e) {
+			var selectedTask = (sender as StackPanel).DataContext as TravelTask;
 
 			if (selectedTask != null) {
 				ContentDialog cd = new ContentDialog() {
@@ -217,14 +221,7 @@ namespace TravelPacker.View.Travels {
 
 					bool success = await ViewModel.DeleteTask(selectedTask);
 
-					if (success) {
-						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
-						diag.ShowAsync();
-						Frame.Navigate(Frame.Content.GetType(), ViewModel.Travel);
-						Frame.GoBack();
-					}
-					else {
-
+					if (!success) {
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}

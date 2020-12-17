@@ -137,7 +137,7 @@ namespace TravelPacker.View.Travels
             {
                 ContentDialog contentDialog = new ContentDialog()
                 {
-                    Title = "Please turn on the location services for the app if you want to see the route!",
+                    Title = "Make sure the location services for the app are enabled and a valid location is given.",
                     CloseButtonText = "Close"
                 };
                 contentDialog.ShowAsync();

@@ -932,56 +932,6 @@
         </Style>
     </Page.Resources>
 
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="mobileView">
-                    <VisualState.StateTriggers>
-                        -->
-    <!--<util:DeviceFamilyStateTrigger TargetDeviceFamily="Mobile" />-->
-    <!--
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        -->
-    <!--Appbar verbergen-->
-    <!--
-                        <Setter Target="bottonbar.Visibility"
-                                Value="Collapsed" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="tabletView">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        -->
-    <!--Appbar verbergen-->
-    <!--
-                        <Setter Target="bottonbar.Visibility"
-                                Value="Collapsed" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="desktopView">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="750" />
-                        -->
-    <!--<util:DeviceFamilyStateTrigger TargetDeviceFamily="Desktop" />-->
-    <!--
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        -->
-    <!--Appbar tonen>-->
-    <!--
-                        <Setter Target="bottonbar.Visibility"
-                                Value="Visible" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>-->
     <ScrollViewer>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -1310,6 +1260,7 @@
                               BorderThickness="0 0 1 0">
                     <StackPanel>
                         <ListView x:Name="ItemsLV"
+                                  Padding="5"
                                   ItemsSource="{x:Bind ViewModel.Travel.Categories}">
 
                             <ListView.ItemContainerStyle>
@@ -1417,6 +1368,7 @@
                         <!-- New category field -->
 
                         <Grid x:Name="grid_newCategory"
+                              Padding="5"
                               Height="40">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -1451,24 +1403,46 @@
                               Grid.Row="1"
                               BorderBrush="Black"
                               BorderThickness="0 0 1 0">
-                    <StackPanel>
-                        <ListView Padding="10"
-                                  Margin="50 0 0 0"
-                                  x:Name="listView2"
+                    <StackPanel Orientation="Vertical">
+                        <ListView x:Name="listView2"
+                                  Padding="5 0 5 5"
                                   ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
                                   ItemsSource="{x:Bind ViewModel.Travel.Tasks}">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="model:TravelTask">
-                                    <StackPanel Orientation="Vertical">
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox Content="{x:Bind Title}"
-                                                      Checked="onItemChecked" />
-                                            <Button HorizontalAlignment="Right"
-                                                    Margin="200 0 0 0"
-                                                    Click="btn_DeleteTask_Click">
-                                                <SymbolIcon Symbol="Delete" />
-                                            </Button>
-                                        </StackPanel>
+                                    <StackPanel x:Name="SP_Pooky"
+                                                Margin="0 5 0 5"
+                                                Background="{ThemeResource SystemAccentColorLight2}"
+                                                Padding="10"
+                                                MinWidth="500"
+                                                Orientation="Horizontal"
+                                                IsTapEnabled="False"
+                                                IsRightTapEnabled="True"
+                                                RightTapped="btn_DeleteTask_Click">
+                                        <CheckBox MinWidth="500"
+                                                  IsChecked="{x:Bind Done}"
+                                                  Tapped="OnTaskChecked">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="100"
+                                                                      Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <TextBlock Grid.Column="0"
+                                                           TextWrapping="Wrap"
+                                                           MaxWidth="100"
+                                                           Text="{x:Bind Title}" />
+                                                <SymbolIcon Grid.Column="1"
+                                                            Symbol="Clock" />
+                                                <TextBlock Grid.Column="2"
+                                                           VerticalAlignment="Center"
+                                                           Margin="5 0 0 0"
+                                                           Text="{x:Bind Duration}"
+                                                           IsRightTapEnabled="True" />
+                                            </Grid>
+                                        </CheckBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -1492,7 +1466,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="model:ItineraryItem">
                                     <Grid x:Name="GV_itineraryCard"
-                                          Background="{ThemeResource SystemAccentColorLight3}"
+                                          Background="{ThemeResource SystemAccentColorLight2}"
                                           Padding="10"
                                           Width="500"
                                           Margin="5"
@@ -1512,7 +1486,9 @@
                                                     Grid.Column="0"
                                                     Grid.Row="0"
                                                     Grid.ColumnSpan="2">
-                                            <TextBlock Text="{x:Bind Title}" />
+                                            <TextBlock Text="{x:Bind Title}"
+                                                       TextWrapping="Wrap"
+                                                       MaxWidth="200" />
                                             <SymbolIcon Symbol="Accept"
                                                         Margin="5,0,0,0"
                                                         Visibility="{Binding Done, Converter={StaticResource bool2vis}}" />
@@ -1577,43 +1553,4 @@
             </Grid>
         </StackPanel>
     </ScrollViewer>
-    <!--<Grid x:Name="bottonbar"
-              Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Viewbox x:Name="icon_world"
-                     Grid.Column="0"
-                     Grid.Row="0"
-                     Margin="10"
-                     MaxHeight="40"
-                     MaxWidth="40">
-                <SymbolIcon Symbol="World" />
-            </Viewbox>
-            -->
-    <!--List Icon-->
-    <!--
-            <Viewbox x:Name="icon_list"
-                     Grid.Column="1"
-                     Grid.Row="0"
-                     Margin="10"
-                     MaxHeight="40"
-                     MaxWidth="40">
-                <SymbolIcon Symbol="Bullets" />
-            </Viewbox>
-            -->
-    <!--Calendar Icon-->
-    <!--
-            <Viewbox x:Name="icon_calendar"
-                     Grid.Column="2"
-                     Grid.Row="0"
-                     Margin="10"
-                     MaxHeight="40"
-                     MaxWidth="40">
-                <SymbolIcon Symbol="Calendar" />
-            </Viewbox>
-        </Grid>
-    </Grid>-->
 </Page>
