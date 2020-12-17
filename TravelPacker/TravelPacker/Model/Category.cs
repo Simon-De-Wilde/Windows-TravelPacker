@@ -22,8 +22,6 @@ namespace TravelPacker.Model {
 		private int _itemsDone { get; set; }
 		public int ItemsDone { get { return _itemsDone; } set { _itemsDone = value; OnPropertyChanged(nameof(ItemsDone)); } }
 
-		//public string OverviewName => Name + "	" + Items.Where(i => i.Done).ToList().Count + "/" + Items.Count;
-
 		public Category(string name) {
 			Name = name;
 			Items = new ObservableCollection<Item>();

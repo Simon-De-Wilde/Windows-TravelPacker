@@ -19,7 +19,7 @@ namespace TravelPacker.ViewModel {
 			Travels = new ObservableCollection<Travel>();
 		}
 
-		public async void GetTravels() {
+		public async Task<bool> GetTravels() {
 
 			Travels.Clear();
 
@@ -35,9 +35,12 @@ namespace TravelPacker.ViewModel {
 				foreach (Travel t in list) {
 					Travels.Add(t);
 				}
+
+				return true;
 			}
 			catch (Exception e) {
 				Console.WriteLine(e.Message);
+				return false;
 			}
 
 

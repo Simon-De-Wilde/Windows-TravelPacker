@@ -7,6 +7,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 using TravelPacker.Model;
 using TravelPacker.View.Itinerary;
 using TravelPacker.ViewModel;
@@ -15,6 +17,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Services.Maps;
 using Windows.UI;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -228,6 +231,6 @@ namespace TravelPacker.View.Travels {
 				}
 			}
 		}
-    }
+	}
 }
 

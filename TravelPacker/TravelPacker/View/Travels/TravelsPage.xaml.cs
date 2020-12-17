@@ -5,12 +5,16 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 using TravelPacker.Model;
+using TravelPacker.Util;
 using TravelPacker.ViewModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -33,7 +37,6 @@ namespace TravelPacker.View.Travels {
 
 		public TravelsPage() {
 			this.InitializeComponent();
-
 
 			ViewModel = new TravelsPageViewModel();
 
@@ -82,13 +85,62 @@ namespace TravelPacker.View.Travels {
 			}
 		}
 
-		protected override void OnNavigatedTo(NavigationEventArgs e) {
+		protected override async void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			ViewModel.GetTravels();
+			var result = await ViewModel.GetTravels();
+
+			if (result) { showToast(); }
+						
 
 			// TODO secondaryTile aanmaken met eerstvolgende reisroute
 		}
 
+		private void showToast() {
+			var itineraryItem = GetEarliestItineraryItem();
+			var toastTitle = $"[{itineraryItem.Key.Name}] Upcoming itinerary";
+			var title = itineraryItem.Value.Title;
+			var date = itineraryItem.Value.Start.ToString("dd/MM/yyyy HH:mm");
+
+			var xmdock = CreateToast(toastTitle, title, date);
+			var toast = new ToastNotification(xmdock);
+			var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
+			notifi.Show(toast);
+		}
+
+		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Title, string Date)
+		{
+            var toastXml = new XDocument(
+               new XElement("toast",
+               new XElement("visual",
+               new XElement("binding", new XAttribute("template", "ToastGeneric"),
+               new XElement("text", ToastTitle),
+               new XElement("text", Title),
+			   new XElement("text", Date)
+			))));
+
+            var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+			xmlDoc.LoadXml(toastXml.ToString());
+			return xmlDoc;
+		}
+
+		private KeyValuePair<Travel,ItineraryItem> GetEarliestItineraryItem()
+        {
+			var travel = ViewModel.Travels.FirstOrDefault();
+			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
+
+            foreach (Travel t in ViewModel.Travels)
+            {
+				foreach (ItineraryItem i in t.Itineraries)
+                {
+					if (i.Start < itineraryItem.Start) {
+						itineraryItem = i;
+						travel = t;
+					}
+                }
+            }
+
+			return new KeyValuePair<Travel, ItineraryItem>(travel, itineraryItem);
+        }
 	}
 }
