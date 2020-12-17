@@ -35,10 +35,10 @@ namespace TravelPacker.Model {
 
 		public double Progress {
 			get {
-				if (Categories.Count == 0 && Tasks.Count == 0) {
+				int totalAmountOfItems = Categories.Sum(c => c.Items.Count);
+				if (Tasks.Count == 0 && totalAmountOfItems == 0) {
 					return 0;
 				}
-				int totalAmountOfItems = Categories.Sum(c => c.Items.Count);
 				double catProgress = Convert.ToDouble(Categories.Sum(c => c.ItemsDone)) / (totalAmountOfItems + Tasks.Count) * 100;
 				double tasksProgress = Convert.ToDouble(Tasks.Count(i => i.Done)) / (totalAmountOfItems + Tasks.Count) * 100;
 				return catProgress + tasksProgress;
