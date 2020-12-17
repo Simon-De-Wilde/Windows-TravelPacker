@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:44:56.436</Modified>
+      <Modified>2020-12-17T10:35:24.580</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.exe">
       <PackagePath>entrypoint\TravelPacker.exe</PackagePath>
-      <Modified>2020-12-17T08:44:55.207</Modified>
+      <Modified>2020-12-17T10:35:22.635</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -177,231 +177,235 @@
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.521</Modified>
+      <Modified>2020-12-17T08:48:17.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.522</Modified>
+      <Modified>2020-12-17T08:48:17.704</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.522</Modified>
+      <Modified>2020-12-17T08:48:17.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.523</Modified>
+      <Modified>2020-12-17T08:48:17.706</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.523</Modified>
+      <Modified>2020-12-17T08:48:17.708</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png">
       <PackagePath>Assets\icon\logo.png</PackagePath>
       <Modified>2020-12-17T08:18:26.559</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png">
+      <PackagePath>Assets\icon\logo2.png</PackagePath>
+      <Modified>2020-12-17T08:48:17.802</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.524</Modified>
+      <Modified>2020-12-17T08:48:17.710</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.525</Modified>
+      <Modified>2020-12-17T08:48:17.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.526</Modified>
+      <Modified>2020-12-17T08:48:17.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.528</Modified>
+      <Modified>2020-12-17T08:48:17.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.529</Modified>
+      <Modified>2020-12-17T08:48:17.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.530</Modified>
+      <Modified>2020-12-17T08:48:17.728</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.531</Modified>
+      <Modified>2020-12-17T08:48:17.730</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.531</Modified>
+      <Modified>2020-12-17T08:48:17.731</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.532</Modified>
+      <Modified>2020-12-17T08:48:17.736</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.532</Modified>
+      <Modified>2020-12-17T08:48:17.739</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.533</Modified>
+      <Modified>2020-12-17T08:48:17.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.534</Modified>
+      <Modified>2020-12-17T08:48:17.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.534</Modified>
+      <Modified>2020-12-17T08:48:17.743</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.536</Modified>
+      <Modified>2020-12-17T08:48:17.747</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.537</Modified>
+      <Modified>2020-12-17T08:48:17.748</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.537</Modified>
+      <Modified>2020-12-17T08:48:17.750</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.538</Modified>
+      <Modified>2020-12-17T08:48:17.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.539</Modified>
+      <Modified>2020-12-17T08:48:17.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.539</Modified>
+      <Modified>2020-12-17T08:48:17.755</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.540</Modified>
+      <Modified>2020-12-17T08:48:17.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.540</Modified>
+      <Modified>2020-12-17T08:48:17.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.541</Modified>
+      <Modified>2020-12-17T08:48:17.762</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.544</Modified>
+      <Modified>2020-12-17T08:48:17.764</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.545</Modified>
+      <Modified>2020-12-17T08:48:17.766</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.546</Modified>
+      <Modified>2020-12-17T08:48:17.769</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.547</Modified>
+      <Modified>2020-12-17T08:48:17.778</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.548</Modified>
+      <Modified>2020-12-17T08:48:17.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.548</Modified>
+      <Modified>2020-12-17T08:48:17.781</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.550</Modified>
+      <Modified>2020-12-17T08:48:17.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.550</Modified>
+      <Modified>2020-12-17T08:48:17.784</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.551</Modified>
+      <Modified>2020-12-17T08:48:17.786</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.552</Modified>
+      <Modified>2020-12-17T08:48:17.787</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.553</Modified>
+      <Modified>2020-12-17T08:48:17.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.554</Modified>
+      <Modified>2020-12-17T08:48:17.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.554</Modified>
+      <Modified>2020-12-17T08:48:17.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.555</Modified>
+      <Modified>2020-12-17T08:48:17.793</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.555</Modified>
+      <Modified>2020-12-17T08:48:17.795</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.556</Modified>
+      <Modified>2020-12-17T08:48:17.796</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.557</Modified>
+      <Modified>2020-12-17T08:48:17.796</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.558</Modified>
+      <Modified>2020-12-17T08:48:17.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -410,27 +414,27 @@
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.535</Modified>
+      <Modified>2020-12-17T08:48:17.745</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.538</Modified>
+      <Modified>2020-12-17T08:48:17.753</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.547</Modified>
+      <Modified>2020-12-17T08:48:17.776</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.549</Modified>
+      <Modified>2020-12-17T08:48:17.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T08:18:26.558</Modified>
+      <Modified>2020-12-17T08:48:17.797</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -438,51 +442,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.xr.xml">
       <PackagePath>TravelPacker.xr.xml</PackagePath>
-      <Modified>2020-12-17T08:18:26.717</Modified>
+      <Modified>2020-12-17T10:35:22.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.009</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.009</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Itineraries\AddItineraryPage.xbf">
       <PackagePath>View\Itineraries\AddItineraryPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.009</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Tasks\AddTaskPage.xbf">
       <PackagePath>View\Tasks\AddTaskPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.009</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.010</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\RoutePage.xbf">
       <PackagePath>View\Travels\RoutePage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.010</Modified>
+      <Modified>2020-12-17T10:35:22.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelListPage.xbf">
       <PackagePath>View\Travels\TravelListPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.000</Modified>
+      <Modified>2020-12-17T10:35:22.395</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf">
       <PackagePath>View\Users\LoginPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.010</Modified>
+      <Modified>2020-12-17T10:35:22.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf">
       <PackagePath>View\Users\RegistrationPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.010</Modified>
+      <Modified>2020-12-17T10:35:22.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelsPage.xbf">
       <PackagePath>View\Travels\TravelsPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.010</Modified>
+      <Modified>2020-12-17T10:35:22.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\UpdateTravelPage.xbf">
       <PackagePath>View\Travels\UpdateTravelPage.xbf</PackagePath>
-      <Modified>2020-12-17T08:44:55.011</Modified>
+      <Modified>2020-12-17T10:35:22.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -490,11 +494,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-17T08:20:07.083</Modified>
+      <Modified>2020-12-17T09:42:29.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marbo\git\Projecten3A\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\TravelPacker.exe">
       <PackagePath>TravelPacker.exe</PackagePath>
-      <Modified>2020-12-17T08:44:56.431</Modified>
+      <Modified>2020-12-17T10:35:24.565</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
