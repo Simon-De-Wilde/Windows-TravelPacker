@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TravelPackerAPI.Models {
@@ -52,6 +53,13 @@ namespace TravelPackerAPI.Models {
 			// EF
 		}
 
+		[JsonConstructor]
+		protected ItineraryItem(int id, string title, bool done, DateTime start, TimeSpan duration, bool doing) : base(id, title, done) {
+			// Deserializeren
+			_start = start;
+			Duration = duration;
+			_doing = doing;
+		}
 
 
 	}

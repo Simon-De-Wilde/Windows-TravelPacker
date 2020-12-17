@@ -8,9 +8,13 @@
       xmlns:model="using:TravelPacker.Model"
       xmlns:muxc="using:Windows.UI.Xaml.Controls"
       mc:Ignorable="d"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
       RequestedTheme="Light">
 
+    <Page.Background>
+        <ImageBrush x:Name="bgImage"
+                    ImageSource="../../Assets/BackgroundImages/paint-bg.jpg"
+                    Stretch="None" />
+    </Page.Background>
 
 
     <ScrollViewer>
@@ -60,6 +64,9 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical">
+            <StackPanel.Background>
+                <AcrylicBrush TintOpacity="1"/>
+            </StackPanel.Background>
             <TextBlock x:Name="txt_header"
                        Text="Your Travels"
                        Style="{ThemeResource HeaderTextBlockStyle}"

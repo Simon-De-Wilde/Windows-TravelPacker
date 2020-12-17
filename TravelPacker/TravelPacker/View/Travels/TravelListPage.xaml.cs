@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.UI.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -48,7 +49,6 @@ namespace TravelPacker.View.Travels {
             txt_image.Text = travel.ImageUrl;*/
 
 			ViewModel.Travel = travel;
-			ViewModel.Itinerary = new ObservableCollection<ItineraryItem>(ViewModel.Travel.Itineraries);
 		}
 
 		private void onItemChecked(object sender, RoutedEventArgs e) {
@@ -86,9 +86,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteItineraryItem(selectedItineraryItem);
 
 					if (success) {
-						// TODO De lijst wordt niet geupdate in de view
-						ViewModel.Itinerary.Remove(selectedItineraryItem);
-						//DataContext = ViewModel; WERKT OOK NIET...
+						ViewModel.Travel.Itineraries.Remove(selectedItineraryItem);
 					}
 					else {
 
@@ -102,44 +100,83 @@ namespace TravelPacker.View.Travels {
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
 		}
 
-		private async void RemoveCategory_Tapped(object sender, TappedRoutedEventArgs e) {
-			var selectedCategory = (sender as FontIcon).DataContext as Category;
+		private async void RemoveCategory_Tapped(object sender, RightTappedRoutedEventArgs e) { 
+			var selectedCategory = (sender as Expander).DataContext as Category;
+			
+			if (selectedCategory != null)
+			{
 
-			if (selectedCategory != null) {
-				//MessageDialog md = new MessageDialog(selectedCategory.Name);
-				//md.ShowAsync();
+				ContentDialog cd = new ContentDialog()
+				{
+					Title = $"Delete category",
+					Content = $"Do you wish to delete category '{selectedCategory.Name}'? All items under this category will be removed as well. This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
 
-				await ViewModel.DeleteCategory(selectedCategory);
+				ContentDialogResult result = await cd.ShowAsync();
+				if (result == ContentDialogResult.Primary)
+				{
+					bool success = await ViewModel.DeleteCategory(selectedCategory);
+
+					if (success) {
+						ViewModel.Travel.Categories.Remove(selectedCategory);
+					}
+					else{
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+				}
 			}
-
 		}
 
-		private async void RemoveItem_Tapped(object sender, TappedRoutedEventArgs e) {
-			var selectedItem = (sender as FontIcon).DataContext as Item;
+		private async void RemoveItem_Tapped(object sender, RightTappedRoutedEventArgs e) {
+			var selectedItem = (sender as Grid).DataContext as Item;
+			var categoryOfItem = ViewModel.GetCategoryOfItem(selectedItem);
+
+			e.Handled = true;
 
 			if (selectedItem != null) {
-				//MessageDialog md = new MessageDialog(selectedItem.Title);
-				//md.ShowAsync();
 
-				await ViewModel.DeleteItem(selectedItem);
+				ContentDialog cd = new ContentDialog() {
+					Title = $"Delete item from '{categoryOfItem.Name}'",
+					Content = $"Do you wish to delete item '{selectedItem.Title}'? This action cannot be undone.",
+					CloseButtonText = "Close",
+					PrimaryButtonText = "Delete"
+				};
+
+				ContentDialogResult result = await cd.ShowAsync();
+				if (result == ContentDialogResult.Primary) {
+					bool success = await ViewModel.DeleteItem(selectedItem);
+
+					if (success) {
+						categoryOfItem.ItemsDone--;
+						categoryOfItem.Items.Remove(selectedItem);
+					}
+					else {
+						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
+						diag.ShowAsync();
+					}
+				}
 			}
 		}
 
 		private async void AddCategory_Tapped(object sender, TappedRoutedEventArgs e) {
-			var newCategoryTitle = NewCategoryTitle.Text;
+			var newCategoryTitle = txt_newCategory.Text;
 
 			if (newCategoryTitle != null) {
 				await ViewModel.addCategory(newCategoryTitle);
-				NewCategoryTitle.Text = "";
+				txt_newCategory.Text = "";
 			}
 		}
 
 		private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e) {
 			var categoryID = ((sender as FontIcon).DataContext as Category).Id;
-			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox).Text;
+			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox);
 
 			if (newItemTitle != null) {
-				await ViewModel.addItem(newItemTitle, categoryID);
+				await ViewModel.addItem(newItemTitle.Text, categoryID);
+				newItemTitle.Text = "";
 			}
 		}
 
@@ -148,9 +185,6 @@ namespace TravelPacker.View.Travels {
 			var done = (selectedItem.Done) ? false : true;
 
 			if (selectedItem != null) {
-				//MessageDialog md = new MessageDialog(selectedItem.Done.ToString());
-				//md.ShowAsync();
-
 				await ViewModel.updateItem(selectedItem, done);
 			}
 		}
@@ -185,6 +219,6 @@ namespace TravelPacker.View.Travels {
 				}
 			}
 		}
-	}
+    }
 }
 

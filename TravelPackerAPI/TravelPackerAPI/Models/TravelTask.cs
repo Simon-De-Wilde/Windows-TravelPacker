@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,12 @@ namespace TravelPackerAPI.Models {
 
 		protected TravelTask() {
 			// EF
+		}
+
+		[JsonConstructor]
+		protected TravelTask(int id, string title, bool done, TimeSpan duration) : base(id, title, done) {
+			//deserializeren
+			Duration = duration;
 		}
 	}
 }

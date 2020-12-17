@@ -35,11 +35,14 @@ namespace TravelPacker.Model {
 
 		public double Progress {
 			get {
-				double catProgress = Categories.Sum(c => c.Progress);
-				double tasksProgress = Tasks.Count == 0 ? 0 : Convert.ToDouble(Tasks.Count(i => i.Done)) / Tasks.Count * 100;
-				return (catProgress + tasksProgress) / 2;
+				if (Categories.Count == 0 && Tasks.Count == 0) {
+					return 0;
+				}
+				int totalAmountOfItems = Categories.Sum(c => c.Items.Count);
+				double catProgress = Convert.ToDouble(Categories.Sum(c => c.ItemsDone)) / (totalAmountOfItems + Tasks.Count) * 100;
+				double tasksProgress = Convert.ToDouble(Tasks.Count(i => i.Done)) / (totalAmountOfItems + Tasks.Count) * 100;
+				return catProgress + tasksProgress;
 			}
-			set { }
 		}
 
 
@@ -49,23 +52,23 @@ namespace TravelPacker.Model {
 
 		[Required]
 		[JsonProperty("tasks")]
-		public IList<TravelTask> Tasks { get; set; }
+		public ObservableCollection<TravelTask> Tasks { get; set; }
 
 		[Required]
 		[JsonProperty("itineraries")]
-		public IList<ItineraryItem> Itineraries { get; set; }
+		public ObservableCollection<ItineraryItem> Itineraries { get; set; }
 
 		public Travel(string name, string location, string imageUrl) {
 			Name = name;
 			Location = location;
 			ImageUrl = imageUrl;
 			Categories = new ObservableCollection<Category>();
-			Tasks = new List<TravelTask>();
-			Itineraries = new List<ItineraryItem>();
+			Tasks = new ObservableCollection<TravelTask>();
+			Itineraries = new ObservableCollection<ItineraryItem>();
 		}
 
 		[JsonConstructor]
-		protected Travel(int id, string name, string location, string imageUrl, ObservableCollection<Category> categories, IList<TravelTask> tasks, IList<ItineraryItem> itineraries) {
+		protected Travel(int id, string name, string location, string imageUrl, ObservableCollection<Category> categories, ObservableCollection<TravelTask> tasks, ObservableCollection<ItineraryItem> itineraries) {
 			// Deserializeren
 			Id = id;
 			Name = name;

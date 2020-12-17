@@ -42,14 +42,15 @@
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Date"
                            HorizontalAlignment="Left" />
-                <CalendarDatePicker  x:Name="date" />
+                <CalendarDatePicker  x:Name="date"
+                                     DateFormat="{}{day.integer}/{month.integer}/{year.full}" />
             </StackPanel>
 
             <!--Start-->
             <StackPanel Margin="0,0,0,20">
                 <TextBlock Text="Start"
                            HorizontalAlignment="Left" />
-                <TimePicker x:Name="time_start" />
+                <TimePicker x:Name="time_start" ClockIdentifier="24HourClock"/>
             </StackPanel>
 
             <!--duration-->

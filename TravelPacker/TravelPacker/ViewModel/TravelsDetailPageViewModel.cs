@@ -14,12 +14,11 @@ using Windows.Web.Http.Headers;
 namespace TravelPacker.ViewModel {
 	public class TravelsDetailPageViewModel {
 		public Travel Travel { get; set; }
-		public ObservableCollection<ItineraryItem> Itinerary { get; set; }
 
 		public TravelsDetailPageViewModel() {
 		}
 
-		private Category GetCategoryOfItem(Item item) {
+		public Category GetCategoryOfItem(Item item) {
 			foreach (Category c in Travel.Categories) {
 				foreach (Item i in c.Items) {
 					if (i == item) { return c; }
@@ -29,7 +28,7 @@ namespace TravelPacker.ViewModel {
 			return null;
 		}
 
-		private Item GetItem(int itemID) {
+		public Item GetItem(int itemID) {
 			foreach (Category c in Travel.Categories) {
 				foreach (Item i in c.Items) {
 					if (i.Id == itemID) { return i; }
@@ -39,24 +38,24 @@ namespace TravelPacker.ViewModel {
 			return null;
 		}
 
-		public async Task<bool> GetCategories() {
-			Travel.Categories.Clear();
+		//public async Task<bool> GetCategories() {
+		//	Travel.Categories.Clear();
 
-			try {
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+		//	try {
+		//		HttpClient client = new HttpClient();
+		//		client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/GetCategoriesFromTravel/{Travel.Id}"));
-				var list = JsonConvert.DeserializeObject<List<Category>>(result);
+		//		var result = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/GetCategoriesFromTravel/{Travel.Id}"));
+		//		var list = JsonConvert.DeserializeObject<List<Category>>(result);
 
-				foreach (Category c in list) {
-					Travel.Categories.Add(c);
-				}
+		//		foreach (Category c in list) {
+		//			Travel.Categories.Add(c);
+		//		}
 
-				return true;
-			}
-			catch (Exception e) { return false; }
-		}
+		//		return true;
+		//	}
+		//	catch (Exception e) { return false; }
+		//}
 
 		public async Task<bool> DeleteCategory(Category selectedCategory) {
 			try {
@@ -65,7 +64,6 @@ namespace TravelPacker.ViewModel {
 				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/{selectedCategory.Id}"));
 
 				if (result.IsSuccessStatusCode) {
-					Travel.Categories.Remove(selectedCategory);
 					return true;
 				}
 				else { throw new Exception(); }
@@ -74,15 +72,12 @@ namespace TravelPacker.ViewModel {
 		}
 
 		public async Task<bool> DeleteItem(Item selectedItem) {
-			var categoryOfItem = GetCategoryOfItem(selectedItem);
-
 			try {
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{selectedItem.Id}"));
 
 				if (result.IsSuccessStatusCode) {
-					Travel.Categories.Where(c => c.Id == categoryOfItem.Id).FirstOrDefault().Items.Remove(selectedItem);
 					return true;
 				}
 				else { throw new Exception(); }
@@ -103,7 +98,7 @@ namespace TravelPacker.ViewModel {
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
-					await GetCategories();
+					Travel.Categories.Add(JsonConvert.DeserializeObject<Category>(result.Content.ToString()));
 					return true;
 				}
 				else { throw new Exception(); }
@@ -124,7 +119,7 @@ namespace TravelPacker.ViewModel {
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
-					await GetCategories();
+					Travel.Categories.FirstOrDefault(c => c.Id == categoryID).Items.Add(JsonConvert.DeserializeObject<Item>(result.Content.ToString()));
 					return true;
 				}
 				else { throw new Exception(); }
@@ -134,9 +129,17 @@ namespace TravelPacker.ViewModel {
 
 		public async Task<bool> updateItem(Item item, bool done) {
 			try {
+				var category = GetCategoryOfItem(item);
 				var itemToUpdate = GetItem(item.Id);
-				if (done) { itemToUpdate.SetDone(); }
-				else { itemToUpdate.SetNotDone(); }
+
+				if (done) { 
+					itemToUpdate.SetDone();
+					category.ItemsDone++;
+				}
+				else { 
+					itemToUpdate.SetNotDone();
+					category.ItemsDone--;
+				}
 
 				var json = JsonConvert.SerializeObject(itemToUpdate);
 
@@ -148,7 +151,6 @@ namespace TravelPacker.ViewModel {
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
-					await GetCategories();
 					return true;
 				}
 				else { throw new Exception(); }
