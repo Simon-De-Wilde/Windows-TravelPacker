@@ -72,7 +72,6 @@ namespace TravelPacker.View.Travels
                 // The address or business to geocode.
                 string addressToGeocode = viewModel.Travel.Location;
 
-
                 // The nearby location to use as a query hint.
                 BasicGeoposition queryHint = new BasicGeoposition();
                 queryHint.Latitude = 50.8505;
@@ -81,6 +80,17 @@ namespace TravelPacker.View.Travels
 
                 BasicGeoposition startLocation = new BasicGeoposition() { Latitude = latitude, Longitude = longitude };
                 BasicGeoposition endLocation;
+
+                // Reverse geocode the specified geographic location.
+                MapLocationFinderResult userLocation =
+                      await MapLocationFinder.FindLocationsAtAsync(new Geopoint(startLocation));
+
+                // If the query returns results, display the name of the town
+                // contained in the address of the first result.
+                if (userLocation.Status == MapLocationFinderStatus.Success)
+                {
+                    locationBlock.Text = userLocation.Locations[0].Address.Town;
+                }
 
                 // Geocode the specified address, using the specified reference point
                 // as a query hint. Return no more than 3 results.

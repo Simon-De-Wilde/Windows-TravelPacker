@@ -7,6 +7,8 @@ namespace TravelPacker.Model {
 		[JsonProperty("amount")]
 		public int Amount { get; }
 
+		public string DisplayTitle => " [" + Amount + "] " + Title;
+
 		public Item(string title, int amount = 1) : base(title) {
 			Amount = amount;
 		}

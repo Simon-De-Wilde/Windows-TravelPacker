@@ -18,14 +18,12 @@ namespace TravelPacker.ViewModel
         {
         }
 
-        public async Task<bool> AddTaskToTravel(string title, TimeSpan time)
+        public async Task<TravelTask> AddTaskToTravel(string title, TimeSpan time)
         {
 			try
 			{
 				TravelTask newTask = new TravelTask(title, time);
 				var newTaskJSON = JsonConvert.SerializeObject(newTask);
-				newTask.Id = Travel.Tasks.Last().Id + 1;
-				Travel.Tasks.Add(newTask);
 
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
@@ -34,7 +32,7 @@ namespace TravelPacker.ViewModel
 
 				if (result.IsSuccessStatusCode)
 				{
-					return true;
+					return JsonConvert.DeserializeObject<TravelTask>(result.Content.ToString());
 				}
 				else
 				{
@@ -43,7 +41,7 @@ namespace TravelPacker.ViewModel
 			}
 			catch (Exception e)
 			{
-				return false;
+				return null;
 			}
 		}
     }

@@ -38,17 +38,11 @@
                            Style="{ThemeResource HeaderTextBlockStyle}"
                            Text="{x:Bind viewModel.Travel.Location}" />
             </StackPanel>
-            <StackPanel Margin="10 0 40 20"
-                        Orientation="Horizontal">
-                <TextBlock Margin="0 0 10 0"
-                           Text="From:" />
-                <TextBlock Margin="0 0 20 0"
-                           Text="Brussels" />
-                <!--TODO niet hardcoded-->
-                <TextBlock Margin="0 0 20 0"
-                           Text="To:" />
-                <TextBlock Margin="0 0 20 0"
-                           Text="{x:Bind viewModel.Travel.Location}" />
+            <StackPanel Margin="10 0 40 20" Orientation="Horizontal">
+                <TextBlock Margin="0 0 10 0" Text="From:" />
+                <TextBlock x:Name="locationBlock" Margin="0 0 20 0" Text="Brussels" />
+                <TextBlock Margin="0 0 20 0" Text="To:" />
+                <TextBlock Margin="0 0 20 0" Text="{x:Bind viewModel.Travel.Location}" />
             </StackPanel>
         </StackPanel>
         <my:MapControl x:Name="MapWithRoute"

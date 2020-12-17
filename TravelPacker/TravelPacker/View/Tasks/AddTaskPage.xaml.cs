@@ -50,15 +50,16 @@ namespace TravelPacker.View.Travels
 
 			if (!errorbox.Children.Any())
 			{ 
-				bool success = await ViewModel.AddTaskToTravel(txt_title.Text, tp_duration.Time);
+				var success = await ViewModel.AddTaskToTravel(txt_title.Text, TimeSpan.FromMinutes(Convert.ToInt32(tp_duration.Text)));
 
-				if (success)
+				if (success != null)
 				{
+					ViewModel.Travel.Tasks.Add(success);
 					Frame.GoBack();
 				}
 				else
 				{
-					MessageDialog md = new MessageDialog("Something went wrong, travel was not created. Try again later");
+					MessageDialog md = new MessageDialog("Something went wrong, task was not created. Try again later");
 					await md.ShowAsync();
 				}
 			}
@@ -77,7 +78,7 @@ namespace TravelPacker.View.Travels
 				};
 				errorbox.Children.Add(titleError);
 			}
-			if (tp_duration.Time == null)
+			if (tp_duration.Text == null)
 			{
 				TextBlock locationError = new TextBlock()
 				{
