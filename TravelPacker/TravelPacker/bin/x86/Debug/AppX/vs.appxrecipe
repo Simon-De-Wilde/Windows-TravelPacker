@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>47108DDC9F6E5E6636B7C0437D1D2E789A6E3F2425AA7BD7FC3A3D415E41C6E8</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>EC8AB52F385B4B47BA3A9ED838E8F6ACA5D7952A17D829063DC53CACE288AE91</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5b963e10-8b99-4ff0-805f-f559c37989c7_1.0.0.0_x86__ggxdvrfmnj0tt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5b963e10-8b99-4ff0-805f-f559c37989c7_ggxdvrfmnj0tt!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5b963e10-8b99-4ff0-805f-f559c37989c7</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:49:05.295</Modified>
+      <Modified>2020-12-17T08:39:02.393</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.exe">
       <PackagePath>entrypoint\TravelPacker.exe</PackagePath>
-      <Modified>2020-12-15T08:48:55.045</Modified>
+      <Modified>2020-12-17T08:39:00.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -177,231 +177,235 @@
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.836</Modified>
+      <Modified>2020-12-17T08:38:42.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.855</Modified>
+      <Modified>2020-12-17T08:38:42.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.866</Modified>
+      <Modified>2020-12-17T08:38:42.605</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.878</Modified>
+      <Modified>2020-12-17T08:38:42.620</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.897</Modified>
+      <Modified>2020-12-17T08:38:42.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png">
       <PackagePath>Assets\icon\logo.png</PackagePath>
       <Modified>2020-12-15T08:46:40.881</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png">
+      <PackagePath>Assets\icon\logo2.png</PackagePath>
+      <Modified>2020-12-17T08:38:24.389</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.984</Modified>
+      <Modified>2020-12-17T08:38:41.548</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.007</Modified>
+      <Modified>2020-12-17T08:38:41.574</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.036</Modified>
+      <Modified>2020-12-17T08:38:41.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.079</Modified>
+      <Modified>2020-12-17T08:38:41.657</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.214</Modified>
+      <Modified>2020-12-17T08:38:41.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.660</Modified>
+      <Modified>2020-12-17T08:38:41.166</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.672</Modified>
+      <Modified>2020-12-17T08:38:41.181</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.683</Modified>
+      <Modified>2020-12-17T08:38:41.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.695</Modified>
+      <Modified>2020-12-17T08:38:41.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.714</Modified>
+      <Modified>2020-12-17T08:38:41.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.409</Modified>
+      <Modified>2020-12-17T08:38:42.054</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.442</Modified>
+      <Modified>2020-12-17T08:38:42.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.486</Modified>
+      <Modified>2020-12-17T08:38:42.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.819</Modified>
+      <Modified>2020-12-17T08:38:42.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.730</Modified>
+      <Modified>2020-12-17T08:38:41.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.743</Modified>
+      <Modified>2020-12-17T08:38:41.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.760</Modified>
+      <Modified>2020-12-17T08:38:41.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.824</Modified>
+      <Modified>2020-12-17T08:38:41.365</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.334</Modified>
+      <Modified>2020-12-17T08:38:41.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.383</Modified>
+      <Modified>2020-12-17T08:38:42.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.352</Modified>
+      <Modified>2020-12-17T08:38:41.983</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.362</Modified>
+      <Modified>2020-12-17T08:38:41.996</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.224</Modified>
+      <Modified>2020-12-17T08:38:41.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.234</Modified>
+      <Modified>2020-12-17T08:38:41.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.246</Modified>
+      <Modified>2020-12-17T08:38:41.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.270</Modified>
+      <Modified>2020-12-17T08:38:41.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.279</Modified>
+      <Modified>2020-12-17T08:38:41.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.288</Modified>
+      <Modified>2020-12-17T08:38:41.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.325</Modified>
+      <Modified>2020-12-17T08:38:41.949</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.298</Modified>
+      <Modified>2020-12-17T08:38:41.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.307</Modified>
+      <Modified>2020-12-17T08:38:41.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.908</Modified>
+      <Modified>2020-12-17T08:38:42.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.920</Modified>
+      <Modified>2020-12-17T08:38:42.668</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.933</Modified>
+      <Modified>2020-12-17T08:38:42.682</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.947</Modified>
+      <Modified>2020-12-17T08:38:42.698</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.967</Modified>
+      <Modified>2020-12-17T08:38:42.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.837</Modified>
+      <Modified>2020-12-17T08:38:41.382</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.853</Modified>
+      <Modified>2020-12-17T08:38:41.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.871</Modified>
+      <Modified>2020-12-17T08:38:41.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.966</Modified>
+      <Modified>2020-12-17T08:38:41.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -410,27 +414,27 @@
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.556</Modified>
+      <Modified>2020-12-17T08:38:42.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.778</Modified>
+      <Modified>2020-12-17T08:38:41.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.256</Modified>
+      <Modified>2020-12-17T08:38:41.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:09.343</Modified>
+      <Modified>2020-12-17T08:38:41.972</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T08:48:08.895</Modified>
+      <Modified>2020-12-17T08:38:41.450</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -442,47 +446,47 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.760</Modified>
+      <Modified>2020-12-17T08:33:08.858</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.761</Modified>
+      <Modified>2020-12-17T08:33:08.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Itineraries\AddItineraryPage.xbf">
       <PackagePath>View\Itineraries\AddItineraryPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.761</Modified>
+      <Modified>2020-12-17T08:33:08.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Tasks\AddTaskPage.xbf">
       <PackagePath>View\Tasks\AddTaskPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.761</Modified>
+      <Modified>2020-12-17T08:33:08.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.761</Modified>
+      <Modified>2020-12-17T08:33:08.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\RoutePage.xbf">
       <PackagePath>View\Travels\RoutePage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.761</Modified>
+      <Modified>2020-12-17T08:39:00.465</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelListPage.xbf">
       <PackagePath>View\Travels\TravelListPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.754</Modified>
+      <Modified>2020-12-17T08:33:08.851</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf">
       <PackagePath>View\Users\LoginPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.762</Modified>
+      <Modified>2020-12-17T08:33:08.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf">
       <PackagePath>View\Users\RegistrationPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.762</Modified>
+      <Modified>2020-12-17T08:33:08.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelsPage.xbf">
       <PackagePath>View\Travels\TravelsPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.762</Modified>
+      <Modified>2020-12-17T08:33:08.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\UpdateTravelPage.xbf">
       <PackagePath>View\Travels\UpdateTravelPage.xbf</PackagePath>
-      <Modified>2020-12-15T08:48:54.762</Modified>
+      <Modified>2020-12-17T08:33:08.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -490,11 +494,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-15T08:49:04.525</Modified>
+      <Modified>2020-12-17T08:39:01.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\TravelPacker.exe">
       <PackagePath>TravelPacker.exe</PackagePath>
-      <Modified>2020-12-15T08:49:05.281</Modified>
+      <Modified>2020-12-17T08:39:02.387</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

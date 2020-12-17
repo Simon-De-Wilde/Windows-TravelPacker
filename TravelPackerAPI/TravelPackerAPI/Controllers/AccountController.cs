@@ -81,7 +81,7 @@ namespace TravelPackerAPI.Controllers {
 			var claims = new[]
 			{
 			  new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-			  new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
+			  new Claim(JwtRegisteredClaimNames.UniqueName, user.Email)
 			};
 
 			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));

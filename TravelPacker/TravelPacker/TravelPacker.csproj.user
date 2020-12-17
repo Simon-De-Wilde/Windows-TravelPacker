@@ -5,14 +5,14 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup>
-    <Source>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</Source>
-    <SmallTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</SmallTileSource>
-    <MediumTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</MediumTileSource>
-    <WideTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</WideTileSource>
-    <LargeTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</LargeTileSource>
-    <AppIconSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</AppIconSource>
-    <SplashScreenSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</SplashScreenSource>
-    <BadgeLogoSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</BadgeLogoSource>
-    <PackageLogoSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png</PackageLogoSource>
+    <Source>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</Source>
+    <SmallTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</MediumTileSource>
+    <WideTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</WideTileSource>
+    <LargeTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</LargeTileSource>
+    <AppIconSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</SplashScreenSource>
+    <BadgeLogoSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</BadgeLogoSource>
+    <PackageLogoSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</PackageLogoSource>
   </PropertyGroup>
 </Project>
