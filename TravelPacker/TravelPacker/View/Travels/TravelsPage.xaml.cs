@@ -86,6 +86,8 @@ namespace TravelPacker.View.Travels {
 			base.OnNavigatedTo(e);
 
 			ViewModel.GetTravels();
+
+			// TODO secondaryTile aanmaken met eerstvolgende reisroute
 		}
 
 	}
