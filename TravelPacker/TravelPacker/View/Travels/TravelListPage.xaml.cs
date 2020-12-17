@@ -154,7 +154,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteItem(selectedItem);
 
 					if (success) {
-						categoryOfItem.ItemsDone--;
+						if (selectedItem.Done) { categoryOfItem.ItemsDone--; }			
 						categoryOfItem.Items.Remove(selectedItem);
 					}
 					else {
@@ -176,11 +176,20 @@ namespace TravelPacker.View.Travels {
 
 		private async void AddItem_Tapped(object sender, TappedRoutedEventArgs e) {
 			var categoryID = ((sender as FontIcon).DataContext as Category).Id;
-			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox);
+			var newItemTitle = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[1] as TextBox);
+			var newItemAmount = (((sender as FontIcon).Parent as Grid).Children.Where(c => c.GetType().Name == "TextBox").ToList()[0] as TextBox);
+			var amount = 1;
 
-			if (newItemTitle != null) {
-				await ViewModel.addItem(newItemTitle.Text, categoryID);
+			try {
+				amount = Int32.Parse(newItemAmount.Text);
+            } catch (FormatException) {
+				amount = 1;
+            }		
+
+            if (newItemTitle != null && newItemAmount != null) {
+				await ViewModel.addItem(newItemTitle.Text, amount, categoryID);
 				newItemTitle.Text = "";
+				newItemAmount.Text = "1";
 			}
 		}
 

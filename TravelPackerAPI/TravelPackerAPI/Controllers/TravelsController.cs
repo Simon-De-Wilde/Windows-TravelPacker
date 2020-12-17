@@ -83,6 +83,9 @@ namespace TravelPackerAPI.Controllers {
 
 
 			try {
+				if (string.IsNullOrEmpty(travel.ImageUrl) || string.IsNullOrWhiteSpace(travel.ImageUrl)) {
+					travel.ImageUrl = "https://randomwordgenerator.com/img/picture-generator/5ee6d6454d57b10ff3d8992cc12c30771037dbf852547848702a7ed4974c_640.jpg";
+				}
 
 				_travelRepo.Update(travel);
 				_travelRepo.SaveChanges();
