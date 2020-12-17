@@ -197,5 +197,40 @@ namespace TravelPacker.ViewModel {
 				return false;
 			}
 		}
+
+		public async Task<bool> UpdateTask(TravelTask task, bool done)
+		{
+			try
+			{
+
+				if (done)
+				{
+					task.SetDone();
+				}
+				else
+				{
+					task.SetNotDone();
+				}
+
+				var json = JsonConvert.SerializeObject(task);
+
+				HttpClient client = new HttpClient();
+
+				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
+
+				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"),
+					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
+
+				if (result.IsSuccessStatusCode)
+				{
+					return true;
+				}
+				else { throw new Exception(); }
+			}
+			catch (Exception e)
+			{ 
+				return false;
+			}
+		}
 	}
 }
