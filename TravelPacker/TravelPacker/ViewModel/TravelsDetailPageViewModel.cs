@@ -106,9 +106,9 @@ namespace TravelPacker.ViewModel {
 			catch (Exception e) { return false; }
 		}
 
-		public async Task<bool> addItem(string title, int categoryID) {
+		public async Task<bool> addItem(string title, int amount, int categoryID) {
 			try {
-				Item newItem = new Item(title);
+				Item newItem = new Item(title, amount);
 
 				var json = JsonConvert.SerializeObject(newItem);
 

@@ -21,8 +21,8 @@ namespace TravelPackerAPI.Data {
 			_dbContext.Database.EnsureDeleted();
 			if (_dbContext.Database.EnsureCreated())
 			{
-				if (!_dbContext.Users.Any())
-				{
+				//if (!_dbContext.Users.Any())
+				//{
 
 					User student = new User("Student", "McStudent", "student@hogent.be");
 					User prof = new User("Prof", "McProf", "prof@hogent.be");
@@ -76,7 +76,7 @@ namespace TravelPackerAPI.Data {
 					travelKC.Itineraries.Add(itinTaxi);
 
 					_dbContext.SaveChanges();
-				}
+				//}
 
 			}
 		}
