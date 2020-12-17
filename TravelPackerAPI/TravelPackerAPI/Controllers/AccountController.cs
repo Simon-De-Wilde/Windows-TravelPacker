@@ -91,7 +91,7 @@ namespace TravelPackerAPI.Controllers {
 			var token = new JwtSecurityToken(
 			  null, null,
 			  claims,
-			  expires: DateTime.Now.AddMinutes(30),
+			  expires: DateTime.Now.AddDays(7),
 			  signingCredentials: creds);
 
 			return new JwtSecurityTokenHandler().WriteToken(token);
