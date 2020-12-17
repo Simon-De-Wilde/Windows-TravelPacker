@@ -36,8 +36,7 @@
             <StackPanel Margin="0 0 0 20">
                 <TextBlock Text="Duration"
                            HorizontalAlignment="Left" />
-                <TimePicker x:Name="tp_duration"
-                            ClockIdentifier="24HourClock" />
+                <TextBox x:Name="tp_duration"/>
             </StackPanel>
 
             <!--Errors-->
