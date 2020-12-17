@@ -150,7 +150,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteItem(selectedItem);
 
 					if (success) {
-						categoryOfItem.ItemsDone--;
+						if (selectedItem.Done) { categoryOfItem.ItemsDone--; }			
 						categoryOfItem.Items.Remove(selectedItem);
 					}
 					else {

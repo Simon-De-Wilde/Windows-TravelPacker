@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T09:11:57.148</Modified>
+      <Modified>2020-12-17T09:36:47.147</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\TravelPacker.exe">
       <PackagePath>entrypoint\TravelPacker.exe</PackagePath>
-      <Modified>2020-12-17T09:11:55.438</Modified>
+      <Modified>2020-12-17T09:36:45.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -177,231 +177,235 @@
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.048</Modified>
+      <Modified>2020-12-17T09:17:21.475</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.048</Modified>
+      <Modified>2020-12-17T09:17:21.477</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.056</Modified>
+      <Modified>2020-12-17T09:17:21.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.056</Modified>
+      <Modified>2020-12-17T09:17:21.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.477</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo.png">
       <PackagePath>Assets\icon\logo.png</PackagePath>
       <Modified>2020-12-17T07:27:04.058</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png">
+      <PackagePath>Assets\icon\logo2.png</PackagePath>
+      <Modified>2020-12-17T09:17:21.479</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.481</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.482</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.482</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.058</Modified>
+      <Modified>2020-12-17T09:17:21.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.066</Modified>
+      <Modified>2020-12-17T09:17:21.485</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.066</Modified>
+      <Modified>2020-12-17T09:17:21.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.493</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.492</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.496</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.496</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.076</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.076</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.076</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -410,27 +414,27 @@
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.067</Modified>
+      <Modified>2020-12-17T09:17:21.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.489</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.068</Modified>
+      <Modified>2020-12-17T09:17:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-17T07:27:04.078</Modified>
+      <Modified>2020-12-17T09:17:21.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -442,47 +446,47 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.846</Modified>
+      <Modified>2020-12-17T09:36:45.139</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.847</Modified>
+      <Modified>2020-12-17T09:36:45.139</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Itineraries\AddItineraryPage.xbf">
       <PackagePath>View\Itineraries\AddItineraryPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.847</Modified>
+      <Modified>2020-12-17T09:36:45.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Tasks\AddTaskPage.xbf">
       <PackagePath>View\Tasks\AddTaskPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.848</Modified>
+      <Modified>2020-12-17T09:36:45.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\AddTravelPage.xbf">
       <PackagePath>View\Travels\AddTravelPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.848</Modified>
+      <Modified>2020-12-17T09:36:45.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\RoutePage.xbf">
       <PackagePath>View\Travels\RoutePage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.849</Modified>
+      <Modified>2020-12-17T09:36:45.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelListPage.xbf">
       <PackagePath>View\Travels\TravelListPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.836</Modified>
+      <Modified>2020-12-17T09:36:45.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\LoginPage.xbf">
       <PackagePath>View\Users\LoginPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.849</Modified>
+      <Modified>2020-12-17T09:36:45.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Users\RegistrationPage.xbf">
       <PackagePath>View\Users\RegistrationPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.850</Modified>
+      <Modified>2020-12-17T09:36:45.143</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\TravelsPage.xbf">
       <PackagePath>View\Travels\TravelsPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.850</Modified>
+      <Modified>2020-12-17T09:36:45.143</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\View\Travels\UpdateTravelPage.xbf">
       <PackagePath>View\Travels\UpdateTravelPage.xbf</PackagePath>
-      <Modified>2020-12-17T09:11:43.851</Modified>
+      <Modified>2020-12-17T09:36:45.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -490,11 +494,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-17T08:20:09.425</Modified>
+      <Modified>2020-12-17T09:28:03.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kenny Buffel\School\Hogent %28hoger%29\2020-21\Native apps 2 Windows\Windows-TravelPacker\TravelPacker\TravelPacker\bin\x86\Debug\Core\TravelPacker.exe">
       <PackagePath>TravelPacker.exe</PackagePath>
-      <Modified>2020-12-17T09:11:57.141</Modified>
+      <Modified>2020-12-17T09:36:47.139</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
