@@ -93,6 +93,7 @@ Om de applicatie succesvol te runnen moet deze info beschikbaar zijn in de user-
 
 }
 ```
+Bij het runnen voor de eerste maal moet de database geïnitialiseerd worden. Doe dit door de code op lijn 20 en 21 van DataInitialiser.cs uit commentar te halen en de code op lijn 22 in comentaar te zetten. Hierdoor za de database (opnieuw) geïnitialiseerd worden bij de volgende run.
 
 ### Teamleden
 
