@@ -11,6 +11,7 @@ using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -38,6 +39,7 @@ namespace TravelPacker.View.Travels {
 			ViewModel = new TravelsPageViewModel();
 
 			this.DataContext = ViewModel;
+
 		}
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
