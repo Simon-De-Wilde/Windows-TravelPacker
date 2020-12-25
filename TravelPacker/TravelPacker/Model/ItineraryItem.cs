@@ -44,7 +44,7 @@ namespace TravelPacker.Model {
 			return Doing;
 		}
 
-		public bool Done { get => End < DateTime.Now; }
+		public new bool Done { get => End < DateTime.Now; }
 
 	}
 }

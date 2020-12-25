@@ -59,7 +59,7 @@ namespace TravelPacker.ViewModel {
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch {
 				return false;
 			}
 

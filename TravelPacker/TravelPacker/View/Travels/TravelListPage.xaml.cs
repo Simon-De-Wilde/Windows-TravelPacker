@@ -42,21 +42,28 @@ namespace TravelPacker.View.Travels {
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			Travel travel = (Travel)e.Parameter;
+			try {
+				Travel travel = (Travel)e.Parameter;
 
-			/*txt_title.Text = travel.Name;
-            txt_location.Text = travel.Location;
-            txt_image.Text = travel.ImageUrl;*/
+				if (travel == null) {
+					throw new Exception();
+				}
 
-			ViewModel.Travel = travel;
+				ViewModel.Travel = travel;
+			}
+			catch {
+				MessageDialog md = new MessageDialog("Something went wrong. Try again later");
+				md.ShowAsync();
+
+				Frame.Navigate(typeof(TravelsPage));
+			}
 		}
 
 		private async void OnTaskChecked(object sender, RoutedEventArgs e) {
 			var selectedTask = (sender as CheckBox).DataContext as TravelTask;
 			var done = (selectedTask.Done) ? false : true;
 
-			if (selectedTask != null)
-			{
+			if (selectedTask != null) {
 				await ViewModel.UpdateTask(selectedTask, done);
 			}
 		}
@@ -104,14 +111,12 @@ namespace TravelPacker.View.Travels {
 			Frame.Navigate(typeof(AddTaskPage), ViewModel.Travel);
 		}
 
-		private async void RemoveCategory_Tapped(object sender, RightTappedRoutedEventArgs e) { 
+		private async void RemoveCategory_Tapped(object sender, RightTappedRoutedEventArgs e) {
 			var selectedCategory = (sender as Expander).DataContext as Category;
-			
-			if (selectedCategory != null)
-			{
 
-				ContentDialog cd = new ContentDialog()
-				{
+			if (selectedCategory != null) {
+
+				ContentDialog cd = new ContentDialog() {
 					Title = $"Delete category",
 					Content = $"Do you wish to delete category '{selectedCategory.Name}'? All items under this category will be removed as well. This action cannot be undone.",
 					CloseButtonText = "Close",
@@ -119,14 +124,13 @@ namespace TravelPacker.View.Travels {
 				};
 
 				ContentDialogResult result = await cd.ShowAsync();
-				if (result == ContentDialogResult.Primary)
-				{
+				if (result == ContentDialogResult.Primary) {
 					bool success = await ViewModel.DeleteCategory(selectedCategory);
 
 					if (success) {
 						ViewModel.Travel.Categories.Remove(selectedCategory);
 					}
-					else{
+					else {
 						ContentDialog diag = new ContentDialog() { Title = "Delete failed, try again later", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
@@ -154,7 +158,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteItem(selectedItem);
 
 					if (success) {
-						if (selectedItem.Done) { categoryOfItem.ItemsDone--; }			
+						if (selectedItem.Done) { categoryOfItem.ItemsDone--; }
 						categoryOfItem.Items.Remove(selectedItem);
 					}
 					else {
@@ -182,11 +186,12 @@ namespace TravelPacker.View.Travels {
 
 			try {
 				amount = Int32.Parse(newItemAmount.Text);
-            } catch (FormatException) {
+			}
+			catch (FormatException) {
 				amount = 1;
-            }		
+			}
 
-            if (newItemTitle != null && newItemAmount != null) {
+			if (newItemTitle != null && newItemAmount != null) {
 				await ViewModel.addItem(newItemTitle.Text, amount, categoryID);
 				newItemTitle.Text = "";
 				newItemAmount.Text = "1";
@@ -225,6 +230,6 @@ namespace TravelPacker.View.Travels {
 				}
 			}
 		}
-    }
+	}
 }
 

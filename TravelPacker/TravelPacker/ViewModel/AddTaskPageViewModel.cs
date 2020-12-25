@@ -9,19 +9,14 @@ using TravelPacker.Util;
 using Windows.Web.Http;
 using Windows.Web.Http.Headers;
 
-namespace TravelPacker.ViewModel
-{
-    public class AddTaskPageViewModel
-    {
-        public Travel Travel { get; set; }
-        public AddTaskPageViewModel()
-        {
-        }
+namespace TravelPacker.ViewModel {
+	public class AddTaskPageViewModel {
+		public Travel Travel { get; set; }
+		public AddTaskPageViewModel() {
+		}
 
-        public async Task<TravelTask> AddTaskToTravel(string title, TimeSpan time)
-        {
-			try
-			{
+		public async Task<TravelTask> AddTaskToTravel(string title, TimeSpan time) {
+			try {
 				TravelTask newTask = new TravelTask(title, time);
 				var newTaskJSON = JsonConvert.SerializeObject(newTask);
 
@@ -30,19 +25,16 @@ namespace TravelPacker.ViewModel
 				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/" + Travel.Id),
 					new HttpStringContent(newTaskJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
-				if (result.IsSuccessStatusCode)
-				{
+				if (result.IsSuccessStatusCode) {
 					return JsonConvert.DeserializeObject<TravelTask>(result.Content.ToString());
 				}
-				else
-				{
+				else {
 					throw new Exception();
 				}
 			}
-			catch (Exception e)
-			{
+			catch {
 				return null;
 			}
 		}
-    }
+	}
 }

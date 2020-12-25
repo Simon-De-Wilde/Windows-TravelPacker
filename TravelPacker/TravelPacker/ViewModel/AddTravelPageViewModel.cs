@@ -29,7 +29,7 @@ namespace TravelPacker.View {
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch {
 				return false;
 			}
 		}
