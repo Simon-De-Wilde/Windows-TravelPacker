@@ -19,50 +19,46 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace TravelPacker.View.Travels {
-	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
-	public sealed partial class AddTaskPage : Page {
-		public AddTaskPageViewModel ViewModel { get; set; }
+namespace TravelPacker.View.Travels
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class AddTaskPage : Page
+    {
+        public AddTaskPageViewModel ViewModel { get; set; }
 
-		public AddTaskPage() {
-			this.InitializeComponent();
-			ViewModel = new AddTaskPageViewModel();
-		}
+        public AddTaskPage()
+        {
+            this.InitializeComponent();
+            ViewModel = new AddTaskPageViewModel();
+        }
 
-		protected override void OnNavigatedTo(NavigationEventArgs e) {
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
 			base.OnNavigatedTo(e);
 
-			try {
-				Travel travel = (Travel)e.Parameter;
+			Travel travel = (Travel)e.Parameter;
 
-				if (travel == null) {
-					throw new Exception();
-				}
-
-				ViewModel.Travel = travel;
-			}
-			catch {
-				MessageDialog md = new MessageDialog("Something went wrong. Try again later");
-				md.ShowAsync();
-
-				Frame.Navigate(typeof(TravelsPage));
-			}
+			ViewModel.Travel = travel;
 		}
 
-		private async void Button_Click(object sender, RoutedEventArgs e) {
+		private async void Button_Click(object sender, RoutedEventArgs e)
+        {
 			errorbox.Children.Clear();
 			CheckForm();
 
-			if (!errorbox.Children.Any()) {
+			if (!errorbox.Children.Any())
+			{ 
 				var success = await ViewModel.AddTaskToTravel(txt_title.Text, TimeSpan.FromMinutes(Convert.ToInt32(tp_duration.Text)));
 
-				if (success != null) {
+				if (success != null)
+				{
 					ViewModel.Travel.Tasks.Add(success);
 					Frame.GoBack();
 				}
-				else {
+				else
+				{
 					MessageDialog md = new MessageDialog("Something went wrong, task was not created. Try again later");
 					await md.ShowAsync();
 				}
@@ -71,27 +67,36 @@ namespace TravelPacker.View.Travels {
 
 
 
-		private void CheckForm() {
-			if (string.IsNullOrEmpty(txt_title.Text) || string.IsNullOrWhiteSpace(txt_title.Text)) {
-				TextBlock titleError = new TextBlock() {
+		private void CheckForm()
+		{
+			if (string.IsNullOrEmpty(txt_title.Text) || string.IsNullOrWhiteSpace(txt_title.Text))
+			{
+				TextBlock titleError = new TextBlock()
+				{
 					Text = "Title is required",
 					Foreground = new SolidColorBrush(Colors.DarkRed)
 				};
 				errorbox.Children.Add(titleError);
 			}
-			if (tp_duration.Text == null) {
-				TextBlock locationError = new TextBlock() {
+			if (tp_duration.Text == null)
+			{
+				TextBlock locationError = new TextBlock()
+				{
 					Text = "Duration is required",
 					Foreground = new SolidColorBrush(Colors.DarkRed)
 				};
 				errorbox.Children.Add(locationError);
 			}
-			if (tp_duration.Text != null) {
-				try {
+			if (tp_duration.Text !=  null)
+            {
+				try
+				{
 					Convert.ToInt32(tp_duration.Text);
 				}
-				catch {
-					TextBlock durationError = new TextBlock() {
+				catch
+				{
+					TextBlock durationError = new TextBlock()
+					{
 						Text = "Please fill in a number as duration",
 						Foreground = new SolidColorBrush(Colors.DarkRed)
 					};
