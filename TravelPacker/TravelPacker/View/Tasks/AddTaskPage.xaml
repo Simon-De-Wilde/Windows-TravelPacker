@@ -31,12 +31,14 @@
             <StackPanel Margin="0 0 0 20">
                 <TextBlock Text="Title"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="txt_title" />
+                <TextBox x:Name="txt_title"
+                         IsSpellCheckEnabled="False" />
             </StackPanel>
             <StackPanel Margin="0 0 0 20">
                 <TextBlock Text="Duration in minutes"
                            HorizontalAlignment="Left" />
-                <TextBox x:Name="tp_duration"/>
+                <TextBox x:Name="tp_duration"
+                         IsSpellCheckEnabled="False" />
             </StackPanel>
 
             <!--Errors-->

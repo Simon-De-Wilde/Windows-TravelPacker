@@ -1325,13 +1325,15 @@
                                                                  Grid.Column="0"
                                                                  Text="1"
                                                                  VerticalAlignment="Center"
-                                                                 BorderBrush="Transparent" />
+                                                                 BorderBrush="Transparent"
+                                                                 IsSpellCheckEnabled="False"/>
 
                                                         <TextBox x:Name="textbox_newItem"
                                                                  Grid.Column="1"
                                                                  PlaceholderText="Add new Item"
                                                                  VerticalAlignment="Center"
-                                                                 BorderBrush="Transparent" />
+                                                                 BorderBrush="Transparent"
+                                                                 IsSpellCheckEnabled="False"/>
 
                                                         <FontIcon x:Name="icon_addItem"
                                                                   Grid.Column="2"
@@ -1380,7 +1382,8 @@
                                      VerticalAlignment="Center"
                                      PlaceholderText="Add new category"
                                      Margin="30,0,0,0"
-                                     BorderBrush="Transparent" />
+                                     BorderBrush="Transparent"
+                                     IsSpellCheckEnabled="False"/>
 
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Right"
