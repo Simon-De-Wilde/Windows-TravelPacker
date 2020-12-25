@@ -8,7 +8,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
 using TravelPacker.Model;
 using TravelPacker.View.Itinerary;
 using TravelPacker.ViewModel;
@@ -27,6 +26,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 namespace TravelPacker.View.Travels {
@@ -35,6 +35,8 @@ namespace TravelPacker.View.Travels {
 	/// </summary>
 	public sealed partial class TravelListPage : Page {
 		public TravelsDetailPageViewModel ViewModel { get; set; }
+		private int SumItems { get; set; }
+		private int SumTasks { get; set; }
 
 		public TravelListPage() {
 			this.InitializeComponent();
@@ -52,7 +54,191 @@ namespace TravelPacker.View.Travels {
             txt_image.Text = travel.ImageUrl;*/
 
 			ViewModel.Travel = travel;
+
+			CalculateSums(travel);
+			BuildBadge(travel);
+			BuildTile(travel);
 		}
+
+		private void CalculateSums(Travel travel)
+        {
+			SumItems = 0;
+			SumTasks = 0;
+			foreach (var c in travel.Categories)
+			{
+				SumItems += c.Items.Where(i => !i.Done).Count();
+			}
+			SumTasks += travel.Tasks.Where(t => !t.Done).Count();
+		}
+
+		private void BuildBadge(Travel travel)
+        {
+
+			// build badge
+			var type = BadgeTemplateType.BadgeNumber;
+			var xml = BadgeUpdateManager.GetTemplateContent(type);
+
+			// update element
+			var elements = xml.GetElementsByTagName("badge");
+			var element = elements[0] as Windows.Data.Xml.Dom.XmlElement;
+
+			var sum = SumItems + SumTasks;
+
+			element.SetAttribute("value", sum.ToString());
+
+			// send to lock screen
+			var updator = BadgeUpdateManager.CreateBadgeUpdaterForApplication();
+			var notification = new BadgeNotification(xml);
+			updator.Update(notification);
+		}
+
+		private void BuildTile(Travel travel)
+        {
+			//Tile layout
+			var tileContent = new TileContent()
+			{
+				Visual = new TileVisual()
+				{
+					TileSmall = new TileBinding()
+					{
+						Content = new TileBindingContentAdaptive()
+						{
+							BackgroundImage = new TileBackgroundImage()
+							{
+								Source = travel.ImageUrl
+							}
+						}
+					},
+					TileMedium = new TileBinding()
+					{
+						Content = new TileBindingContentAdaptive()
+						{
+							Children =
+							{
+								new AdaptiveGroup()
+								{
+									Children =
+									{
+										new AdaptiveSubgroup()
+										{
+											HintWeight = 1,
+											Children =
+											{
+												new AdaptiveText()
+												{
+													Text = travel.Name
+												},
+												new AdaptiveText()
+												{
+													Text = "Items: " + SumItems.ToString(),
+													HintStyle = AdaptiveTextStyle.CaptionSubtle
+												},
+												new AdaptiveText()
+												{
+													Text = "Tasks: " + SumTasks.ToString(),
+													HintStyle = AdaptiveTextStyle.CaptionSubtle
+												}
+											}
+										}
+									}
+								}
+							},
+							BackgroundImage = new TileBackgroundImage()
+							{
+								Source = travel.ImageUrl
+							}
+						}
+					},
+					TileWide = new TileBinding()
+					{
+						Content = new TileBindingContentAdaptive()
+						{
+							Children =
+				{
+					new AdaptiveGroup()
+					{
+						Children =
+						{
+							new AdaptiveSubgroup()
+							{
+								HintWeight = 1,
+								Children =
+								{
+									new AdaptiveText()
+									{
+										Text = travel.Name
+									},
+									new AdaptiveText()
+									{
+										Text = "Items: " + SumItems.ToString(),
+										HintStyle = AdaptiveTextStyle.CaptionSubtle
+									},
+									new AdaptiveText()
+									{
+										Text = "Tasks: " + SumTasks.ToString(),
+										HintStyle = AdaptiveTextStyle.CaptionSubtle
+									}
+								}
+							}
+						}
+					}
+				},
+							BackgroundImage = new TileBackgroundImage()
+							{
+								Source = travel.ImageUrl
+							}
+						}
+					},
+					TileLarge = new TileBinding()
+					{
+						Content = new TileBindingContentAdaptive()
+						{
+							Children =
+				{
+					new AdaptiveGroup()
+					{
+						Children =
+						{
+							new AdaptiveSubgroup()
+							{
+								HintWeight = 1,
+								Children =
+								{
+									new AdaptiveText()
+									{
+										Text = travel.Name
+									},
+									new AdaptiveText()
+									{
+										Text = "Items: " + SumItems.ToString(),
+										HintStyle = AdaptiveTextStyle.CaptionSubtle
+									},
+									new AdaptiveText()
+									{
+										Text = "Tasks: " + SumTasks.ToString(),
+										HintStyle = AdaptiveTextStyle.CaptionSubtle
+									}
+								}
+							}
+						}
+					}
+				},
+							BackgroundImage = new TileBackgroundImage()
+							{
+								Source = travel.ImageUrl
+							}
+						}
+					}
+				}
+			};
+			var tileXml = tileContent.GetContent();
+
+			var xmldocument = new Windows.Data.Xml.Dom.XmlDocument();
+			xmldocument.LoadXml(tileXml);
+			var tileNotification = new TileNotification(xmldocument);
+			TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+		}
+
 
 		private async void OnTaskChecked(object sender, RoutedEventArgs e) {
 			var selectedTask = (sender as CheckBox).DataContext as TravelTask;
@@ -62,6 +248,10 @@ namespace TravelPacker.View.Travels {
 			{
 				await ViewModel.UpdateTask(selectedTask, done);
 			}
+
+			CalculateSums(ViewModel.Travel);
+			BuildBadge(this.ViewModel.Travel);
+			BuildTile(this.ViewModel.Travel);
 		}
 
 		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
@@ -203,6 +393,10 @@ namespace TravelPacker.View.Travels {
 			if (selectedItem != null) {
 				await ViewModel.updateItem(selectedItem, done);
 			}
+
+			CalculateSums(ViewModel.Travel);
+			BuildBadge(this.ViewModel.Travel);
+			BuildTile(this.ViewModel.Travel);
 		}
 
 		private async void btn_DeleteTask_Click(object sender, RightTappedRoutedEventArgs e) {
@@ -228,6 +422,6 @@ namespace TravelPacker.View.Travels {
 				}
 			}
 		}
-	}
+    }
 }
 
