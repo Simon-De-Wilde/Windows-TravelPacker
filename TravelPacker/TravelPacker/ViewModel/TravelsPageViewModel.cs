@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
 using TravelPacker.Util;
@@ -28,9 +26,9 @@ namespace TravelPacker.ViewModel {
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var json = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"));
+				string json = await client.GetStringAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels"));
 
-				var list = JsonConvert.DeserializeObject<List<Travel>>(json);
+				List<Travel> list = JsonConvert.DeserializeObject<List<Travel>>(json);
 
 				foreach (Travel t in list) {
 					Travels.Add(t);
@@ -52,7 +50,7 @@ namespace TravelPacker.ViewModel {
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{selectedTravel.Id}"));
+				HttpResponseMessage deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{selectedTravel.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode) {
 					Travels.Remove(selectedTravel);

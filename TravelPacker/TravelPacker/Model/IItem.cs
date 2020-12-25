@@ -30,8 +30,7 @@ namespace TravelPacker.Model {
 			_done = true;
 		}
 
-		public void SetNotDone()
-        {
+		public void SetNotDone() {
 			_done = false;
 		}
 	}

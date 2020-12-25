@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
 using TravelPacker.Util;
@@ -21,13 +18,13 @@ namespace TravelPacker.ViewModel {
 				Travel.ImageUrl = imageUrl;
 
 
-				var updatedTravelJSON = JsonConvert.SerializeObject(Travel);
+				string updatedTravelJSON = JsonConvert.SerializeObject(Travel);
 
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{Travel.Id}"),
+				HttpResponseMessage result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Travels/{Travel.Id}"),
 					new HttpStringContent(updatedTravelJSON, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {

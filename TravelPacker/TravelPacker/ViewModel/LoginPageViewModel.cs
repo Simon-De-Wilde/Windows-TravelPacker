@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TravelPacker.Model;
 using TravelPacker.Util;
 using Windows.Web.Http;
 
@@ -18,9 +14,9 @@ namespace TravelPacker.ViewModel {
 
 				var postObj = new { email, password };
 
-				var postJson = JsonConvert.SerializeObject(postObj);
+				string postJson = JsonConvert.SerializeObject(postObj);
 
-				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Account/Login"),
+				HttpResponseMessage result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Account/Login"),
 					new HttpStringContent(postJson, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {

@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -44,5 +42,5 @@ namespace TravelPacker.Model {
 		protected void OnPropertyChanged(string propertyName) {
 			if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
 		}
-    }
+	}
 }

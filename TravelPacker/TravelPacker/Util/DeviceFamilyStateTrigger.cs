@@ -14,8 +14,8 @@ namespace TravelPacker.Util {
 		}
 
 		private static void OnDeviceTypePropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs) {
-			var trigger = (DeviceFamilyStateTrigger)dependencyObject;
-			var newTargetDeviceFamily = (DeviceFamily)eventArgs.NewValue;
+			DeviceFamilyStateTrigger trigger = (DeviceFamilyStateTrigger)dependencyObject;
+			DeviceFamily newTargetDeviceFamily = (DeviceFamily)eventArgs.NewValue;
 			trigger.SetActive(newTargetDeviceFamily == DeviceFamilyRecognizer.DeviceFamily);
 		}
 	}

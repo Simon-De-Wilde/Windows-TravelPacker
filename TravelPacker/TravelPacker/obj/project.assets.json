@@ -315,6 +315,18 @@
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
         "type": "package",
         "dependencies": {
@@ -885,6 +897,18 @@
         },
         "runtime": {
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
         }
       },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
@@ -1614,6 +1638,18 @@
         },
         "runtime": {
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
         }
       },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
@@ -2346,6 +2382,18 @@
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
         "type": "package",
         "dependencies": {
@@ -3076,6 +3124,18 @@
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
         "type": "package",
         "dependencies": {
@@ -3803,6 +3863,18 @@
         },
         "runtime": {
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
         }
       },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
@@ -4535,6 +4607,18 @@
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
         "type": "package",
         "dependencies": {
@@ -5262,6 +5346,18 @@
         },
         "runtime": {
           "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
         }
       },
       "Microsoft.Toolkit.Uwp.UI/6.1.1": {
@@ -6362,6 +6458,35 @@
         "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.xml",
         "microsoft.toolkit.uwp.6.1.1.nupkg.sha512",
         "microsoft.toolkit.uwp.nuspec"
+      ]
+    },
+    "Microsoft.Toolkit.Uwp.Notifications/6.1.1": {
+      "sha512": "KTyXZussmmp3J/nOueIpW8rZ7ik20pfXXJF4DGrFQ5oKI1+9ezNz13xOmUICP/p3UFSvlTRZjPpLp44Sbs9G8g==",
+      "type": "package",
+      "path": "microsoft.toolkit.uwp.notifications/6.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/native/Microsoft.Toolkit.Uwp.Notifications.targets",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pri",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.winmd",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/net461/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/net461/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/net461/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/netcoreapp3.0/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/netcoreapp3.0/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/netcoreapp3.0/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/netstandard1.4/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/netstandard1.4/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/netstandard1.4/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.pri",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "microsoft.toolkit.uwp.notifications.6.1.1.nupkg.sha512",
+        "microsoft.toolkit.uwp.notifications.nuspec"
       ]
     },
     "Microsoft.Toolkit.Uwp.UI/6.1.1": {
@@ -10818,6 +10943,7 @@
       "Microsoft.CodeAnalysis.Analyzers >= 3.3.2",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.11",
       "Microsoft.Toolkit.Uwp >= 6.1.1",
+      "Microsoft.Toolkit.Uwp.Notifications >= 6.1.1",
       "Microsoft.Toolkit.Uwp.UI.Controls >= 6.1.1",
       "Newtonsoft.Json >= 12.0.3",
       "System.IdentityModel.Tokens.Jwt >= 6.8.0"
@@ -10871,6 +10997,10 @@
             "version": "[6.2.11, )"
           },
           "Microsoft.Toolkit.Uwp": {
+            "target": "Package",
+            "version": "[6.1.1, )"
+          },
+          "Microsoft.Toolkit.Uwp.Notifications": {
             "target": "Package",
             "version": "[6.1.1, )"
           },

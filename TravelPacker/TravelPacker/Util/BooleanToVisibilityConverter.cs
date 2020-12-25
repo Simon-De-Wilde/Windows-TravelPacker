@@ -13,19 +13,22 @@ namespace TravelPacker.Util {
 		}
 
 		public object Convert(object value, Type targetType, object parameter, string language) {
-			var v = (bool)value;
+			bool v = (bool)value;
 
 			return v ? OnTrue : OnFalse;
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, string language) {
-			if (value is Visibility == false)
+			if (value is Visibility == false) {
 				return DependencyProperty.UnsetValue;
+			}
 
-			if ((Visibility)value == OnTrue)
+			if ((Visibility)value == OnTrue) {
 				return true;
-			else
+			}
+			else {
 				return false;
+			}
 		}
 	}
 }

@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TravelPacker.Model;
 using TravelPacker.Util;
@@ -61,7 +57,7 @@ namespace TravelPacker.ViewModel {
 			try {
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
-				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/{selectedCategory.Id}"));
+				HttpResponseMessage result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/{selectedCategory.Id}"));
 
 				if (result.IsSuccessStatusCode) {
 					return true;
@@ -75,7 +71,7 @@ namespace TravelPacker.ViewModel {
 			try {
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
-				var result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{selectedItem.Id}"));
+				HttpResponseMessage result = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{selectedItem.Id}"));
 
 				if (result.IsSuccessStatusCode) {
 					return true;
@@ -89,12 +85,12 @@ namespace TravelPacker.ViewModel {
 
 			try {
 				Category newCategory = new Category(title);
-				var json = JsonConvert.SerializeObject(newCategory);
+				string json = JsonConvert.SerializeObject(newCategory);
 
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/PostCategoryToTravel/{Travel.Id}"),
+				HttpResponseMessage result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Categories/PostCategoryToTravel/{Travel.Id}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
@@ -110,12 +106,12 @@ namespace TravelPacker.ViewModel {
 			try {
 				Item newItem = new Item(title, amount);
 
-				var json = JsonConvert.SerializeObject(newItem);
+				string json = JsonConvert.SerializeObject(newItem);
 
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/PostItemToCategory/{categoryID}"),
+				HttpResponseMessage result = await client.PostAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/PostItemToCategory/{categoryID}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
@@ -129,8 +125,8 @@ namespace TravelPacker.ViewModel {
 
 		public async Task<bool> updateItem(Item item, bool done) {
 			try {
-				var category = GetCategoryOfItem(item);
-				var itemToUpdate = GetItem(item.Id);
+				Category category = GetCategoryOfItem(item);
+				Item itemToUpdate = GetItem(item.Id);
 
 				if (done) {
 					itemToUpdate.SetDone();
@@ -141,13 +137,13 @@ namespace TravelPacker.ViewModel {
 					category.ItemsDone--;
 				}
 
-				var json = JsonConvert.SerializeObject(itemToUpdate);
+				string json = JsonConvert.SerializeObject(itemToUpdate);
 
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{item.Id}"),
+				HttpResponseMessage result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Item/{item.Id}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {
@@ -163,7 +159,7 @@ namespace TravelPacker.ViewModel {
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
-				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/ItineraryItems/{ii.Id}"));
+				HttpResponseMessage deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/ItineraryItems/{ii.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode) {
 					return true;
@@ -183,7 +179,7 @@ namespace TravelPacker.ViewModel {
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"));
+				HttpResponseMessage deleteResult = await client.DeleteAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"));
 
 				if (deleteResult.IsSuccessStatusCode) {
 					Travel.Tasks.Remove(task);
@@ -208,13 +204,13 @@ namespace TravelPacker.ViewModel {
 					task.SetNotDone();
 				}
 
-				var json = JsonConvert.SerializeObject(task);
+				string json = JsonConvert.SerializeObject(task);
 
 				HttpClient client = new HttpClient();
 
 				client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", Globals.BearerToken);
 
-				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"),
+				HttpResponseMessage result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
 				if (result.IsSuccessStatusCode) {

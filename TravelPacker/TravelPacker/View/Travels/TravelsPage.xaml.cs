@@ -1,28 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 using TravelPacker.Model;
-using TravelPacker.Util;
 using TravelPacker.ViewModel;
-using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Core;
 using Windows.UI.Notifications;
-using Windows.UI.Popups;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -40,7 +25,7 @@ namespace TravelPacker.View.Travels {
 
 			ViewModel = new TravelsPageViewModel();
 
-			this.DataContext = ViewModel;
+			DataContext = ViewModel;
 		}
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
@@ -48,7 +33,7 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private async void TravelsGV_RightTapped(object sender, RightTappedRoutedEventArgs e) {
-			var selectedTravel = (sender as StackPanel).DataContext as Travel;
+			Travel selectedTravel = (sender as StackPanel).DataContext as Travel;
 
 			if (selectedTravel != null) {
 				ContentDialog cd = new ContentDialog() {
@@ -78,7 +63,7 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private void TravelsGV_Tapped(object sender, TappedRoutedEventArgs e) {
-			var selectedTravel = TravelsGV.SelectedItem as Travel;
+			Travel selectedTravel = TravelsGV.SelectedItem as Travel;
 
 			if (selectedTravel != null) {
 				Frame.Navigate(typeof(TravelListPage), selectedTravel);
@@ -88,10 +73,10 @@ namespace TravelPacker.View.Travels {
 		protected override async void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			var result = await ViewModel.GetTravels();
+			bool result = await ViewModel.GetTravels();
 
 			if (result) {
-				var itineraryItem = GetEarliestItineraryItem();
+				KeyValuePair<Travel, ItineraryItem> itineraryItem = GetEarliestItineraryItem();
 				if (itineraryItem.Value != null) {
 					if (itineraryItem.Value.Done == false) {
 						showToast(itineraryItem);
@@ -102,16 +87,16 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private void showToast(KeyValuePair<Travel, ItineraryItem> itineraryItem) {
-			var toastTitle = $"[{itineraryItem.Key.Name}]\nUpcoming itinerary: {itineraryItem.Value.Title}";
+			string toastTitle = $"[{itineraryItem.Key.Name}]\nUpcoming itinerary: {itineraryItem.Value.Title}";
 
-			var timeUntillItinerary = itineraryItem.Value.Start - DateTime.Now;
-			var time = $"Starts in {timeUntillItinerary.Days} day(s) {timeUntillItinerary.Hours} hour(s) {timeUntillItinerary.Minutes} minute(s)";
+			TimeSpan timeUntillItinerary = itineraryItem.Value.Start - DateTime.Now;
+			string time = $"Starts in {timeUntillItinerary.Days} day(s) {timeUntillItinerary.Hours} hour(s) {timeUntillItinerary.Minutes} minute(s)";
 
-			var xml = CreateToast(toastTitle, time);
-			var toast = new ToastNotification(xml);
+			Windows.Data.Xml.Dom.XmlDocument xml = CreateToast(toastTitle, time);
+			ToastNotification toast = new ToastNotification(xml);
 
 			try {
-				var notifi = ToastNotificationManager.CreateToastNotifier();
+				ToastNotifier notifi = ToastNotificationManager.CreateToastNotifier();
 				notifi.Show(toast);
 			}
 			catch { }
@@ -120,7 +105,7 @@ namespace TravelPacker.View.Travels {
 		}
 
 		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time) {
-			var toastXml = new XDocument(
+			XDocument toastXml = new XDocument(
 			   new XElement("toast",
 			   new XElement("visual",
 			   new XElement("binding", new XAttribute("template", "ToastGeneric"),
@@ -128,29 +113,29 @@ namespace TravelPacker.View.Travels {
 			   new XElement("text", Time)
 			))));
 
-			var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+			Windows.Data.Xml.Dom.XmlDocument xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
 			xmlDoc.LoadXml(toastXml.ToString());
 			return xmlDoc;
 		}
 
 		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem() {
-			var travel = ViewModel.Travels.FirstOrDefault();
+			Travel travel = ViewModel.Travels.FirstOrDefault();
 
 			if (travel == null) {
 				return new KeyValuePair<Travel, ItineraryItem>(null, null);
 			}
 
-			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
+			ItineraryItem itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
 
 			if (itineraryItem == null) {
 				return new KeyValuePair<Travel, ItineraryItem>(null, null);
 			}
 
-			var timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
+			double timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
 
 			foreach (Travel t in ViewModel.Travels) {
 				foreach (ItineraryItem i in t.Itineraries) {
-					var minutesUntillItiniraryStart = (i.Start - DateTime.Now).TotalMinutes;
+					double minutesUntillItiniraryStart = (i.Start - DateTime.Now).TotalMinutes;
 
 					// Itinerary in the future
 					if (minutesUntillItiniraryStart > 0) {
