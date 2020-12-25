@@ -59,26 +59,13 @@ namespace TravelPacker.View.Travels {
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			try {
-				Travel travel = (Travel)e.Parameter;
+			Travel travel = (Travel)e.Parameter;
 
-				if (travel == null) {
-					throw new Exception();
-				}
+			txt_title.Text = travel.Name;
+			txt_location.Text = travel.Location;
+			txt_image.Text = travel.ImageUrl;
 
-
-				txt_title.Text = travel.Name;
-				txt_location.Text = travel.Location;
-				txt_image.Text = travel.ImageUrl;
-
-				ViewModel.Travel = travel;
-			}
-			catch {
-				MessageDialog md = new MessageDialog("Something went wrong. Try again later");
-				md.ShowAsync();
-
-				Frame.Navigate(typeof(TravelsPage));
-			}
+			ViewModel.Travel = travel;
 
 		}
 

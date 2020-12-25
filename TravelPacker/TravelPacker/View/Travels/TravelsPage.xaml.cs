@@ -5,7 +5,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 using TravelPacker.Model;
+using TravelPacker.Util;
 using TravelPacker.ViewModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
@@ -35,11 +38,9 @@ namespace TravelPacker.View.Travels {
 		public TravelsPage() {
 			this.InitializeComponent();
 
-
 			ViewModel = new TravelsPageViewModel();
 
 			this.DataContext = ViewModel;
-
 		}
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
@@ -64,7 +65,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteTravel(selectedTravel);
 
 					if (success) {
-						ContentDialog diag = new ContentDialog() { Title = "Delete Successful", CloseButtonText = "Close" };
+						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
 					else {
@@ -84,13 +85,84 @@ namespace TravelPacker.View.Travels {
 			}
 		}
 
-		protected override void OnNavigatedTo(NavigationEventArgs e) {
+		protected override async void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			ViewModel.GetTravels();
+			var result = await ViewModel.GetTravels();
 
-			// TODO secondaryTile aanmaken met eerstvolgende reisroute
+			if (result) {
+				var itineraryItem = GetEarliestItineraryItem();
+				if (itineraryItem.Value.Done == false) {
+					showToast(itineraryItem);
+				}
+			}
+
 		}
 
+		private void showToast(KeyValuePair<Travel, ItineraryItem> itineraryItem) {
+			var toastTitle = $"[{itineraryItem.Key.Name}]\nUpcoming itinerary: {itineraryItem.Value.Title}";
+
+			var timeUntillItinerary = itineraryItem.Value.Start - DateTime.Now;
+			var time = $"Starts in {timeUntillItinerary.Days} day(s) {timeUntillItinerary.Hours} hour(s) {timeUntillItinerary.Minutes} minute(s)";
+
+			var xml = CreateToast(toastTitle, time);
+			var toast = new ToastNotification(xml);
+
+			try
+            {
+				var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
+				notifi.Show(toast);
+            } catch {  }
+
+
+		}
+
+		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time) {
+			var toastXml = new XDocument(
+			   new XElement("toast",
+			   new XElement("visual",
+			   new XElement("binding", new XAttribute("template", "ToastGeneric"),
+			   new XElement("text", ToastTitle),
+			   new XElement("text", Time)
+			))));
+
+			var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+			xmlDoc.LoadXml(toastXml.ToString());
+			return xmlDoc;
+		}
+
+		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem() {
+			var travel = ViewModel.Travels.FirstOrDefault();
+			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
+			var timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
+
+			foreach (Travel t in ViewModel.Travels) {
+				foreach (ItineraryItem i in t.Itineraries) {
+					var minutesUntillItiniraryStart = (i.Start - DateTime.Now).TotalMinutes;
+
+					// Itinerary in the future
+					if (minutesUntillItiniraryStart > 0) {
+
+						// Itinerary in the future as new default
+						if (timeBetween < 0) {
+							itineraryItem = i;
+							travel = t;
+							timeBetween = minutesUntillItiniraryStart;
+						}
+
+						// Compare
+						if (minutesUntillItiniraryStart < timeBetween) {
+							itineraryItem = i;
+							travel = t;
+							timeBetween = minutesUntillItiniraryStart;
+						}
+
+					}
+
+				}
+			}
+
+			return new KeyValuePair<Travel, ItineraryItem>(travel, itineraryItem);
+		}
 	}
 }

@@ -33,7 +33,7 @@ namespace TravelPacker.ViewModel {
 					throw new Exception();
 				}
 			}
-			catch {
+			catch (Exception e) {
 				return null;
 			}
 		}
