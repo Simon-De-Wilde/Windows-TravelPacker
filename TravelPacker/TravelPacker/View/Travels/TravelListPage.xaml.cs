@@ -35,6 +35,8 @@ namespace TravelPacker.View.Travels {
 	/// </summary>
 	public sealed partial class TravelListPage : Page {
 		public TravelsDetailPageViewModel ViewModel { get; set; }
+		private int SumItems { get; set; }
+		private int SumTasks { get; set; }
 
 		public TravelListPage() {
 			this.InitializeComponent();
@@ -53,6 +55,24 @@ namespace TravelPacker.View.Travels {
 
 			ViewModel.Travel = travel;
 
+			CalculateSums(travel);
+			BuildBadge(travel);
+			BuildTile(travel);
+		}
+
+		private void CalculateSums(Travel travel)
+        {
+			SumItems = 0;
+			SumTasks = 0;
+			foreach (var c in travel.Categories)
+			{
+				SumItems += c.Items.Where(i => !i.Done).Count();
+			}
+			SumTasks += travel.Tasks.Where(t => !t.Done).Count();
+		}
+
+		private void BuildBadge(Travel travel)
+        {
 
 			// build badge
 			var type = BadgeTemplateType.BadgeNumber;
@@ -61,15 +81,8 @@ namespace TravelPacker.View.Travels {
 			// update element
 			var elements = xml.GetElementsByTagName("badge");
 			var element = elements[0] as Windows.Data.Xml.Dom.XmlElement;
-			var sumItems = 0;
-			var sumTasks = 0;
 
-			foreach (var c in travel.Categories)
-            {
-				sumItems += c.Items.Where(i => !i.Done).Count();
-            }
-			sumTasks += travel.Tasks.Where(t => !t.Done).Count();
-			var sum = sumItems + sumTasks;
+			var sum = SumItems + SumTasks;
 
 			element.SetAttribute("value", sum.ToString());
 
@@ -77,7 +90,10 @@ namespace TravelPacker.View.Travels {
 			var updator = BadgeUpdateManager.CreateBadgeUpdaterForApplication();
 			var notification = new BadgeNotification(xml);
 			updator.Update(notification);
+		}
 
+		private void BuildTile(Travel travel)
+        {
 			//Tile layout
 			var tileContent = new TileContent()
 			{
@@ -114,12 +130,12 @@ namespace TravelPacker.View.Travels {
 												},
 												new AdaptiveText()
 												{
-													Text = "Items: " + sumItems.ToString(),
+													Text = "Items: " + SumItems.ToString(),
 													HintStyle = AdaptiveTextStyle.CaptionSubtle
 												},
 												new AdaptiveText()
 												{
-													Text = "Tasks: " + sumTasks.ToString(),
+													Text = "Tasks: " + SumTasks.ToString(),
 													HintStyle = AdaptiveTextStyle.CaptionSubtle
 												}
 											}
@@ -154,12 +170,12 @@ namespace TravelPacker.View.Travels {
 									},
 									new AdaptiveText()
 									{
-										Text = "Items: " + sumItems.ToString(),
+										Text = "Items: " + SumItems.ToString(),
 										HintStyle = AdaptiveTextStyle.CaptionSubtle
 									},
 									new AdaptiveText()
 									{
-										Text = "Tasks: " + sumTasks.ToString(),
+										Text = "Tasks: " + SumTasks.ToString(),
 										HintStyle = AdaptiveTextStyle.CaptionSubtle
 									}
 								}
@@ -194,12 +210,12 @@ namespace TravelPacker.View.Travels {
 									},
 									new AdaptiveText()
 									{
-										Text = "Items: " + sumItems.ToString(),
+										Text = "Items: " + SumItems.ToString(),
 										HintStyle = AdaptiveTextStyle.CaptionSubtle
 									},
 									new AdaptiveText()
 									{
-										Text = "Tasks: " + sumTasks.ToString(),
+										Text = "Tasks: " + SumTasks.ToString(),
 										HintStyle = AdaptiveTextStyle.CaptionSubtle
 									}
 								}
@@ -224,7 +240,6 @@ namespace TravelPacker.View.Travels {
 		}
 
 
-
 		private async void OnTaskChecked(object sender, RoutedEventArgs e) {
 			var selectedTask = (sender as CheckBox).DataContext as TravelTask;
 			var done = (selectedTask.Done) ? false : true;
@@ -233,6 +248,10 @@ namespace TravelPacker.View.Travels {
 			{
 				await ViewModel.UpdateTask(selectedTask, done);
 			}
+
+			CalculateSums(ViewModel.Travel);
+			BuildBadge(this.ViewModel.Travel);
+			BuildTile(this.ViewModel.Travel);
 		}
 
 		private void btn_updateTravel_Click(object sender, RoutedEventArgs e) {
@@ -374,6 +393,10 @@ namespace TravelPacker.View.Travels {
 			if (selectedItem != null) {
 				await ViewModel.updateItem(selectedItem, done);
 			}
+
+			CalculateSums(ViewModel.Travel);
+			BuildBadge(this.ViewModel.Travel);
+			BuildTile(this.ViewModel.Travel);
 		}
 
 		private async void btn_DeleteTask_Click(object sender, RightTappedRoutedEventArgs e) {
