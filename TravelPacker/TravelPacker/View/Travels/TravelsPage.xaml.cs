@@ -107,8 +107,14 @@ namespace TravelPacker.View.Travels {
 
 			var xml = CreateToast(toastTitle, time);
 			var toast = new ToastNotification(xml);
-			var notifi = ToastNotificationManager.CreateToastNotifier();
-			notifi.Show(toast);
+
+			try
+            {
+				var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
+				notifi.Show(toast);
+            } catch {  }
+
+
 		}
 
 		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time) {
