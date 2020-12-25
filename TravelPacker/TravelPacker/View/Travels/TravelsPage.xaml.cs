@@ -92,8 +92,10 @@ namespace TravelPacker.View.Travels {
 
 			if (result) {
 				var itineraryItem = GetEarliestItineraryItem();
-				if (itineraryItem.Value.Done == false) {
-					showToast(itineraryItem);
+				if (itineraryItem.Value != null) {
+					if (itineraryItem.Value.Done == false) {
+						showToast(itineraryItem);
+					}
 				}
 			}
 
@@ -108,11 +110,11 @@ namespace TravelPacker.View.Travels {
 			var xml = CreateToast(toastTitle, time);
 			var toast = new ToastNotification(xml);
 
-			try
-            {
-				var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
+			try {
+				var notifi = ToastNotificationManager.CreateToastNotifier();
 				notifi.Show(toast);
-            } catch {  }
+			}
+			catch { }
 
 
 		}
@@ -133,7 +135,17 @@ namespace TravelPacker.View.Travels {
 
 		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem() {
 			var travel = ViewModel.Travels.FirstOrDefault();
+
+			if (travel == null) {
+				return new KeyValuePair<Travel, ItineraryItem>(null, null);
+			}
+
 			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
+
+			if (itineraryItem == null) {
+				return new KeyValuePair<Travel, ItineraryItem>(null, null);
+			}
+
 			var timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
 
 			foreach (Travel t in ViewModel.Travels) {
