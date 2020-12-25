@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using TravelPacker.Model;
+using TravelPacker.View.Travels;
 using TravelPacker.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -132,9 +133,21 @@ namespace TravelPacker.View.Itinerary {
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
 			base.OnNavigatedTo(e);
 
-			Travel travel = (Travel)e.Parameter;
+			try {
+				Travel travel = (Travel)e.Parameter;
 
-			ViewModel.Travel = travel;
+				if (travel == null) {
+					throw new Exception();
+				}
+
+				ViewModel.Travel = travel;
+			}
+			catch {
+				MessageDialog md = new MessageDialog("Something went wrong. Try again later");
+				md.ShowAsync();
+
+				Frame.Navigate(typeof(TravelsPage));
+			}
 
 
 		}

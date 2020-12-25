@@ -68,7 +68,7 @@ namespace TravelPacker.ViewModel {
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e) { return false; }
+			catch { return false; }
 		}
 
 		public async Task<bool> DeleteItem(Item selectedItem) {
@@ -82,7 +82,7 @@ namespace TravelPacker.ViewModel {
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e) { return false; }
+			catch { return false; }
 		}
 
 		public async Task<bool> addCategory(string title) {
@@ -103,7 +103,7 @@ namespace TravelPacker.ViewModel {
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e) { return false; }
+			catch { return false; }
 		}
 
 		public async Task<bool> addItem(string title, int amount, int categoryID) {
@@ -124,7 +124,7 @@ namespace TravelPacker.ViewModel {
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e) { return false; }
+			catch { return false; }
 		}
 
 		public async Task<bool> updateItem(Item item, bool done) {
@@ -132,11 +132,11 @@ namespace TravelPacker.ViewModel {
 				var category = GetCategoryOfItem(item);
 				var itemToUpdate = GetItem(item.Id);
 
-				if (done) { 
+				if (done) {
 					itemToUpdate.SetDone();
 					category.ItemsDone++;
 				}
-				else { 
+				else {
 					itemToUpdate.SetNotDone();
 					category.ItemsDone--;
 				}
@@ -155,7 +155,7 @@ namespace TravelPacker.ViewModel {
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e) { return false; }
+			catch { return false; }
 		}
 
 		public async Task<bool> DeleteItineraryItem(ItineraryItem ii) {
@@ -172,7 +172,7 @@ namespace TravelPacker.ViewModel {
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch {
 				return false;
 			}
 		}
@@ -193,22 +193,18 @@ namespace TravelPacker.ViewModel {
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch {
 				return false;
 			}
 		}
 
-		public async Task<bool> UpdateTask(TravelTask task, bool done)
-		{
-			try
-			{
+		public async Task<bool> UpdateTask(TravelTask task, bool done) {
+			try {
 
-				if (done)
-				{
+				if (done) {
 					task.SetDone();
 				}
-				else
-				{
+				else {
 					task.SetNotDone();
 				}
 
@@ -221,14 +217,12 @@ namespace TravelPacker.ViewModel {
 				var result = await client.PutAsync(new Uri($"{EnvironmentsProperties.BASE_URL}/Task/{task.Id}"),
 					new HttpStringContent(json, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"));
 
-				if (result.IsSuccessStatusCode)
-				{
+				if (result.IsSuccessStatusCode) {
 					return true;
 				}
 				else { throw new Exception(); }
 			}
-			catch (Exception e)
-			{ 
+			catch {
 				return false;
 			}
 		}
