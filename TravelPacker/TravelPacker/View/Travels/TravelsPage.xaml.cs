@@ -62,7 +62,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteTravel(selectedTravel);
 
 					if (success) {
-						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
+						ContentDialog diag = new ContentDialog() { Title = "Delete Successful", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
 					else {
