@@ -41,6 +41,7 @@ namespace TravelPacker.View.Travels {
 			ViewModel = new TravelsPageViewModel();
 
 			this.DataContext = ViewModel;
+
 		}
 
 		private void Add_Travel_Btn(object sender, RoutedEventArgs e) {
@@ -65,7 +66,7 @@ namespace TravelPacker.View.Travels {
 					bool success = await ViewModel.DeleteTravel(selectedTravel);
 
 					if (success) {
-						ContentDialog diag = new ContentDialog() { Title = "Delete Successfull", CloseButtonText = "Close" };
+						ContentDialog diag = new ContentDialog() { Title = "Delete Successful", CloseButtonText = "Close" };
 						diag.ShowAsync();
 					}
 					else {

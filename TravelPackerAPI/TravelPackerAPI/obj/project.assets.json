@@ -10520,23 +10520,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Kenny Buffel\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "C:\\Users\\marbo\\.nuget\\packages\\": {}
+>>>>>>> develop
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
       "projectName": "TravelPackerAPI",
       "projectPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
       "packagesPath": "C:\\Users\\Kenny Buffel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\marbo\\git\\Projecten3A\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
+      "projectName": "TravelPackerAPI",
+      "projectPath": "C:\\Users\\marbo\\git\\Projecten3A\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
+      "packagesPath": "C:\\Users\\marbo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marbo\\git\\Projecten3A\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\obj\\",
+>>>>>>> develop
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Kenny Buffel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\marbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

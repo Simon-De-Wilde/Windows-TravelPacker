@@ -7,7 +7,7 @@
   <PropertyGroup>
     <Source>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</Source>
     <SmallTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</SmallTileSource>
-    <MediumTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</MediumTileSource>
+    <MediumTileSource>Assets\Square150x150Logo.png</MediumTileSource>
     <WideTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</WideTileSource>
     <LargeTileSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</LargeTileSource>
     <AppIconSource>C:\Users\Simon\Desktop\NativeApps2-Windows\Windows-TravelPacker\TravelPacker\TravelPacker\Assets\icon\logo2.png</AppIconSource>
