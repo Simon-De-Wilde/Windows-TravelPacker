@@ -90,33 +90,37 @@ namespace TravelPacker.View.Travels {
 
 			var result = await ViewModel.GetTravels();
 
-			if (result) { showToast(); }
+			if (result) {
+				var itineraryItem = GetEarliestItineraryItem();
+				if (itineraryItem.Value.Done == false) {
+					showToast(itineraryItem);
+                }
+			}
 						
 
 			// TODO secondaryTile aanmaken met eerstvolgende reisroute
 		}
 
-		private void showToast() {
-			var itineraryItem = GetEarliestItineraryItem();
-			var toastTitle = $"[{itineraryItem.Key.Name}] Upcoming itinerary";
-			var title = itineraryItem.Value.Title;
-			var date = itineraryItem.Value.Start.ToString("dd/MM/yyyy HH:mm");
+		private void showToast(KeyValuePair<Travel, ItineraryItem> itineraryItem) {
+			var toastTitle = $"[{itineraryItem.Key.Name}]\nUpcoming itinerary: {itineraryItem.Value.Title}";
 
-			var xmdock = CreateToast(toastTitle, title, date);
-			var toast = new ToastNotification(xmdock);
+			var timeUntillItinerary = itineraryItem.Value.Start - DateTime.Now;
+			var time = $"Starts in {timeUntillItinerary.Days} day(s) {timeUntillItinerary.Hours} hour(s) {timeUntillItinerary.Minutes} minute(s)";
+
+			var xml = CreateToast(toastTitle, time);
+			var toast = new ToastNotification(xml);
 			var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
 			notifi.Show(toast);
 		}
 
-		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Title, string Date)
+		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time)
 		{
             var toastXml = new XDocument(
                new XElement("toast",
                new XElement("visual",
                new XElement("binding", new XAttribute("template", "ToastGeneric"),
                new XElement("text", ToastTitle),
-               new XElement("text", Title),
-			   new XElement("text", Date)
+			   new XElement("text", Time)
 			))));
 
             var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
@@ -124,23 +128,41 @@ namespace TravelPacker.View.Travels {
 			return xmlDoc;
 		}
 
-		private KeyValuePair<Travel,ItineraryItem> GetEarliestItineraryItem()
+		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem()
         {
 			var travel = ViewModel.Travels.FirstOrDefault();
 			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
+			var timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
 
             foreach (Travel t in ViewModel.Travels)
             {
 				foreach (ItineraryItem i in t.Itineraries)
                 {
-					if (i.Start < itineraryItem.Start) {
-						itineraryItem = i;
-						travel = t;
+					var minutesUntillItiniraryStart = (i.Start - DateTime.Now).TotalMinutes;
+
+					// Itinerary in the future
+					if (minutesUntillItiniraryStart > 0 ) {
+
+						// Itinerary in the future as new default
+						if (timeBetween < 0) {
+							itineraryItem = i;
+							travel = t;
+							timeBetween = minutesUntillItiniraryStart;
+						}
+
+						// Compare
+						if (minutesUntillItiniraryStart < timeBetween) {
+							itineraryItem = i;
+							travel = t;
+							timeBetween = minutesUntillItiniraryStart;
+						}
+
 					}
+				
                 }
             }
 
 			return new KeyValuePair<Travel, ItineraryItem>(travel, itineraryItem);
-        }
+		}
 	}
 }

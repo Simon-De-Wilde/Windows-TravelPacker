@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj": {}
+    "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj": {
+    "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
         "projectName": "TravelPackerAPI",
-        "projectPath": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
-        "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simon\\Desktop\\NativeApps2-Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\obj\\",
+        "projectPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\TravelPackerAPI.csproj",
+        "packagesPath": "C:\\Users\\Kenny Buffel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kenny Buffel\\School\\Hogent (hoger)\\2020-21\\Native apps 2 Windows\\Windows-TravelPacker\\TravelPackerAPI\\TravelPackerAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kenny Buffel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -91,6 +96,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -99,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
