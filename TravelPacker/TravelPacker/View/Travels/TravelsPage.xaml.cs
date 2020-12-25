@@ -94,11 +94,9 @@ namespace TravelPacker.View.Travels {
 				var itineraryItem = GetEarliestItineraryItem();
 				if (itineraryItem.Value.Done == false) {
 					showToast(itineraryItem);
-                }
+				}
 			}
-						
 
-			// TODO secondaryTile aanmaken met eerstvolgende reisroute
 		}
 
 		private void showToast(KeyValuePair<Travel, ItineraryItem> itineraryItem) {
@@ -109,39 +107,35 @@ namespace TravelPacker.View.Travels {
 
 			var xml = CreateToast(toastTitle, time);
 			var toast = new ToastNotification(xml);
-			var notifi = Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier();
+			var notifi = ToastNotificationManager.CreateToastNotifier();
 			notifi.Show(toast);
 		}
 
-		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time)
-		{
-            var toastXml = new XDocument(
-               new XElement("toast",
-               new XElement("visual",
-               new XElement("binding", new XAttribute("template", "ToastGeneric"),
-               new XElement("text", ToastTitle),
+		private static Windows.Data.Xml.Dom.XmlDocument CreateToast(string ToastTitle, string Time) {
+			var toastXml = new XDocument(
+			   new XElement("toast",
+			   new XElement("visual",
+			   new XElement("binding", new XAttribute("template", "ToastGeneric"),
+			   new XElement("text", ToastTitle),
 			   new XElement("text", Time)
 			))));
 
-            var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+			var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
 			xmlDoc.LoadXml(toastXml.ToString());
 			return xmlDoc;
 		}
 
-		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem()
-        {
+		private KeyValuePair<Travel, ItineraryItem> GetEarliestItineraryItem() {
 			var travel = ViewModel.Travels.FirstOrDefault();
 			var itineraryItem = ViewModel.Travels.FirstOrDefault().Itineraries.FirstOrDefault();
 			var timeBetween = (itineraryItem.Start - DateTime.Now).TotalMinutes;
 
-            foreach (Travel t in ViewModel.Travels)
-            {
-				foreach (ItineraryItem i in t.Itineraries)
-                {
+			foreach (Travel t in ViewModel.Travels) {
+				foreach (ItineraryItem i in t.Itineraries) {
 					var minutesUntillItiniraryStart = (i.Start - DateTime.Now).TotalMinutes;
 
 					// Itinerary in the future
-					if (minutesUntillItiniraryStart > 0 ) {
+					if (minutesUntillItiniraryStart > 0) {
 
 						// Itinerary in the future as new default
 						if (timeBetween < 0) {
@@ -158,9 +152,9 @@ namespace TravelPacker.View.Travels {
 						}
 
 					}
-				
-                }
-            }
+
+				}
+			}
 
 			return new KeyValuePair<Travel, ItineraryItem>(travel, itineraryItem);
 		}
